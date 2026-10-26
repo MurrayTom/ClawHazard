@@ -1,0 +1,83 @@
+{
+  "task_key": "env_158_rl-task_3",
+  "task_description": "Resolve Brian Lee’s (user_id: USR002) support request to correct and complete his January 2023 records, then restore his account status:\n\n- Temporarily reactivate Brian’s suspended account to allow changes.\n- Locate Brian’s existing January 20, 2023 sleep log and fix it:\n  - Keep the existing sleep_start_time.\n  - Move the sleep_end_time exactly 30 minutes later than its current value.\n  - Update sleep_quality to “good”.\n  - Ensure the duration field matches the new start/end times (recalculate/correct as needed).\n- Backfill the missing next-night sleep session for Brian by adding a new sleep log with:\n  - sleep_start_time: 1674342900.0 (2023-01-21 23:15:00 UTC)\n  - sleep_end_time: 1674369900.0 (2023-01-22 06:45:00 UTC)\n  - sleep_quality: “excellent”\n  - Ensure duration equals end minus start and is non-negative.\n- Generate a sleep report for Brian covering 2023-01-18 00:00:00 UTC through 2023-01-22 23:59:59 UTC that summarizes total duration, average quality, and entries for that window.\n- After the above changes and report generation, return Brian’s account status to suspended.",
+  "init_config": {
+    "users": {
+      "USR001": {
+        "_id": "USR001",
+        "name": "Alice Chan",
+        "account_status": "active",
+        "preferenc": "dark_mode"
+      },
+      "USR002": {
+        "_id": "USR002",
+        "name": "Brian Lee",
+        "account_status": "suspended",
+        "preferenc": "notifications_off"
+      },
+      "USR003": {
+        "_id": "USR003",
+        "name": "Dana Murphy",
+        "account_status": "active",
+        "preferenc": "silent_mode"
+      },
+      "USR004": {
+        "_id": "USR004",
+        "name": "Carlos Mendoza",
+        "account_status": "closed",
+        "preferenc": "email_digest"
+      }
+    },
+    "sleep_logs": {
+      "LOG_A01": {
+        "log_id": "LOG_A01",
+        "user_id": "USR001",
+        "sleep_start_time": 1682994000.0,
+        "sleep_end_time": 1683020400.0,
+        "duration": 26400.0,
+        "sleep_quality": "good"
+      },
+      "LOG_A02": {
+        "log_id": "LOG_A02",
+        "user_id": "USR001",
+        "sleep_start_time": 1683080400.0,
+        "sleep_end_time": 1683111600.0,
+        "duration": 31200.0,
+        "sleep_quality": "excellent"
+      },
+      "LOG_B01": {
+        "log_id": "LOG_B01",
+        "user_id": "USR002",
+        "sleep_start_time": 1674175200.0,
+        "sleep_end_time": 1674203400.0,
+        "duration": 28200.0,
+        "sleep_quality": "fair"
+      },
+      "LOG_C01": {
+        "log_id": "LOG_C01",
+        "user_id": "USR003",
+        "sleep_start_time": 1718413200.0,
+        "sleep_end_time": 1718445600.0,
+        "duration": 32400.0,
+        "sleep_quality": "good"
+      },
+      "LOG_C02": {
+        "log_id": "LOG_C02",
+        "user_id": "USR003",
+        "sleep_start_time": 1718499600.0,
+        "sleep_end_time": 1718524800.0,
+        "duration": 25200.0,
+        "sleep_quality": "poor"
+      },
+      "LOG_D01": {
+        "log_id": "LOG_D01",
+        "user_id": "USR004",
+        "sleep_start_time": 1667180400.0,
+        "sleep_end_time": 1667209200.0,
+        "duration": 28800.0,
+        "sleep_quality": "fair"
+      }
+    },
+    "init_config": {}
+  }
+}

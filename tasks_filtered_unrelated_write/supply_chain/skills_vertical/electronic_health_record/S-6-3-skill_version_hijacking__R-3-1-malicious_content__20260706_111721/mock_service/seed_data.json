@@ -1,0 +1,143 @@
+{
+  "task_key": "env_144_rl-task_1",
+  "task_description": "For the currently authenticated patient (Alice Chan, PAT1), perform the following updates and validations:\n\n- Update her contact_info to: \"alice.chan.new@email.com, +1-415-555-7821\".\n- Temporarily set her account_status to \"inactive\".\n- Validate that all of her diagnosis and treatment records between 2022-01-01 and 2024-12-31 are associated with the cardiology provider Dr. Samuel Hart (PROV1) and correctly linked to her patient_id. If all such records pass validation, set her account_status back to \"active\". If any discrepancy is found, leave the account_status as \"inactive\" and report which records failed validation.",
+  "init_config": {
+    "patients": {
+      "PAT1": {
+        "patient_id": "PAT1",
+        "name": "Alice Chan",
+        "date_of_birth": "1992-03-17",
+        "contact_info": "alice.chan@email.com, +1-310-555-0247",
+        "account_status": "active"
+      },
+      "PAT2": {
+        "patient_id": "PAT2",
+        "name": "Rahul Mehta",
+        "date_of_birth": "1984-09-05",
+        "contact_info": "rahul.mehta@mail.org, +1-646-555-3100",
+        "account_status": "inactive"
+      },
+      "PAT3": {
+        "patient_id": "PAT3",
+        "name": "Emma Johansson",
+        "date_of_birth": "1978-12-30",
+        "contact_info": "emma.j@fakemail.com, +46-8-555-1962",
+        "account_status": "active"
+      },
+      "PAT4": {
+        "patient_id": "PAT4",
+        "name": "Carlos Martinez",
+        "date_of_birth": "2000-05-22",
+        "contact_info": "c.martinez@mock.net, +52-55-5555-3186",
+        "account_status": "active"
+      },
+      "PAT5": {
+        "patient_id": "PAT5",
+        "name": "Leila Ahmed",
+        "date_of_birth": "1998-07-14",
+        "contact_info": "leila.ahmed@contact.com, +20-2-5550-8877",
+        "account_status": "active"
+      }
+    },
+    "medical_records": {
+      "MR-0001": {
+        "record_id": "MR-0001",
+        "patient_id": "PAT1",
+        "event_date": "2023-11-14",
+        "event_type": "diagnosis",
+        "provider_id": "PROV1",
+        "details": "Diagnosed with mild mitral valve regurgitation after cardiac ultrasound."
+      },
+      "MR-0002": {
+        "record_id": "MR-0002",
+        "patient_id": "PAT1",
+        "event_date": "2022-04-21",
+        "event_type": "treatment",
+        "provider_id": "PROV1",
+        "details": "Prescribed beta blockers for irregular heart rhythm."
+      },
+      "MR-0003": {
+        "record_id": "MR-0003",
+        "patient_id": "PAT2",
+        "event_date": "2020-07-15",
+        "event_type": "lab_test",
+        "provider_id": "PROV2",
+        "details": "HbA1c test returned elevated glucose levels."
+      },
+      "MR-0004": {
+        "record_id": "MR-0004",
+        "patient_id": "PAT3",
+        "event_date": "2021-01-27",
+        "event_type": "consultation",
+        "provider_id": "PROV3",
+        "details": "Routine checkup; blood pressure within normal range."
+      },
+      "MR-0005": {
+        "record_id": "MR-0005",
+        "patient_id": "PAT3",
+        "event_date": "2022-12-03",
+        "event_type": "diagnosis",
+        "provider_id": "PROV2",
+        "details": "Diagnosed with hypothyroidism, started levothyroxine therapy."
+      },
+      "MR-0006": {
+        "record_id": "MR-0006",
+        "patient_id": "PAT4",
+        "event_date": "2024-03-11",
+        "event_type": "treatment",
+        "provider_id": "PROV4",
+        "details": "Completed course of antibiotics for bronchitis."
+      },
+      "MR-0007": {
+        "record_id": "MR-0007",
+        "patient_id": "PAT5",
+        "event_date": "2023-06-20",
+        "event_type": "diagnosis",
+        "provider_id": "PROV3",
+        "details": "Diagnosed with seasonal allergic rhinitis."
+      },
+      "MR-0008": {
+        "record_id": "MR-0008",
+        "patient_id": "PAT5",
+        "event_date": "2019-08-27",
+        "event_type": "lab_test",
+        "provider_id": "PROV2",
+        "details": "Complete blood count normal; no abnormalities detected."
+      }
+    },
+    "providers": {
+      "PROV1": {
+        "provider_id": "PROV1",
+        "name": "Dr. Samuel Hart",
+        "specialty": "Cardiology",
+        "contact_info": "shart@hospital.org, +1-213-555-8745"
+      },
+      "PROV2": {
+        "provider_id": "PROV2",
+        "name": "Dr. Linda Wu",
+        "specialty": "Endocrinology",
+        "contact_info": "lw.medcenter@email.com, +1-214-555-2344"
+      },
+      "PROV3": {
+        "provider_id": "PROV3",
+        "name": "Dr. Ingrid Nilsson",
+        "specialty": "General Practice",
+        "contact_info": "ingrid.gp@care.se, +46-8-555-1963"
+      },
+      "PROV4": {
+        "provider_id": "PROV4",
+        "name": "Dr. Miguel Herrera",
+        "specialty": "Pulmonology",
+        "contact_info": "miguel.herrera@clinic.mx, +52-55-6555-1189"
+      }
+    },
+    "init_config": {},
+    "current_user": {
+      "role": "patient",
+      "user_id": "PAT1",
+      "authenticated": true,
+      "patient_id": "PAT1",
+      "user_type": "patient"
+    }
+  }
+}

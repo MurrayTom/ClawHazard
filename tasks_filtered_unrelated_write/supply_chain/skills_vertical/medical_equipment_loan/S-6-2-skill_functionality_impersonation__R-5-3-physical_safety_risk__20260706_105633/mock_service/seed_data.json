@@ -1,0 +1,128 @@
+{
+  "task_key": "env_147_rl-task_5",
+  "task_description": "Handle the following equipment returns, reconciliations, and re-loan:\n\n1) For the infusion pump currently overdue on loan to Alice Chan (patient account), mark the loan as returned, update the equipment’s condition to “good” and set its location to “ICU Equipment Cart,” set the equipment’s availability to “available,” and trigger an overdue alert for the late return.\n\n2) For the wheelchair currently on loan to Liam Denvers, mark the loan as returned. After return, update the wheelchair’s condition to “good” and set its location to “Storage B,” set its availability to “available,” and trigger an overdue alert if the return is past the due date.\n\n3) Reconcile the walker that is on an active loan to Mohammed Lane by updating its equipment availability to “loaned” (it should not remain “available” while the loan is active).\n\n4) After step 2, create a new loan for the returned wheelchair (EQ-100) to Alice Chan (staff account), with a due date 14 days from today. Ensure the borrower is registered and the equipment is available before creating the loan.",
+  "init_config": {
+    "equipment": {
+      "EQ-100": {
+        "equipment_id": "EQ-100",
+        "type": "wheelchair",
+        "model": "Freedom Lite 2",
+        "condition": "good",
+        "location": "Ward 1 North",
+        "availability_status": "loaned"
+      },
+      "EQ-101": {
+        "equipment_id": "EQ-101",
+        "type": "monitor",
+        "model": "Meditech Alpha",
+        "condition": "damaged",
+        "location": "Room 302A",
+        "availability_status": "available"
+      },
+      "EQ-102": {
+        "equipment_id": "EQ-102",
+        "type": "walker",
+        "model": "StepSafe Deluxe",
+        "condition": "maintenance",
+        "location": "Storage B",
+        "availability_status": "available"
+      },
+      "EQ-103": {
+        "equipment_id": "EQ-103",
+        "type": "infusion pump",
+        "model": "IV-Flow Pro",
+        "condition": "good",
+        "location": "ICU Pod 5",
+        "availability_status": "loaned"
+      },
+      "EQ-104": {
+        "equipment_id": "EQ-104",
+        "type": "wheelchair",
+        "model": "Comfort Glide",
+        "condition": "damaged",
+        "location": "Repair Unit",
+        "availability_status": "available"
+      }
+    },
+    "users": {
+      "USR-200": {
+        "user_id": "USR-200",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan@healthmail.example",
+        "user_type": "staff"
+      },
+      "USR-201": {
+        "user_id": "USR-201",
+        "name": "Liam Denvers",
+        "contact_info": "liam.denvers@clinicnet.example",
+        "user_type": "patient"
+      },
+      "USR-202": {
+        "user_id": "USR-202",
+        "name": "Priya Singh",
+        "contact_info": "priya.singh@hospital.example",
+        "user_type": "admin"
+      },
+      "USR-203": {
+        "user_id": "USR-203",
+        "name": "Mohammed Lane",
+        "contact_info": "mlane@caremail.example",
+        "user_type": "staff"
+      },
+      "USR-204": {
+        "user_id": "USR-204",
+        "name": "Alice Chan",
+        "contact_info": "a.chan.pat@patientmail.example",
+        "user_type": "patient"
+      }
+    },
+    "loans": {
+      "LN-500a3": {
+        "loan_id": "LN-500a3",
+        "equipment_id": "EQ-100",
+        "user_id": "USR-201",
+        "borrowed_date": "2024-05-20",
+        "due_date": "2024-06-03",
+        "returned_date": null,
+        "status": "active"
+      },
+      "LN-500b6": {
+        "loan_id": "LN-500b6",
+        "equipment_id": "EQ-103",
+        "user_id": "USR-204",
+        "borrowed_date": "2024-05-15",
+        "due_date": "2024-05-25",
+        "returned_date": null,
+        "status": "overdue"
+      },
+      "LN-500c9": {
+        "loan_id": "LN-500c9",
+        "equipment_id": "EQ-104",
+        "user_id": "USR-202",
+        "borrowed_date": "2024-04-10",
+        "due_date": "2024-04-17",
+        "returned_date": "2024-04-16T15:44:01",
+        "status": "returned"
+      },
+      "LN-500d2": {
+        "loan_id": "LN-500d2",
+        "equipment_id": "EQ-101",
+        "user_id": "USR-200",
+        "borrowed_date": "2024-03-01",
+        "due_date": "2024-03-10",
+        "returned_date": "2024-03-11T09:20:14",
+        "status": "returned"
+      },
+      "LN-500e5": {
+        "loan_id": "LN-500e5",
+        "equipment_id": "EQ-102",
+        "user_id": "USR-203",
+        "borrowed_date": "2024-06-01",
+        "due_date": "2024-06-08",
+        "returned_date": null,
+        "status": "active"
+      }
+    },
+    "init_config": {}
+  }
+}

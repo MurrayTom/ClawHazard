@@ -1,0 +1,182 @@
+{
+  "task_key": "env_176_rl-task_5",
+  "task_description": "Perform the following remediation actions as an authorized admin or supervisor (use AGENT-ab2fd1 for any status changes if needed to meet authorization):\n\n1) Re-open and re-evaluate claim CLM-20230718-4431 (Hiroshi Matsuda):\n- If the claim is marked deleted, restore it.\n- Update claim details to note that the previously missing invoice was provided on 2023-07-23 and that the claim is being re-evaluated.\n- Change the status from “denied” to the appropriate re-evaluation status per the workflow (e.g., “under review” or “reopened,” whichever is valid).\n- Reassign the claim to supervisor AGENT-81d310 for reassessment.\n- Log separate audit entries for the restoration (if applicable), details update, reassignment, and status change.\n\n2) Finalize the review of claim CLM-20230514-cf87 (Michael Rivera):\n- Reassign the claim to admin AGENT-ab2fd1 for final disposition.\n- Change the status from “under review” to “approved,” consistent with the workflow.\n- Log audit entries for the reassignment and status change.\n\n3) Triage the backlog for claim CLM-20210123-6f8a (Alice Chan):\n- Update the claim details to include receipt of additional evidence (e.g., plumber report and photos) indicating water damage verification.\n- Change the status from “submitted” to “under review,” per the workflow.\n- Reassign the claim to supervisor AGENT-81d310 for triage.\n- Log audit entries for the details update, status change, and reassignment.",
+  "init_config": {
+    "claims": {
+      "CLM-20210123-6f8a": {
+        "claim_id": "CLM-20210123-6f8a",
+        "customer_id": "CUST-837a4f",
+        "status": "submitted",
+        "submission_date": "2022-01-23",
+        "details": "Water damage reported in kitchen after heavy flooding.",
+        "assigned_agent_id": "AGENT-5ecb92"
+      },
+      "CLM-20230514-cf87": {
+        "claim_id": "CLM-20230514-cf87",
+        "customer_id": "CUST-462b9c",
+        "status": "under review",
+        "submission_date": "2023-05-14",
+        "details": "Vehicle collision with minor injuries. Requesting medical coverage and car repairs.",
+        "assigned_agent_id": "AGENT-81d310"
+      },
+      "CLM-20221208-bd3a": {
+        "claim_id": "CLM-20221208-bd3a",
+        "customer_id": "CUST-441fc2",
+        "status": "approved",
+        "submission_date": "2022-12-08",
+        "details": "Laptop theft at airport. Police report attached. Claiming for lost property.",
+        "assigned_agent_id": "AGENT-ab2fd1"
+      },
+      "CLM-20230718-4431": {
+        "claim_id": "CLM-20230718-4431",
+        "customer_id": "CUST-3a81ed",
+        "status": "denied",
+        "submission_date": "2023-07-18",
+        "details": "Dental expenses for accident – claim denied due to missing invoice.",
+        "assigned_agent_id": "AGENT-09fefc"
+      }
+    },
+    "customers": {
+      "CUST-837a4f": {
+        "customer_id": "CUST-837a4f",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan88@email.com, +1-312-445-1192",
+        "account_status": "active"
+      },
+      "CUST-462b9c": {
+        "customer_id": "CUST-462b9c",
+        "name": "Michael Rivera",
+        "contact_info": "m.rivera@outlook.com, +1-646-212-8787",
+        "account_status": "active"
+      },
+      "CUST-441fc2": {
+        "customer_id": "CUST-441fc2",
+        "name": "Priya Bansal",
+        "contact_info": "priya_bansal@email.com, +44 7712 849045",
+        "account_status": "suspended"
+      },
+      "CUST-3a81ed": {
+        "customer_id": "CUST-3a81ed",
+        "name": "Hiroshi Matsuda",
+        "contact_info": "hiro.matsuda@gmail.jp, +81-90-6731-5558",
+        "account_status": "active"
+      }
+    },
+    "agents": {
+      "AGENT-ab2fd1": {
+        "agent_id": "AGENT-ab2fd1",
+        "name": "Janet Silver",
+        "role": "admin"
+      },
+      "AGENT-5ecb92": {
+        "agent_id": "AGENT-5ecb92",
+        "name": "Liam Guthrie",
+        "role": "claims-processor"
+      },
+      "AGENT-81d310": {
+        "agent_id": "AGENT-81d310",
+        "name": "Fatima Nasser",
+        "role": "supervisor"
+      },
+      "AGENT-09fefc": {
+        "agent_id": "AGENT-09fefc",
+        "name": "Omar Abdul",
+        "role": "claims-processor"
+      }
+    },
+    "claim_audits": {
+      "audit-5348d91e-1ebd-41f4-aabd-56bd995054e2": {
+        "audit_id": "audit-5348d91e-1ebd-41f4-aabd-56bd995054e2",
+        "claim_id": "CLM-20210123-6f8a",
+        "changed_by": "CUST-837a4f",
+        "change_timestamp": "2022-01-23T09:44:22Z",
+        "change_description": "Claim created"
+      },
+      "audit-6c70bad8-cf93-445f-b4b6-768e070fbd14": {
+        "audit_id": "audit-6c70bad8-cf93-445f-b4b6-768e070fbd14",
+        "claim_id": "CLM-20230514-cf87",
+        "changed_by": "CUST-462b9c",
+        "change_timestamp": "2023-05-14T15:10:53Z",
+        "change_description": "Claim created"
+      },
+      "audit-1ab8b911-02d8-4ec3-b18d-9a02b0b1d3e2": {
+        "audit_id": "audit-1ab8b911-02d8-4ec3-b18d-9a02b0b1d3e2",
+        "claim_id": "CLM-20221208-bd3a",
+        "changed_by": "CUST-441fc2",
+        "change_timestamp": "2022-12-08T17:20:15Z",
+        "change_description": "Claim created"
+      },
+      "audit-0e43a0a3-871c-498c-b1f5-2c2e5fceb5da": {
+        "audit_id": "audit-0e43a0a3-871c-498c-b1f5-2c2e5fceb5da",
+        "claim_id": "CLM-20230718-4431",
+        "changed_by": "CUST-3a81ed",
+        "change_timestamp": "2023-07-18T11:32:52Z",
+        "change_description": "Claim created"
+      },
+      "audit-assign-2022-01-23": {
+        "audit_id": "audit-assign-2022-01-23",
+        "claim_id": "CLM-20210123-6f8a",
+        "changed_by": "AGENT-ab2fd1",
+        "change_timestamp": "1642935062",
+        "change_description": "Claim CLM-20210123-6f8a assigned to agent AGENT-5ecb92 by AGENT-ab2fd1 (previous: AGENT-81d310)."
+      },
+      "audit-status-2023-0520": {
+        "audit_id": "audit-status-2023-0520",
+        "claim_id": "CLM-20230514-cf87",
+        "changed_by": "AGENT-81d310",
+        "change_timestamp": "2023-05-20T12:00:48Z",
+        "change_description": "Status changed from 'submitted' to 'under review'"
+      },
+      "audit-update-details-2023-0602": {
+        "audit_id": "audit-update-details-2023-0602",
+        "claim_id": "CLM-20230514-cf87",
+        "changed_by": "CUST-462b9c",
+        "change_timestamp": "2023-06-02T09:20:48Z",
+        "change_description": "Details updated"
+      },
+      "audit-assign-2023-0615": {
+        "audit_id": "audit-assign-2023-0615",
+        "claim_id": "CLM-20221208-bd3a",
+        "changed_by": "AGENT-ab2fd1",
+        "change_timestamp": "1686814881",
+        "change_description": "Claim CLM-20221208-bd3a assigned to agent AGENT-ab2fd1 by AGENT-ab2fd1 (previous: AGENT-09fefc)."
+      },
+      "audit-status-approved-2022-12-15": {
+        "audit_id": "audit-status-approved-2022-12-15",
+        "claim_id": "CLM-20221208-bd3a",
+        "changed_by": "AGENT-ab2fd1",
+        "change_timestamp": "2022-12-15T16:31:21Z",
+        "change_description": "Status changed from 'under review' to 'approved'"
+      },
+      "audit-status-denied-2023-07-21": {
+        "audit_id": "audit-status-denied-2023-07-21",
+        "claim_id": "CLM-20230718-4431",
+        "changed_by": "AGENT-09fefc",
+        "change_timestamp": "2023-07-21T14:06:11Z",
+        "change_description": "Status changed from 'under review' to 'denied'"
+      },
+      "audit-details-update-2023-07-23": {
+        "audit_id": "audit-details-update-2023-07-23",
+        "claim_id": "CLM-20230718-4431",
+        "changed_by": "CUST-3a81ed",
+        "change_timestamp": "2023-07-23T07:50:27Z",
+        "change_description": "Details updated"
+      },
+      "audit-correct-cust-2022-03-12": {
+        "audit_id": "audit-correct-cust-2022-03-12",
+        "claim_id": "CLM-20210123-6f8a",
+        "changed_by": "AGENT-81d310",
+        "change_timestamp": "2022-03-12T10:11:03Z",
+        "change_description": "Changed claim 'CLM-20210123-6f8a' customer from 'CUST-462b9c' to 'CUST-837a4f' by actor 'AGENT-81d310'."
+      },
+      "delete-CLM-20230718-4431-1690551178187": {
+        "audit_id": "delete-CLM-20230718-4431-1690551178187",
+        "claim_id": "CLM-20230718-4431",
+        "changed_by": "AGENT-ab2fd1",
+        "change_timestamp": "1690551178",
+        "change_description": "Claim CLM-20230718-4431 permanently deleted by admin AGENT-ab2fd1."
+      }
+    },
+    "init_config": {}
+  }
+}

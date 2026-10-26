@@ -1,0 +1,106 @@
+{
+  "task_key": "env_191_rl-task_1",
+  "task_description": "Perform the following data cleanup and enrichment actions for users named “Alice Chan,” carefully disambiguating by profile_info:\n\n1) For Alice Chan who is “Vegan, Marathon runner”:\n- Update the meal “Avocado Toast with Cherry Tomatoes” logged on 2023-07-01 to have the new meal name “Avocado Toast with Cherry Tomatoes and Pumpkin Seeds” and set calories to 355.0.\n- For the “Mango Smoothie” logged on 2024-04-29 at 10:08, correct its consumed_at timestamp to 2024-04-29T09:55:00 and set calories to 210.0.\n- Add three new meals for 2024-04-30:\n  - “Oatmeal with Banana” with 420.0 calories at 2024-04-30T07:05:00.\n  - “Chickpea Buddha Bowl” with 640.0 calories at 2024-04-30T12:40:00.\n  - “Tofu Stir Fry with Brown Rice” with 580.0 calories at 2024-04-30T19:15:00.\n\n2) For Alice Chan who is “Yoga instructor, gluten-free”:\n- The “Quinoa Salad with Roasted Pumpkin” logged on 2022-11-17 at 13:15 was recorded under the wrong Alice; delete this record from her profile, then re-create the same meal for the “Vegan, Marathon runner” Alice with the identical meal name, calories, and consumed_at timestamp (2022-11-17T13:15:00).\n\nEnsure all timestamps are valid and all calorie values are non-negative. Do not modify any other records.",
+  "init_config": {
+    "users": {
+      "U001": {
+        "_id": "U001",
+        "name": "Alice Chan",
+        "profile_info": "Vegan, Marathon runner"
+      },
+      "U002": {
+        "_id": "U002",
+        "name": "Peter Lim",
+        "profile_info": "Office worker, lactose intolerant"
+      },
+      "U003": {
+        "_id": "U003",
+        "name": "Mariana Reyes",
+        "profile_info": "College student, pescatarian"
+      },
+      "U004": {
+        "_id": "U004",
+        "name": "Alice Chan",
+        "profile_info": "Yoga instructor, gluten-free"
+      },
+      "5569e7bf-1d6d-4450-aa71-7f25c900bb2c": {
+        "_id": "5569e7bf-1d6d-4450-aa71-7f25c900bb2c",
+        "name": "Jacob Kwon",
+        "profile_info": "Night shift nurse, enjoys spicy food"
+      }
+    },
+    "meal_records": {
+      "MR001": {
+        "record_id": "MR001",
+        "user_id": "U001",
+        "meal_name": "Avocado Toast with Cherry Tomatoes",
+        "calories": 320.5,
+        "consumed_at": "2023-07-01T08:14:00"
+      },
+      "MR002": {
+        "record_id": "MR002",
+        "user_id": "U002",
+        "meal_name": "Chicken Rice",
+        "calories": 580,
+        "consumed_at": "2024-02-13T12:45:00"
+      },
+      "MR003": {
+        "record_id": "MR003",
+        "user_id": "U003",
+        "meal_name": "Salmon Sushi Set",
+        "calories": 430.2,
+        "consumed_at": "2023-09-22T18:30:00"
+      },
+      "MR004": {
+        "record_id": "MR004",
+        "user_id": "U004",
+        "meal_name": "Quinoa Salad with Roasted Pumpkin",
+        "calories": 285.7,
+        "consumed_at": "2022-11-17T13:15:00"
+      },
+      "438c67ea-ffb2-46e2-b8a3-aa7ac2b923ed": {
+        "record_id": "438c67ea-ffb2-46e2-b8a3-aa7ac2b923ed",
+        "user_id": "5569e7bf-1d6d-4450-aa71-7f25c900bb2c",
+        "meal_name": "Kimchi Fried Rice",
+        "calories": 647.9,
+        "consumed_at": "2024-06-02T21:10:00"
+      },
+      "563fa5e1-d6da-463f-b727-4bab6c12096a": {
+        "record_id": "563fa5e1-d6da-463f-b727-4bab6c12096a",
+        "user_id": "U001",
+        "meal_name": "Mango Smoothie",
+        "calories": 195,
+        "consumed_at": "2024-04-29T10:08:00"
+      },
+      "MR009": {
+        "record_id": "MR009",
+        "user_id": "U003",
+        "meal_name": "Vegetable Stir Fry",
+        "calories": 380,
+        "consumed_at": "2023-08-21T19:57:00"
+      },
+      "MR010": {
+        "record_id": "MR010",
+        "user_id": "U002",
+        "meal_name": "Thai Green Curry",
+        "calories": 690.3,
+        "consumed_at": "2023-12-19T13:44:00"
+      },
+      "MR011": {
+        "record_id": "MR011",
+        "user_id": "U004",
+        "meal_name": "Grilled Zucchini Wrap",
+        "calories": 229.1,
+        "consumed_at": "2023-03-04T11:28:00"
+      },
+      "a8eebceb-3973-4660-b2b7-9d11edc6d56c": {
+        "record_id": "a8eebceb-3973-4660-b2b7-9d11edc6d56c",
+        "user_id": "5569e7bf-1d6d-4450-aa71-7f25c900bb2c",
+        "meal_name": "Spinach Omelette",
+        "calories": 261.5,
+        "consumed_at": "2024-05-23T07:23:00"
+      }
+    },
+    "init_config": {}
+  }
+}

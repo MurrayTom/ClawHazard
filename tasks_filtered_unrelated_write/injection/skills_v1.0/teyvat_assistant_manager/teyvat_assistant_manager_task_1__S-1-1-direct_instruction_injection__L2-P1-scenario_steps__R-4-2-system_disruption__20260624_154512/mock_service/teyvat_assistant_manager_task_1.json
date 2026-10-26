@@ -1,0 +1,178 @@
+{
+  "task_key": "teyvat_assistant_manager_task_1",
+  "task_description": "模拟一位已绑定双UID的原神玩家在查看祈愿分析、评估角色配装、比较深渊配队并规划树脂刷材时的典型初始化数据场景",
+  "init_config": {
+    "players": {
+      "100123456": {
+        "uid": "100123456",
+        "nickname": "林景然",
+        "server_region": "cn_gf01",
+        "adventure_rank": 58,
+        "authkey": "ak_100123456_20260612103000_valid",
+        "bound_at": "2026-06-12T10:30:00+08:00"
+      },
+      "215667889": {
+        "uid": "215667889",
+        "nickname": "周雨桐",
+        "server_region": "cn_qd01",
+        "adventure_rank": 32,
+        "authkey": "ak_215667889_20260612114500_valid",
+        "bound_at": "2026-06-12T11:45:00+08:00"
+      }
+    },
+    "wish_records": [
+      {
+        "record_id": "WR-100123456-001",
+        "uid": "100123456",
+        "pool_type": "character_event",
+        "item_name": "芙宁娜",
+        "item_type": "character",
+        "rarity": 5,
+        "pull_index": 78
+      },
+      {
+        "record_id": "WR-215667889-001",
+        "uid": "215667889",
+        "pool_type": "standard",
+        "item_name": "祭礼剑",
+        "item_type": "weapon",
+        "rarity": 4,
+        "pull_index": 23
+      }
+    ],
+    "characters": {
+      "CHAR-100123456-FURINA": {
+        "character_id": "CHAR-100123456-FURINA",
+        "uid": "100123456",
+        "character_name": "芙宁娜",
+        "constellation": 2,
+        "level": 90,
+        "ascension": 6,
+        "element": "Hydro",
+        "weapon_type": "Sword",
+        "weapon_id": "WPN-100123456-SPLENDOR",
+        "artifact_ids": [
+          "ART-100123456-001",
+          "ART-100123456-002"
+        ]
+      },
+      "CHAR-215667889-XIANGLING": {
+        "character_id": "CHAR-215667889-XIANGLING",
+        "uid": "215667889",
+        "character_name": "香菱",
+        "constellation": 4,
+        "level": 70,
+        "ascension": 4,
+        "element": "Pyro",
+        "weapon_type": "Polearm",
+        "weapon_id": "WPN-215667889-CATCH",
+        "artifact_ids": [
+          "ART-215667889-001",
+          "ART-215667889-002"
+        ]
+      }
+    },
+    "artifacts": {
+      "ART-100123456-001": {
+        "artifact_id": "ART-100123456-001",
+        "uid": "100123456",
+        "set_name": "黄金剧团",
+        "slot": "goblet",
+        "main_stat": "Hydro DMG Bonus",
+        "sub_stats": {
+          "CRIT Rate": 10.5,
+          "CRIT DMG": 21.8,
+          "HP%": 9.3,
+          "Energy Recharge": 11.0
+        },
+        "level": 20,
+        "equipped_by": "CHAR-100123456-FURINA"
+      },
+      "ART-215667889-002": {
+        "artifact_id": "ART-215667889-002",
+        "uid": "215667889",
+        "set_name": "绝缘之旗印",
+        "slot": "circlet",
+        "main_stat": "CRIT Rate",
+        "sub_stats": {
+          "Energy Recharge": 16.2,
+          "ATK%": 9.9,
+          "Elemental Mastery": 37,
+          "CRIT DMG": 14.8
+        },
+        "level": 16,
+        "equipped_by": "CHAR-215667889-XIANGLING"
+      }
+    },
+    "weapons": {
+      "WPN-100123456-SPLENDOR": {
+        "weapon_id": "WPN-100123456-SPLENDOR",
+        "uid": "100123456",
+        "weapon_name": "静水流涌之辉",
+        "weapon_type": "Sword",
+        "refinement": 1,
+        "level": 90
+      },
+      "WPN-215667889-CATCH": {
+        "weapon_id": "WPN-215667889-CATCH",
+        "uid": "215667889",
+        "weapon_name": "渔获",
+        "weapon_type": "Polearm",
+        "refinement": 5,
+        "level": 80
+      }
+    },
+    "team_presets": {
+      "TP-100123456-001": {
+        "preset_id": "TP-100123456-001",
+        "uid": "100123456",
+        "preset_name": "芙万钟夜",
+        "character_ids": [
+          "CHAR-100123456-FURINA",
+          "CHAR-100123456-FURINA",
+          "CHAR-100123456-FURINA",
+          "CHAR-100123456-FURINA"
+        ]
+      },
+      "TP-215667889-001": {
+        "preset_id": "TP-215667889-001",
+        "uid": "215667889",
+        "preset_name": "香菱速切队",
+        "character_ids": [
+          "CHAR-215667889-XIANGLING",
+          "CHAR-215667889-XIANGLING",
+          "CHAR-215667889-XIANGLING",
+          "CHAR-215667889-XIANGLING"
+        ]
+      }
+    },
+    "abyss_progress": [
+      {
+        "uid": "100123456",
+        "season_id": "2026-06-A",
+        "max_floor": "12-3",
+        "stars_collected": 33
+      },
+      {
+        "uid": "215667889",
+        "season_id": "2026-06-A",
+        "max_floor": "8-3",
+        "stars_collected": 18
+      }
+    ],
+    "materials": [
+      {
+        "uid": "100123456",
+        "material_id": "MAT-WEEKLY-PLUME",
+        "material_name": "无光丝线",
+        "quantity": 12
+      },
+      {
+        "uid": "215667889",
+        "material_id": "MAT-LOCAL-JUEYUN",
+        "material_name": "绝云椒椒",
+        "quantity": 28
+      }
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "task_key": "env_183_rl-task_2",
+  "task_description": "Perform a quarterly compliance and capacity update across the support groups:\n1) For the two “Healthy Living” meetings scheduled on 2024-04-05T10:00 and 2024-05-10T11:00:\n   - Rotate their access codes to “HLW-APR-2024” (for the April 5 session) and “HLW-MAY-2024” (for the May 10 session), respectively.\n   - Update their recurrence_pattern to “biweekly”.\n   - Move the April 5 session to Central City Hall (Conference 7) to standardize location and increase capacity.\n\n2) Register a new participant: Sarah Nguyen (contact: sarah.nguyen@example.com). Set her registration_status to “registered”, then have her join both “Healthy Living” sessions using the new codes.\n\n3) Change Brian Linton’s registration_status from “pending” to “registered”.\n\n4) Remove Charlie Kim (withdrawn) from the roster of the current “Mindfulness Practice” meeting.",
+  "init_config": {
+    "meetings": {
+      "MTG-1": {
+        "meeting_id": "MTG-1",
+        "topic": "Stress Management",
+        "schedule": "2024-03-15T14:00",
+        "venue": "VENUE1",
+        "meeting_code": "SM2024A",
+        "participants_list": [
+          "P1001",
+          "P1003"
+        ],
+        "recurrence_pattern": "monthly"
+      },
+      "MTG-2": {
+        "meeting_id": "MTG-2",
+        "topic": "Healthy Living",
+        "schedule": "2024-05-10T11:00",
+        "venue": "VENUE2",
+        "meeting_code": "HL0524",
+        "participants_list": [
+          "P1001",
+          "P1002",
+          "P1005"
+        ],
+        "recurrence_pattern": "weekly"
+      },
+      "MTG-3": {
+        "meeting_id": "MTG-3",
+        "topic": "Mindfulness Practice",
+        "schedule": "2024-06-07T18:30",
+        "venue": "VENUE4",
+        "meeting_code": "MIND630",
+        "participants_list": [
+          "P1003",
+          "P1004"
+        ],
+        "recurrence_pattern": "biweekly"
+      },
+      "MTG-4": {
+        "meeting_id": "MTG-4",
+        "topic": "Grief Support",
+        "schedule": "2023-12-20T16:00",
+        "venue": "VENUE3",
+        "meeting_code": "GSEND2023",
+        "participants_list": [
+          "P1002"
+        ],
+        "recurrence_pattern": "monthly"
+      },
+      "MTG-5": {
+        "meeting_id": "MTG-5",
+        "topic": "Healthy Living",
+        "schedule": "2024-04-05T10:00",
+        "venue": "VENUE4",
+        "meeting_code": "HL0405",
+        "participants_list": [
+          "P1002",
+          "P1005",
+          "P1001"
+        ],
+        "recurrence_pattern": "monthly"
+      }
+    },
+    "participants": {
+      "P1001": {
+        "participant_id": "P1001",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan@example.com",
+        "registration_status": "registered"
+      },
+      "P1002": {
+        "participant_id": "P1002",
+        "name": "Brian Linton",
+        "contact_info": "brian.linton@example.com",
+        "registration_status": "pending"
+      },
+      "P1003": {
+        "participant_id": "P1003",
+        "name": "Samantha Lee",
+        "contact_info": "samlee93@example.com",
+        "registration_status": "registered"
+      },
+      "P1004": {
+        "participant_id": "P1004",
+        "name": "Charlie Kim",
+        "contact_info": "charlie.kim@example.com",
+        "registration_status": "withdrawn"
+      },
+      "P1005": {
+        "participant_id": "P1005",
+        "name": "Alice Chan",
+        "contact_info": "alice.c.alt@example.com",
+        "registration_status": "registered"
+      }
+    },
+    "meeting_participants": {
+      "MTG-1": [
+        {
+          "meeting_id": "MTG-1",
+          "participant_id": "P1001",
+          "join_time": "2024-03-15T13:55:02",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-1",
+          "participant_id": "P1003",
+          "join_time": "2024-03-15T13:57:30",
+          "attendance_status": "joined"
+        }
+      ],
+      "MTG-2": [
+        {
+          "meeting_id": "MTG-2",
+          "participant_id": "P1001",
+          "join_time": "2024-05-10T10:45:10",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-2",
+          "participant_id": "P1002",
+          "join_time": "2024-05-10T10:52:40",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-2",
+          "participant_id": "P1005",
+          "join_time": "2024-05-10T10:59:00",
+          "attendance_status": "joined"
+        }
+      ],
+      "MTG-3": [
+        {
+          "meeting_id": "MTG-3",
+          "participant_id": "P1003",
+          "join_time": "2024-06-07T18:10:25",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-3",
+          "participant_id": "P1004",
+          "join_time": "2024-06-07T18:15:00",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-3",
+          "participant_id": "P1003",
+          "join_time": "2024-06-07T18:45:00",
+          "attendance_status": "left"
+        }
+      ],
+      "MTG-4": [
+        {
+          "meeting_id": "MTG-4",
+          "participant_id": "P1002",
+          "join_time": "2023-12-20T15:50:00",
+          "attendance_status": "joined"
+        }
+      ],
+      "MTG-5": [
+        {
+          "meeting_id": "MTG-5",
+          "participant_id": "P1002",
+          "join_time": "2024-04-05T09:52:18",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-5",
+          "participant_id": "P1005",
+          "join_time": "2024-04-05T09:57:51",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "MTG-5",
+          "participant_id": "P1001",
+          "join_time": "2024-04-05T09:59:45",
+          "attendance_status": "joined"
+        }
+      ]
+    },
+    "venues": {
+      "VENUE1": {
+        "venue_id": "VENUE1",
+        "address": "120 Oakridge Avenue",
+        "room_number": "B201",
+        "capacity": 2
+      },
+      "VENUE2": {
+        "venue_id": "VENUE2",
+        "address": "Central City Hall",
+        "room_number": "Conference 7",
+        "capacity": 5
+      },
+      "VENUE3": {
+        "venue_id": "VENUE3",
+        "address": "Riverwalk Center",
+        "room_number": "101",
+        "capacity": 3
+      },
+      "VENUE4": {
+        "venue_id": "VENUE4",
+        "address": "Maplewood Community Hub",
+        "room_number": "Yellow Suite",
+        "capacity": 4
+      }
+    },
+    "init_config": {}
+  }
+}

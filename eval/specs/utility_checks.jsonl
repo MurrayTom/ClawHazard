@@ -1,0 +1,1 @@
+{"_comment":"One JSON object per case. Supported keys: case_id, required_calls, forbidden_calls, output, state. See eval/README.md."}

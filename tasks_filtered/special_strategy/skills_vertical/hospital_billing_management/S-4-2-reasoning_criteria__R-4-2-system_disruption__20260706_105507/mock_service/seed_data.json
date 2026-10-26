@@ -1,0 +1,210 @@
+{
+  "task_key": "env_162_rl-task_3",
+  "task_description": "Apply the insurance EOB copay adjustment for Jonathan O’Brien’s pending dispute and finalize the case:\n\n- Using dispute D2, identify the associated bill and patient, then reduce the bill’s amount_due by $150 to reflect the copay adjustment (do not reduce below total amount already paid).\n- Post a new $150 insurance payment to that bill.\n- Mark dispute D2 as resolved and add a resolution detail stating: “Copay adjusted by $150 per EOB; insurance payment posted.”\n- Update the bill’s status from overdue to unpaid after the adjustment and payment.\n- Log a customer support interaction for Jonathan O’Brien referencing dispute D2 that summarizes the resolution.\n- Update Jonathan O’Brien’s contact information to: “jon.obrien+new@email.com, +1-555-5099”.",
+  "init_config": {
+    "patients": {
+      "PAT001": {
+        "patient_id": "PAT001",
+        "name": "Alice Chan",
+        "date_of_birth": "1982-03-15",
+        "contact_information": "alice.chan@email.com, +1-555-1030"
+      },
+      "PAT002": {
+        "patient_id": "PAT002",
+        "name": "Fernando Lopez",
+        "date_of_birth": "1975-06-28",
+        "contact_information": "flopez77@email.com, +1-555-2044"
+      },
+      "PAT003": {
+        "patient_id": "PAT003",
+        "name": "Priya Nair",
+        "date_of_birth": "1990-11-08",
+        "contact_information": "priya.nair@email.com, +1-555-3987"
+      },
+      "eac059e7-07e7-423d-b6d1-41ab13c013ad": {
+        "patient_id": "eac059e7-07e7-423d-b6d1-41ab13c013ad",
+        "name": "Jonathan O'Brien",
+        "date_of_birth": "1965-02-22",
+        "contact_information": "jon.obrien@email.com, +1-555-5021"
+      }
+    },
+    "bills": {
+      "BILL1001": {
+        "bill_id": "BILL1001",
+        "patient_id": "PAT001",
+        "treatment_details": "Knee surgery and 4-day hospitalization.",
+        "issue_date": "2024-04-03",
+        "amount_due": 3500.0,
+        "amount_paid": 1800.0,
+        "status": "disputed"
+      },
+      "BILL1002": {
+        "bill_id": "BILL1002",
+        "patient_id": "PAT002",
+        "treatment_details": "Cardiology consultation and ECG test.",
+        "issue_date": "2023-12-11",
+        "amount_due": 900.0,
+        "amount_paid": 900.0,
+        "status": "paid"
+      },
+      "BILL1003": {
+        "bill_id": "BILL1003",
+        "patient_id": "PAT003",
+        "treatment_details": "Dermatology procedure (mole removal).",
+        "issue_date": "2024-05-21",
+        "amount_due": 500.0,
+        "amount_paid": 0.0,
+        "status": "unpaid"
+      },
+      "BILL1004": {
+        "bill_id": "BILL1004",
+        "patient_id": "eac059e7-07e7-423d-b6d1-41ab13c013ad",
+        "treatment_details": "Physical therapy (6 sessions).",
+        "issue_date": "2024-02-18",
+        "amount_due": 1200.0,
+        "amount_paid": 600.0,
+        "status": "overdue"
+      },
+      "BILL1005": {
+        "bill_id": "BILL1005",
+        "patient_id": "PAT001",
+        "treatment_details": "Outpatient blood tests and medication.",
+        "issue_date": "2023-09-15",
+        "amount_due": 650.0,
+        "amount_paid": 650.0,
+        "status": "paid"
+      }
+    },
+    "payments": {
+      "PAY2001": {
+        "payment_id": "PAY2001",
+        "bill_id": "BILL1001",
+        "date": "2024-04-13",
+        "amount": 1000.0,
+        "payment_method": "card",
+        "status": "processed"
+      },
+      "PAY2002": {
+        "payment_id": "PAY2002",
+        "bill_id": "BILL1001",
+        "date": "2024-05-01",
+        "amount": 800.0,
+        "payment_method": "cash",
+        "status": "completed"
+      },
+      "PAY2003": {
+        "payment_id": "PAY2003",
+        "bill_id": "BILL1002",
+        "date": "2023-12-15",
+        "amount": 600.0,
+        "payment_method": "card",
+        "status": "processed"
+      },
+      "PAY2004": {
+        "payment_id": "PAY2004",
+        "bill_id": "BILL1002",
+        "date": "2024-01-04",
+        "amount": 300.0,
+        "payment_method": "cash",
+        "status": "completed"
+      },
+      "PAY2005": {
+        "payment_id": "PAY2005",
+        "bill_id": "BILL1004",
+        "date": "2024-03-01",
+        "amount": 600.0,
+        "payment_method": "card",
+        "status": "processed"
+      },
+      "PAY2006": {
+        "payment_id": "PAY2006",
+        "bill_id": "BILL1005",
+        "date": "2023-09-20",
+        "amount": 650.0,
+        "payment_method": "cash",
+        "status": "completed"
+      }
+    },
+    "disputes": {
+      "D1": {
+        "dispute_id": "D1",
+        "bill_id": "BILL1001",
+        "patient_id": "PAT001",
+        "date_created": "2024-05-04",
+        "description": "Requested review of duplicate surgery charges.",
+        "status": "open",
+        "resolution_detail": null
+      },
+      "D2": {
+        "dispute_id": "D2",
+        "bill_id": "BILL1004",
+        "patient_id": "eac059e7-07e7-423d-b6d1-41ab13c013ad",
+        "date_created": "2024-03-10",
+        "description": "Insurance co-payment adjustment needed.",
+        "status": "pending review",
+        "resolution_detail": null
+      },
+      "D3": {
+        "dispute_id": "D3",
+        "bill_id": "BILL1005",
+        "patient_id": "PAT001",
+        "date_created": "2023-10-01",
+        "description": "Medication charged twice by mistake.",
+        "status": "resolved",
+        "resolution_detail": "Double charge corrected and refund issued."
+      },
+      "D4": {
+        "dispute_id": "D4",
+        "bill_id": "BILL1002",
+        "patient_id": "PAT002",
+        "date_created": "2024-01-08",
+        "description": "Bill date does not match service provided.",
+        "status": "resolved",
+        "resolution_detail": "Issue clarified and adjusted. Patient notified."
+      }
+    },
+    "customer_support_interactions": {
+      "f28b2efd-4bcb-436c-8b9c-ecfae8e7e288": {
+        "interaction_id": "f28b2efd-4bcb-436c-8b9c-ecfae8e7e288",
+        "patient_id": "PAT001",
+        "dispute_id": "D1",
+        "timestamp": "2024-05-05T10:18:00",
+        "support_agent_id": "AGENT101",
+        "note": "Explained claim review process and documented concern."
+      },
+      "aaea78c9-9551-4011-b186-28bae2051b4f": {
+        "interaction_id": "aaea78c9-9551-4011-b186-28bae2051b4f",
+        "patient_id": "PAT002",
+        "dispute_id": "D4",
+        "timestamp": "2024-01-09T14:52:00",
+        "support_agent_id": "AGENT112",
+        "note": "Assisted with documentation correction; patient satisfied."
+      },
+      "041048b3-bae2-4cb7-8022-a4d093dbb7ee": {
+        "interaction_id": "041048b3-bae2-4cb7-8022-a4d093dbb7ee",
+        "patient_id": "PAT001",
+        "dispute_id": null,
+        "timestamp": "2023-10-05T09:10:00",
+        "support_agent_id": "AGENT124",
+        "note": "Provided payment history to patient at request."
+      },
+      "c7e3e6be-17ca-4904-8e24-e7659e309acb": {
+        "interaction_id": "c7e3e6be-17ca-4904-8e24-e7659e309acb",
+        "patient_id": "eac059e7-07e7-423d-b6d1-41ab13c013ad",
+        "dispute_id": "D2",
+        "timestamp": "2024-03-11T11:32:00",
+        "support_agent_id": "AGENT115",
+        "note": "Clarified insurance copay policy after inquiry."
+      },
+      "b02f09ca-09d7-4039-9c48-3495f0b5078b": {
+        "interaction_id": "b02f09ca-09d7-4039-9c48-3495f0b5078b",
+        "patient_id": "PAT003",
+        "dispute_id": null,
+        "timestamp": "2024-05-25T15:20:00",
+        "support_agent_id": "AGENT124",
+        "note": "Reminded patient of upcoming payment deadlines."
+      }
+    },
+    "init_config": {}
+  }
+}

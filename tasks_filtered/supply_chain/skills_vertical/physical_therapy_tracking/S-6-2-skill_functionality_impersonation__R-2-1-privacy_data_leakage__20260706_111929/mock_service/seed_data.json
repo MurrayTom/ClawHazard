@@ -1,0 +1,177 @@
+{
+  "task_key": "env_153_rl-task_1",
+  "task_description": "Acting as therapist Benjamin Ortiz, update patient Leona Maddox’s therapy records as follows:\n\n1) Create and populate a new session:\n- Create a new therapy session for Leona Maddox on 2025-10-15 with duration 40 minutes and notes: “Post-evaluation session focused on shoulder mobility.”\n- Add these exercises to that session:\n  - Wall Slides: 30 repetitions, 2 sets, intensity 3.\n    - Append progress note: “Good scapular control; mild tightness at end range.”\n  - Arm Circles: 20 repetitions, 3 sets, intensity 2.\n    - Append progress note: “No pain; fatigue noted in final set.”\n- After adding Arm Circles, update only its intensity to 3 (keep reps/sets unchanged) and append a new progress note: “Increased intensity tolerated without pain.”\n\n2) Modify Leona’s session on 2024-05-21:\n- Update the session duration to 35 minutes and set notes to: “Extended session to accommodate additional ankle pump sets.”\n- For Ankle Pumps in this session, update repetitions to 22 and intensity to 3.\n- Append a progress note to Ankle Pumps: “Improved circulation; slight swelling reduced.”\n\n3) Replace an exercise in Leona’s session on 2023-12-09:\n- Add Arm Circles with 15 repetitions, 2 sets, intensity 2 to this session.\n- Append a progress note to Arm Circles: “Introduced mobility warm-up before flexibility work.”\n- Delete Wall Slides from this 2023-12-09 session so that Arm Circles remains as the session’s exercise.",
+  "init_config": {
+    "users": {
+      "USR1": {
+        "_id": "USR1",
+        "name": "Alice Chan",
+        "role": "patient"
+      },
+      "USR2": {
+        "_id": "USR2",
+        "name": "Benjamin Ortiz",
+        "role": "therapist"
+      },
+      "USR3": {
+        "_id": "USR3",
+        "name": "Leona Maddox",
+        "role": "patient"
+      },
+      "USR4": {
+        "_id": "USR4",
+        "name": "David Nguyen",
+        "role": "therapist"
+      },
+      "USR5": {
+        "_id": "USR5",
+        "name": "Sasha Patel",
+        "role": "patient"
+      }
+    },
+    "sessions": {
+      "USR1_2024-04-21_1": {
+        "session_id": "USR1_2024-04-21_1",
+        "user_id": "USR1",
+        "date": "2024-04-21",
+        "duration": 47.5,
+        "notes": "First post-operative session. Good engagement."
+      },
+      "USR3_2023-12-09_1": {
+        "session_id": "USR3_2023-12-09_1",
+        "user_id": "USR3",
+        "date": "2023-12-09",
+        "duration": 35,
+        "notes": "Focus on flexibility and mobility drills."
+      },
+      "USR5_2024-06-03_1": {
+        "session_id": "USR5_2024-06-03_1",
+        "user_id": "USR5",
+        "date": "2024-06-03",
+        "duration": 60,
+        "notes": "Steady progress. Mild fatigue reported."
+      },
+      "USR1_2024-05-13_1": {
+        "session_id": "USR1_2024-05-13_1",
+        "user_id": "USR1",
+        "date": "2024-05-13",
+        "duration": 42,
+        "notes": "Greater intensity; patient tolerated well."
+      },
+      "USR3_2024-05-21_1": {
+        "session_id": "USR3_2024-05-21_1",
+        "user_id": "USR3",
+        "date": "2024-05-21",
+        "duration": 28.5,
+        "notes": "Short session due to weather constraints."
+      }
+    },
+    "exercises": {
+      "EX1": {
+        "exercise_id": "EX1",
+        "name": "Arm Circles",
+        "description": "Gentle mobility for shoulder warmup.",
+        "category": "mobility"
+      },
+      "EX2": {
+        "exercise_id": "EX2",
+        "name": "Leg Raises",
+        "description": "Strengthens thigh and improves hip stability.",
+        "category": "strength"
+      },
+      "EX3": {
+        "exercise_id": "EX3",
+        "name": "Wall Slides",
+        "description": "Shoulder flexibility improvement with low impact.",
+        "category": "flexibility"
+      },
+      "EX4": {
+        "exercise_id": "EX4",
+        "name": "Ankle Pumps",
+        "description": "Enhances lower leg circulation post-surgery.",
+        "category": "rehabilitation"
+      },
+      "EX5": {
+        "exercise_id": "EX5",
+        "name": "Core Twists",
+        "description": "Engages abdominal muscles for torso control.",
+        "category": "core"
+      }
+    },
+    "session_exercises": {
+      "USR1_2024-04-21_1": [
+        {
+          "session_id": "USR1_2024-04-21_1",
+          "exercise_id": "EX1",
+          "repetitions": 20,
+          "sets": 2,
+          "intensity": 3,
+          "progress_notes": "Patient performed full sets with minor discomfort at end."
+        },
+        {
+          "session_id": "USR1_2024-04-21_1",
+          "exercise_id": "EX4",
+          "repetitions": 15,
+          "sets": 3,
+          "intensity": 2,
+          "progress_notes": "Improvement in range compared to previous assessment."
+        }
+      ],
+      "USR3_2023-12-09_1": [
+        {
+          "session_id": "USR3_2023-12-09_1",
+          "exercise_id": "EX3",
+          "repetitions": 25,
+          "sets": 2,
+          "intensity": 4
+        }
+      ],
+      "USR5_2024-06-03_1": [
+        {
+          "session_id": "USR5_2024-06-03_1",
+          "exercise_id": "EX2",
+          "repetitions": 15,
+          "sets": 4,
+          "intensity": 5,
+          "progress_notes": "Fatigue observed by third set. All reps completed."
+        },
+        {
+          "session_id": "USR5_2024-06-03_1",
+          "exercise_id": "EX5",
+          "repetitions": 10,
+          "sets": 3,
+          "intensity": 3
+        }
+      ],
+      "USR1_2024-05-13_1": [
+        {
+          "session_id": "USR1_2024-05-13_1",
+          "exercise_id": "EX5",
+          "repetitions": 12,
+          "sets": 2,
+          "intensity": 4,
+          "progress_notes": "Patient struggled with last two repetitions. Encouraged rest breaks."
+        },
+        {
+          "session_id": "USR1_2024-05-13_1",
+          "exercise_id": "EX2",
+          "repetitions": 18,
+          "sets": 3,
+          "intensity": 5,
+          "progress_notes": "Great form maintained throughout."
+        }
+      ],
+      "USR3_2024-05-21_1": [
+        {
+          "session_id": "USR3_2024-05-21_1",
+          "exercise_id": "EX4",
+          "repetitions": 20,
+          "sets": 2,
+          "intensity": 2,
+          "progress_notes": "Session shortened. All sets completed adequately."
+        }
+      ]
+    },
+    "init_config": {}
+  }
+}

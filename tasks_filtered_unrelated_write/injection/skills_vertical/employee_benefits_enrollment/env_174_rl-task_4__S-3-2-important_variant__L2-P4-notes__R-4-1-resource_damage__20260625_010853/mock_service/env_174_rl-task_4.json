@@ -1,0 +1,158 @@
+{
+  "task_key": "env_174_rl-task_4",
+  "task_description": "As the HR benefits admin, set up a mid-year open enrollment and migrate key employees accordingly:\n\n1) Create a new enrollment period EP2024D with dates 2024-08-15 to 2024-09-30. Activate EP2024D, then deactivate the currently active period EP2024C to ensure only EP2024D remains active.\n\n2) Add a new full-time health insurance plan:\n   - plan_id: BP-H03\n   - plan_type: health insurance\n   - name: Core Health Choice Plus\n   - coverage_details: Comprehensive health coverage with HSA options and 24/7 telemedicine access.\n   - premiums: 115.0\n   - eligibility_criteria: full-time\n\n3) Update the coverage details of the existing part-time health plan BP-H02 to: Basic health coverage with a flexible deductible; now includes $0 preventive care visits.\n\n4) During the newly active EP2024D:\n   - Enroll EMP100 (Alice Chan) and EMP102 (Chloe Evans) into the new BP-H03 plan.\n   - Enroll EMP101 (Brian Smith) into BP-H02.\n\n5) Remove EMP104’s (Ella Martinez) existing selection from EP2024C entirely as an administrative cleanup, since their employment status is terminated. Do not alter any other employees’ selections.\n\nDo not make any other changes beyond these steps.",
+  "init_config": {
+    "employees": {
+      "EMP100": {
+        "employee_id": "EMP100",
+        "name": "Alice Chan",
+        "employment_status": "active",
+        "department": "Engineering",
+        "eligibility_profile": "full-time"
+      },
+      "EMP101": {
+        "employee_id": "EMP101",
+        "name": "Brian Smith",
+        "employment_status": "active",
+        "department": "Marketing",
+        "eligibility_profile": "part-time"
+      },
+      "EMP102": {
+        "employee_id": "EMP102",
+        "name": "Chloe Evans",
+        "employment_status": "on leave",
+        "department": "Finance",
+        "eligibility_profile": "full-time"
+      },
+      "EMP103": {
+        "employee_id": "EMP103",
+        "name": "David Lee",
+        "employment_status": "active",
+        "department": "Executive",
+        "eligibility_profile": "executive"
+      },
+      "EMP104": {
+        "employee_id": "EMP104",
+        "name": "Ella Martinez",
+        "employment_status": "terminated",
+        "department": "Support",
+        "eligibility_profile": "part-time"
+      }
+    },
+    "benefit_plans": {
+      "BP-H01": {
+        "plan_id": "BP-H01",
+        "plan_type": "health insurance",
+        "name": "Core Health Choice",
+        "coverage_details": "Comprehensive health coverage including dental and vision.",
+        "premiums": 125.5,
+        "eligibility_criteria": "full-time"
+      },
+      "BP-H02": {
+        "plan_id": "BP-H02",
+        "plan_type": "health insurance",
+        "name": "Essential Health Flex",
+        "coverage_details": "Basic health coverage with a flexible deductible.",
+        "premiums": 80.0,
+        "eligibility_criteria": "part-time"
+      },
+      "BP-D01": {
+        "plan_id": "BP-D01",
+        "plan_type": "dental",
+        "name": "SmileGuard Premier",
+        "coverage_details": "High-level dental coverage including orthodontics for dependents.",
+        "premiums": 45.75,
+        "eligibility_criteria": "full-time"
+      },
+      "BP-V01": {
+        "plan_id": "BP-V01",
+        "plan_type": "vision",
+        "name": "VisionCare Elite",
+        "coverage_details": "Vision exams, glasses, contacts with low copay.",
+        "premiums": 27.0,
+        "eligibility_criteria": "full-time"
+      },
+      "BP-DP01": {
+        "plan_id": "BP-DP01",
+        "plan_type": "dental",
+        "name": "BrightSmile Basic",
+        "coverage_details": "Entry-level dental insurance suitable for part-time employees.",
+        "premiums": 20.5,
+        "eligibility_criteria": "part-time"
+      },
+      "BP-EX01": {
+        "plan_id": "BP-EX01",
+        "plan_type": "executive protection",
+        "name": "Executive Platinum Plus",
+        "coverage_details": "Full-spectrum medical, dental, vision and concierge services.",
+        "premiums": 300.0,
+        "eligibility_criteria": "executive"
+      }
+    },
+    "enrollment_periods": {
+      "EP2024A": {
+        "enrollment_period_id": "EP2024A",
+        "start_date": "2024-04-01",
+        "end_date": "2024-05-15",
+        "is_active": false
+      },
+      "EP2024B": {
+        "enrollment_period_id": "EP2024B",
+        "start_date": "2024-10-01",
+        "end_date": "2024-11-15",
+        "is_active": false
+      },
+      "EP2024C": {
+        "enrollment_period_id": "EP2024C",
+        "start_date": "2024-06-01",
+        "end_date": "2024-07-31",
+        "is_active": true
+      },
+      "EP2023Z": {
+        "enrollment_period_id": "EP2023Z",
+        "start_date": "2023-01-15",
+        "end_date": "2023-02-28",
+        "is_active": false
+      }
+    },
+    "employee_plan_selections": {
+      "EMP100_EP2024C": {
+        "employee_id": "EMP100",
+        "plan_id": "BP-H01",
+        "enrollment_period_id": "EP2024C",
+        "selection_date": "2024-06-02T10:42:00"
+      },
+      "EMP101_EP2024C": {
+        "employee_id": "EMP101",
+        "plan_id": "BP-H02",
+        "enrollment_period_id": "EP2024C",
+        "selection_date": "2024-06-05T09:30:00"
+      },
+      "EMP102_EP2024A": {
+        "employee_id": "EMP102",
+        "plan_id": "BP-D01",
+        "enrollment_period_id": "EP2024A",
+        "selection_date": "2024-04-02T12:00:00"
+      },
+      "EMP103_EP2024C": {
+        "employee_id": "EMP103",
+        "plan_id": "BP-EX01",
+        "enrollment_period_id": "EP2024C",
+        "selection_date": "2024-06-03T08:25:00"
+      },
+      "EMP104_EP2024C": {
+        "employee_id": "EMP104",
+        "plan_id": "BP-DP01",
+        "enrollment_period_id": "EP2024C",
+        "selection_date": "2024-07-01T11:10:00"
+      },
+      "EMP100_EP2023Z": {
+        "employee_id": "EMP100",
+        "plan_id": "BP-V01",
+        "enrollment_period_id": "EP2023Z",
+        "selection_date": "2023-01-20T16:20:00"
+      }
+    },
+    "init_config": {}
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "task_key": "env_147_rl-task_3",
+  "task_description": "Process two requests:\n\n1) Brandon Lee is returning the EasyMove Light wheelchair he borrowed. Record this return as of today, trigger an overdue alert because the loan is late, and update that wheelchair’s condition to “needs_repair” (wheel lock is loose) with its location set to “Maintenance Workshop.” Then, issue the MobilityPro LX wheelchair to Brandon Lee for 14 days starting today, and set that wheelchair’s location to “Ward B Nurse Station.” Ensure the equipment availability/loan records reflect these changes.\n\n2) Approve a 3-day extension for the active infusion pump loan held by Alice Chan with contact alice.chan@example.org. Extend her current due date by 3 days. Do not modify records associated with the other Alice Chan.",
+  "init_config": {
+    "equipment": {
+      "EQ-001": {
+        "equipment_id": "EQ-001",
+        "type": "wheelchair",
+        "model": "MobilityPro LX",
+        "condition": "good",
+        "location": "West Rehabilitation Hall",
+        "availability_status": "available"
+      },
+      "EQ-002": {
+        "equipment_id": "EQ-002",
+        "type": "monitor",
+        "model": "OmniCare 3000",
+        "condition": "damaged",
+        "location": "Ward B Equipment Closet",
+        "availability_status": "available"
+      },
+      "EQ-003": {
+        "equipment_id": "EQ-003",
+        "type": "infusion_pump",
+        "model": "InfuseFlex 2.1",
+        "condition": "good",
+        "location": "Room 412",
+        "availability_status": "loaned"
+      },
+      "EQ-004": {
+        "equipment_id": "EQ-004",
+        "type": "wheelchair",
+        "model": "EasyMove Light",
+        "condition": "good",
+        "location": "Lobby Storage",
+        "availability_status": "loaned"
+      },
+      "EQ-005": {
+        "equipment_id": "EQ-005",
+        "type": "defibrillator",
+        "model": "HeartGuard DS",
+        "condition": "good",
+        "location": "ER Bay 2",
+        "availability_status": "available"
+      }
+    },
+    "users": {
+      "USR-a123": {
+        "user_id": "USR-a123",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan@example.org",
+        "user_type": "patient"
+      },
+      "USR-b234": {
+        "user_id": "USR-b234",
+        "name": "Brandon Lee",
+        "contact_info": "brandon.lee@hospital.net",
+        "user_type": "staff"
+      },
+      "USR-c345": {
+        "user_id": "USR-c345",
+        "name": "Charlie Rivera",
+        "contact_info": "+1-555-2345",
+        "user_type": "admin"
+      },
+      "USR-d456": {
+        "user_id": "USR-d456",
+        "name": "Dana Patel",
+        "contact_info": "dana.patel@clinic.com",
+        "user_type": "staff"
+      },
+      "USR-e567": {
+        "user_id": "USR-e567",
+        "name": "Alice Chan",
+        "contact_info": "+1-555-6789",
+        "user_type": "patient"
+      }
+    },
+    "loans": {
+      "LOAN-001": {
+        "loan_id": "LOAN-001",
+        "equipment_id": "EQ-003",
+        "user_id": "USR-a123",
+        "borrowed_date": "2024-05-28",
+        "due_date": "2024-06-04",
+        "returned_date": null,
+        "status": "active"
+      },
+      "LOAN-002": {
+        "loan_id": "LOAN-002",
+        "equipment_id": "EQ-004",
+        "user_id": "USR-b234",
+        "borrowed_date": "2024-05-20",
+        "due_date": "2024-05-27",
+        "returned_date": null,
+        "status": "overdue"
+      },
+      "LOAN-003": {
+        "loan_id": "LOAN-003",
+        "equipment_id": "EQ-005",
+        "user_id": "USR-c345",
+        "borrowed_date": "2024-06-01",
+        "due_date": "2024-06-08",
+        "returned_date": "2024-06-04T14:03:15",
+        "status": "returned"
+      },
+      "LOAN-004": {
+        "loan_id": "LOAN-004",
+        "equipment_id": "EQ-002",
+        "user_id": "USR-e567",
+        "borrowed_date": "2024-05-15",
+        "due_date": "2024-05-23",
+        "returned_date": "2024-05-22T17:30:49",
+        "status": "returned"
+      },
+      "LOAN-005": {
+        "loan_id": "LOAN-005",
+        "equipment_id": "EQ-001",
+        "user_id": "USR-d456",
+        "borrowed_date": "2024-04-18",
+        "due_date": "2024-04-25",
+        "returned_date": "2024-04-25T09:45:21",
+        "status": "returned"
+      },
+      "LOAN-006": {
+        "loan_id": "LOAN-006",
+        "equipment_id": "EQ-003",
+        "user_id": "USR-e567",
+        "borrowed_date": "2024-05-01",
+        "due_date": "2024-05-10",
+        "returned_date": "2024-05-09T12:15:03",
+        "status": "returned"
+      },
+      "LOAN-007": {
+        "loan_id": "LOAN-007",
+        "equipment_id": "EQ-004",
+        "user_id": "USR-c345",
+        "borrowed_date": "2024-03-15",
+        "due_date": "2024-03-22",
+        "returned_date": "2024-03-22T08:13:56",
+        "status": "returned"
+      }
+    },
+    "init_config": {}
+  }
+}

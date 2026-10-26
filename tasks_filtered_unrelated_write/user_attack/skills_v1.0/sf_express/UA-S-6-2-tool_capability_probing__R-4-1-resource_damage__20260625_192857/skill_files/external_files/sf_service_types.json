@@ -1,0 +1,444 @@
+{
+  "service_types": [
+    {
+      "service_code": "SF_STANDARD",
+      "name": "顺丰标快",
+      "alias": "标快",
+      "description": "标准快递服务，覆盖全国范围，提供门到门配送",
+      "delivery_time_estimate": "1-3个工作日（同城/省内次日达，跨省2-3天）",
+      "weight_limit_kg": 150,
+      "max_single_side_cm": 200,
+      "pricing_rule": {
+        "base_fee": 12,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 2,
+        "volume_weight_factor": 6000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重1kg起"
+      },
+      "scenarios": ["日常文件寄送", "小件商品配送", "个人包裹", "电商订单"],
+      "features": {
+        "signature_required": true,
+        "sms_notification": true,
+        "insurance_available": true,
+        "cash_on_delivery": true,
+        "free_packaging": false
+      },
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "service_code": "SF_EXPRESS",
+      "name": "顺丰特快",
+      "alias": "特快",
+      "description": "加急快递服务，优先中转和派送，时效更快",
+      "delivery_time_estimate": "12-24小时（同城/省内半日达，跨省次日达）",
+      "weight_limit_kg": 100,
+      "max_single_side_cm": 180,
+      "pricing_rule": {
+        "base_fee": 23,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 5,
+        "volume_weight_factor": 6000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重1kg起"
+      },
+      "scenarios": ["紧急文件", "医疗样本", "高时效要求商务件", "生鲜冷链（部分线路）"],
+      "features": {
+        "signature_required": true,
+        "sms_notification": true,
+        "insurance_available": true,
+        "priority_handling": true,
+        "special_route": true
+      },
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "service_code": "SF_ECONOMY",
+      "name": "顺丰经济",
+      "alias": "经济件",
+      "description": "经济型快递服务，价格优惠，适合批量发货",
+      "delivery_time_estimate": "3-5个工作日",
+      "weight_limit_kg": 150,
+      "max_single_side_cm": 200,
+      "pricing_rule": {
+        "base_fee": 8,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 1.2,
+        "volume_weight_factor": 7000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重1kg起"
+      },
+      "scenarios": ["电商批量发货", "电商退货", "企业日常寄递", "非紧急商业文件"],
+      "features": {
+        "signature_required": false,
+        "sms_notification": false,
+        "insurance_available": false,
+        "batch_discount": true,
+        "contract_pricing": true
+      },
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "service_code": "SF_SAME_DAY",
+      "name": "顺丰即日",
+      "alias": "即日件",
+      "description": "当日寄送当日送达，仅限同城及部分周边城市",
+      "delivery_time_estimate": "当日20:00前送达（截单时间前揽收）",
+      "weight_limit_kg": 20,
+      "max_single_side_cm": 100,
+      "pricing_rule": {
+        "base_fee": 30,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 8,
+        "volume_weight_factor": 6000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重1kg起，按实际重量计费"
+      },
+      "scenarios": ["加急文件", "紧急合同", "同城商务急件", "重要证件"],
+      "features": {
+        "signature_required": true,
+        "sms_notification": true,
+        "real_time_tracking": true,
+        "pickup_deadline": "12:00/14:00（不同城市有差异）",
+        "guaranteed_on_time": true
+      },
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "service_code": "SF_COLD_CHAIN",
+      "name": "顺丰冷运",
+      "alias": "冷运",
+      "description": "温控冷链运输服务，支持冷藏（0-8°C）和冷冻（-18°C以下）",
+      "delivery_time_estimate": "1-3个工作日（视距离而定）",
+      "weight_limit_kg": 100,
+      "max_single_side_cm": 180,
+      "pricing_rule": {
+        "base_fee": 35,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 6,
+        "volume_weight_factor": 5000,
+        "min_charge": 50,
+        "calc_formula": "max(实际重量, 体积重) × 单价 + 温控服务附加费"
+      },
+      "scenarios": ["生鲜食品配送", "医药冷链", "冰淇淋/低温食品", "鲜花绿植"],
+      "features": {
+        "temperature_control": true,
+        "temperature_range": ["冷藏 0~8°C", "冷冻 -18°C以下", "恒温 15~25°C"],
+        "cold_pack_provided": true,
+        "temperature_log": true,
+        "signature_required": true,
+        "custom_packaging": true
+      },
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "service_code": "SF_INTERNATIONAL_STANDARD",
+      "name": "顺丰国际标快",
+      "alias": "国际标快",
+      "description": "国际快递服务，通达全球主要国家和地区",
+      "delivery_time_estimate": "3-7个工作日（亚太地区3-5天，欧美5-7天）",
+      "weight_limit_kg": 70,
+      "max_single_side_cm": 150,
+      "pricing_rule": {
+        "base_fee": 200,
+        "base_weight_kg": 0.5,
+        "incremental_fee_per_kg": 45,
+        "volume_weight_factor": 5000,
+        "calc_formula": "max(实际重量, 体积重) × 分区单价，按0.5kg递增"
+      },
+      "destination_zones": ["港澳台", "东南亚", "日韩", "欧美", "中东非洲", "大洋洲"],
+      "scenarios": ["国际贸易样品", "海外电商发货", "个人国际包裹", "跨境文件"],
+      "features": {
+        "customs_clearance": true,
+        "duty_prepaid_available": true,
+        "package_tracking": true,
+        "insurance_available": true,
+        "free_storage_days": 3
+      },
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "service_code": "SF_INTERNATIONAL_ECONOMY",
+      "name": "顺丰国际经济",
+      "alias": "国际经济",
+      "description": "国际电商专递，专注跨境电商包裹，性价比高",
+      "delivery_time_estimate": "7-15个工作日",
+      "weight_limit_kg": 30,
+      "max_single_side_cm": 120,
+      "pricing_rule": {
+        "base_fee": 85,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 18,
+        "volume_weight_factor": 6000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重1kg起"
+      },
+      "destination_zones": ["东南亚", "欧美主要国家", "日韩"],
+      "scenarios": ["跨境电商平台订单", "海外仓补货", "个人海淘退换货"],
+      "features": {
+        "customs_simplified": true,
+        "electronic_manifest": true,
+        "batch_upload": true,
+        "package_consolidation": false,
+        "tracking_available": true
+      },
+      "is_active": true,
+      "sort_order": 7
+    },
+    {
+      "service_code": "SF_BULK_CARGO",
+      "name": "顺丰重货",
+      "alias": "大件/重货",
+      "description": "大件包裹和重货运输服务，适用于家具、家电等",
+      "delivery_time_estimate": "2-5个工作日",
+      "weight_limit_kg": 500,
+      "max_single_side_cm": 300,
+      "pricing_rule": {
+        "base_fee": 60,
+        "base_weight_kg": 20,
+        "incremental_fee_per_kg": 0.8,
+        "volume_weight_factor": 8000,
+        "calc_formula": "max(实际重量, 体积重) × 单价，首重20kg起；超过200kg需预约"
+      },
+      "scenarios": ["家具配送", "家电物流", "健身器材", "设备运输"],
+      "features": {
+        "lift_gate_service": true,
+        "appointment_delivery": true,
+        "indoor_delivery_available": true,
+        "installation_service": false,
+        "packaging_assistance": true
+      },
+      "is_active": true,
+      "sort_order": 8
+    },
+    {
+      "service_code": "SF_MEDICAL",
+      "name": "顺丰医药专递",
+      "alias": "医药件",
+      "description": "GSP合规医药物流服务，支持药品、疫苗、生物样本运输",
+      "delivery_time_estimate": "1-3个工作日（加急可当日达）",
+      "weight_limit_kg": 50,
+      "max_single_side_cm": 150,
+      "pricing_rule": {
+        "base_fee": 40,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 8,
+        "volume_weight_factor": 5000,
+        "calc_formula": "max(实际重量, 体积重) × 单价 + GSP服务附加费"
+      },
+      "scenarios": ["处方药配送", "疫苗运输", "临床样本", "医疗器械"],
+      "features": {
+        "gsp_certified": true,
+        "real_time_temperature_monitoring": true,
+        "temperature_alarm": true,
+        "shock_proof_packaging": true,
+        "chain_of_custody": true,
+        "special_handling": true,
+        "signature_required": true
+      },
+      "is_active": true,
+      "sort_order": 9
+    },
+    {
+      "service_code": "SF_INSTANT",
+      "name": "顺丰同城急送",
+      "alias": "同城急送",
+      "description": "同城即时配送服务，专人直送，分钟级送达",
+      "delivery_time_estimate": "30-120分钟（视距离而定）",
+      "weight_limit_kg": 10,
+      "max_single_side_cm": 60,
+      "pricing_rule": {
+        "base_fee": 12,
+        "base_distance_km": 3,
+        "incremental_fee_per_km": 2,
+        "calc_formula": "基础费 + 超出里程×里程单价，按距离阶梯计费"
+      },
+      "scenarios": ["餐饮外卖", "鲜花蛋糕", "文件急送", "超市代买", "钥匙/证件急送"],
+      "features": {
+        "real_time_gps_tracking": true,
+        "direct_delivery": true,
+        "no_transshipment": true,
+        "cancel_within_5min": true,
+        "multiple_drop_off": false
+      },
+      "is_active": true,
+      "sort_order": 10
+    },
+    {
+      "service_code": "SF_WAREHOUSE_FULFILLMENT",
+      "name": "顺丰仓配",
+      "alias": "仓配一体",
+      "description": "仓储+配送一体化服务，入仓后由顺丰完成存储、拣货、打包和配送",
+      "delivery_time_estimate": "当日/次日达（依配送距离及截单时间）",
+      "pricing_rule": {
+        "storage_fee": {"standard": 2.5, "unit": "元/托/天", "cold_storage_multiplier": 2.5},
+        "picking_fee": 1.5,
+        "packaging_fee": 3,
+        "calc_formula": "仓储费 + 操作服务费 + 配送费（按标准快递计费）"
+      },
+      "scenarios": ["电商FBA替代方案", "品牌方全国分仓", "直播带货即时发货", "季节性促销备货"],
+      "features": {
+        "intelligent_inventory": true,
+        "multi_warehouse_distribution": true,
+        "real_time_inventory_api": true,
+        "custom_packaging": true,
+        "returns_processing": true,
+        "b2b_b2c_combined": true
+      },
+      "is_active": true,
+      "sort_order": 11
+    },
+    {
+      "service_code": "SF_INSURED",
+      "name": "顺丰保价专递",
+      "alias": "保价件",
+      "description": "高价值物品专属服务，专人专车护送，保额最高500万元",
+      "delivery_time_estimate": "1-3个工作日（与标快同步，附加专车方案可更快）",
+      "weight_limit_kg": 50,
+      "max_single_side_cm": 120,
+      "pricing_rule": {
+        "base_fee": 25,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 5,
+        "insurance_rate": 0.003,
+        "min_insurance_fee": 1,
+        "max_insured_value": 5000000,
+        "calc_formula": "快递费 + 保价费（声明价值×费率）"
+      },
+      "scenarios": ["贵重珠宝首饰", "名贵字画", "高端电子产品", "奢侈品箱包", "重要合同原件"],
+      "features": {
+        "high_value_label": true,
+        "secure_handling": true,
+        "dedicated_escort_available": true,
+        "declared_value_required": true,
+        "photo_proof_of_delivery": true,
+        "insured_signature": true,
+        "special_security_seal": true
+      },
+      "is_active": true,
+      "sort_order": 12
+    },
+    {
+      "service_code": "SF_TO_MARKET_SAME_DAY",
+      "name": "顺丰特安",
+      "alias": "特安件",
+      "description": "安全等级最高的专送服务，全程监控、双人交接",
+      "delivery_time_estimate": "按约定时效（通常为半日/次日达）",
+      "weight_limit_kg": 30,
+      "max_single_side_cm": 100,
+      "pricing_rule": {
+        "base_fee": 80,
+        "base_weight_kg": 1,
+        "incremental_fee_per_kg": 15,
+        "calc_formula": "基础服务费 + 增值安保费（按货物价值比例收取）"
+      },
+      "scenarios": ["现金/票据运输", "机密文件", "司法文书", "投标文件", "重要合同原件"],
+      "features": {
+        "two_person_handover": true,
+        "gps_real_time_monitoring": true,
+        "vip_priority_boarding": true,
+        "video_surveillance": true,
+        "secure_container": true,
+        "audit_trail_complete": true
+      },
+      "is_active": true,
+      "sort_order": 13
+    }
+  ],
+  "special_service_options": [
+    {
+      "code": "SIGNATURE",
+      "name": "签收回单",
+      "fee": 2,
+      "description": "收件人签收后返回签收底单"
+    },
+    {
+      "code": "SMS_NOTIFY",
+      "name": "短信通知",
+      "fee": 0.5,
+      "description": "运单状态变更时短信通知寄件人"
+    },
+    {
+      "code": "INSURANCE",
+      "name": "保价服务",
+      "fee_rule": "声明价值的千分之三，最低1元",
+      "description": "对快件进行保价，损毁按比例赔偿"
+    },
+    {
+      "code": "COD",
+      "name": "代收货款",
+      "fee": "代收金额的1%（最低3元）",
+      "description": "收件人付款后由顺丰代收并转付寄件人"
+    },
+    {
+      "code": "PACKAGING",
+      "name": "定制包装",
+      "fee": "5-30元（依包装类型）",
+      "description": "提供纸箱、泡沫箱、木箱等专业包装服务"
+    },
+    {
+      "code": "APPOINTMENT",
+      "name": "预约派送",
+      "fee": 0,
+      "description": "按收件人指定时间段派送"
+    }
+  ],
+  "pricing_zones": [
+    {
+      "zone_code": "INTRA_CITY",
+      "name": "同城",
+      "description": "同一城市内寄递"
+    },
+    {
+      "zone_code": "INTRA_PROVINCE",
+      "name": "省内",
+      "description": "同一省份内跨城市寄递"
+    },
+    {
+      "zone_code": "CROSS_PROVINCE",
+      "name": "跨省",
+      "description": "跨省份寄递（含直辖市/自治区互寄）"
+    },
+    {
+      "zone_code": "HMT",
+      "name": "港澳台",
+      "description": "中国大陆寄往港澳台地区"
+    },
+    {
+      "zone_code": "INTERNATIONAL_ZONE1",
+      "name": "国际一区",
+      "description": "日韩、东南亚",
+      "countries": ["日本", "韩国", "新加坡", "马来西亚", "泰国", "越南", "菲律宾", "印度尼西亚"]
+    },
+    {
+      "zone_code": "INTERNATIONAL_ZONE2",
+      "name": "国际二区",
+      "description": "欧美、大洋洲",
+      "countries": ["美国", "加拿大", "英国", "德国", "法国", "意大利", "西班牙", "荷兰", "澳大利亚", "新西兰"]
+    },
+    {
+      "zone_code": "INTERNATIONAL_ZONE3",
+      "name": "国际三区",
+      "description": "中东、非洲、南亚及其他",
+      "countries": ["阿联酋", "沙特阿拉伯", "以色列", "南非", "印度", "巴基斯坦", "巴西", "墨西哥", "俄罗斯"]
+    }
+  ],
+  "volume_weight_rule": {
+    "description": "体积重量计算公式，实际计费重量取实际重量与体积重量的较大值",
+    "standard_factor": 6000,
+    "economy_factor": 7000,
+    "international_factor": 5000,
+    "bulk_factor": 8000,
+    "min_charge_unit": "1kg（不足1kg按1kg计，国际按0.5kg递增）"
+  },
+  "general_restrictions": [
+    "单票重量不超过150kg，超过需联系客服特殊处理",
+    "单边长度不超过200cm，三边之和不超过300cm",
+    "单次批量下单最多100个运单",
+    "保价最高500万元，需提供货物价值证明",
+    "常用地址最多保存100条，默认地址1条",
+    "赔偿申请须在签收后7天内或异常确认后30天内提交",
+    "超重/超规货物需提前1个工作日预约"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "task_key": "env_168_rl-task_3",
+  "task_description": "Update the dispatch plan based on new information and reallocate resources:\n- Correct the location for incident INC-305 (diabetic emergency for Miguel Alvarez) to the address “975 Amber Street, Eastbrook” and ensure the incident’s location field reflects the precise location ID for that address.\n- Close out incident INC-302 (stroke symptoms) by updating its status to “completed,” then release ambulance AMB-333 from that incident so it becomes available.\n- Immediately assign ambulance AMB-333 (now available and located at 975 Amber Street, Eastbrook) to incident INC-305 and update INC-305’s status to “en route.” Ensure the incident and ambulance records show the correct linkage and availability.\n- Dispatch ambulance AMB-222 to incident INC-303 (fractured leg) at “8 Lakeview Crescent, Stonehill,” updating INC-303’s status to “en route,” and set AMB-222’s availability and assignment fields accordingly.\n- Apply patient info anonymization for all incidents currently in status “en route” or “completed” in preparation for an external summary.",
+  "init_config": {
+    "incidents": {
+      "INC-301": {
+        "incident_id": "INC-301",
+        "type": "heart attack",
+        "location": "LOC1",
+        "timestamp": "2024-07-11T13:14:00",
+        "patient_id": "PAT-A1",
+        "status": "en route",
+        "assigned_ambulance_id": "AMB-111"
+      },
+      "INC-302": {
+        "incident_id": "INC-302",
+        "type": "stroke symptoms",
+        "location": "LOC4",
+        "timestamp": "2024-07-12T19:03:00",
+        "patient_id": "PAT-D4",
+        "status": "arrived",
+        "assigned_ambulance_id": "AMB-333"
+      },
+      "INC-303": {
+        "incident_id": "INC-303",
+        "type": "fractured leg",
+        "location": "LOC2",
+        "timestamp": "2024-07-09T09:22:00",
+        "patient_id": "PAT-C3",
+        "status": "requested",
+        "assigned_ambulance_id": null
+      },
+      "INC-304": {
+        "incident_id": "INC-304",
+        "type": "allergic reaction",
+        "location": "LOC5",
+        "timestamp": "2024-07-10T08:46:00",
+        "patient_id": "PAT-B2",
+        "status": "completed",
+        "assigned_ambulance_id": null
+      },
+      "INC-305": {
+        "incident_id": "INC-305",
+        "type": "diabetic emergency",
+        "location": "LOC3",
+        "timestamp": "2024-07-13T17:30:00",
+        "patient_id": "PAT-E5",
+        "status": "requested",
+        "assigned_ambulance_id": null
+      }
+    },
+    "ambulances": {
+      "AMB-111": {
+        "ambulance_id": "AMB-111",
+        "current_location": "LOC1",
+        "availability_status": "unavailable",
+        "crew_details": "A. Chan, L. Porter",
+        "assigned_incident_id": "INC-301"
+      },
+      "AMB-222": {
+        "ambulance_id": "AMB-222",
+        "current_location": "LOC2",
+        "availability_status": "available",
+        "crew_details": "C. West, M. Gupta",
+        "assigned_incident_id": null
+      },
+      "AMB-333": {
+        "ambulance_id": "AMB-333",
+        "current_location": "LOC4",
+        "availability_status": "unavailable",
+        "crew_details": "E. Knight, S. Harrow",
+        "assigned_incident_id": "INC-302"
+      },
+      "AMB-444": {
+        "ambulance_id": "AMB-444",
+        "current_location": "LOC5",
+        "availability_status": "available",
+        "crew_details": "P. Torres, F. McCall",
+        "assigned_incident_id": null
+      },
+      "AMB-555": {
+        "ambulance_id": "AMB-555",
+        "current_location": "LOC3",
+        "availability_status": "available",
+        "crew_details": "N. Patel, R. Dorsey",
+        "assigned_incident_id": null
+      }
+    },
+    "locations": {
+      "LOC1": {
+        "location_id": "LOC1",
+        "address": "152 Cherrywood Avenue, Central City",
+        "gps_coordinates": "40.7128,-74.0060"
+      },
+      "LOC2": {
+        "location_id": "LOC2",
+        "address": "8 Lakeview Crescent, Stonehill",
+        "gps_coordinates": "40.7812,-73.9665"
+      },
+      "LOC3": {
+        "location_id": "LOC3",
+        "address": "250 Pine Ridge Road, North Quarter",
+        "gps_coordinates": "40.7651,-73.9544"
+      },
+      "LOC4": {
+        "location_id": "LOC4",
+        "address": "975 Amber Street, Eastbrook",
+        "gps_coordinates": "40.7295,-73.9872"
+      },
+      "LOC5": {
+        "location_id": "LOC5",
+        "address": "43 Willow Gardens, Midtown",
+        "gps_coordinates": "40.7472,-73.9918"
+      }
+    },
+    "patients": {
+      "PAT-A1": {
+        "patient_id": "PAT-A1",
+        "name": "Ethan Marlow",
+        "age": 66,
+        "medical_condition": "suspected heart attack",
+        "contact_info": "555-0172-4998"
+      },
+      "PAT-B2": {
+        "patient_id": "PAT-B2",
+        "name": "Priya Das",
+        "age": 34,
+        "medical_condition": "severe allergic reaction",
+        "contact_info": "priya.das89@email.com"
+      },
+      "PAT-C3": {
+        "patient_id": "PAT-C3",
+        "name": "Jacob Lin",
+        "age": 22,
+        "medical_condition": "fractured leg",
+        "contact_info": "555-0209-1117"
+      },
+      "PAT-D4": {
+        "patient_id": "PAT-D4",
+        "name": "Zoey Carter",
+        "age": 48,
+        "medical_condition": "stroke symptoms",
+        "contact_info": "zoey.carter@healthmail.com"
+      },
+      "PAT-E5": {
+        "patient_id": "PAT-E5",
+        "name": "Miguel Alvarez",
+        "age": 60,
+        "medical_condition": "diabetic emergency",
+        "contact_info": "555-0111-2277"
+      }
+    },
+    "init_config": {}
+  }
+}

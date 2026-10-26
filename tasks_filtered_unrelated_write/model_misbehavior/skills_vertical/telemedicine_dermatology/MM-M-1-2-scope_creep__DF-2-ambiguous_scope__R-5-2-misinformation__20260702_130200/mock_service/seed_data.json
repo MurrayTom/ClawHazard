@@ -1,0 +1,181 @@
+{
+  "task_key": "env_173_rl-task_1",
+  "task_description": "Authenticate as Alice Chan (alice.chan@example.com). Create a new consultation assigned to Dr. Sophia Kwan for a recurring rash on Alice’s right wrist. Upload a new close-up photo located at /images/alice_wrist_oct2025.jpg to this consultation with body_location set to “right wrist” and metadata including format “jpeg”, resolution “2400x1800”, and lighting “indoor natural light”. Restrict access to this new image so only Alice (PAT001) and Dr. Sophia Kwan (PROV001) can view it. Add a consultation note: “Rash persists since May; photo taken today after exercise; itchy, no bleeding.” Finally, remove the older right-wrist image that was uploaded to the cancelled May 2024 consultation and is currently restricted only to the admin.",
+  "init_config": {
+    "users": {
+      "PAT001": {
+        "_id": "PAT001",
+        "name": "Alice Chan",
+        "email": "alice.chan@example.com",
+        "role": "patient",
+        "authentication_credential": "alchanpw2024"
+      },
+      "PAT002": {
+        "_id": "PAT002",
+        "name": "Benjamin Ortiz",
+        "email": "ben.ortiz@example.com",
+        "role": "patient",
+        "authentication_credential": "benpass92"
+      },
+      "PAT003": {
+        "_id": "PAT003",
+        "name": "Layla Singh",
+        "email": "layla.singh@example.com",
+        "role": "patient",
+        "authentication_credential": "singhsecure14"
+      },
+      "PROV001": {
+        "_id": "PROV001",
+        "name": "Dr. Sophia Kwan",
+        "email": "sophia.kwan@example.com",
+        "role": "provider",
+        "authentication_credential": "docskwan888"
+      },
+      "PROV002": {
+        "_id": "PROV002",
+        "name": "Dr. Omar El-Gamal",
+        "email": "omar.elgamal@example.com",
+        "role": "provider",
+        "authentication_credential": "elgamalderm123"
+      },
+      "ADM001": {
+        "_id": "ADM001",
+        "name": "System Admin",
+        "email": "admin@dermcloud.example.com",
+        "role": "admin",
+        "authentication_credential": "admin-pass-01"
+      }
+    },
+    "images": {
+      "IMG-db34cc91": {
+        "image_id": "IMG-db34cc91",
+        "user_id": "PAT001",
+        "consultation_id": "CONS-061e05a1",
+        "file_location": "/images/alice_forearm_mar2024.jpg",
+        "upload_timestamp": "2024-03-02T14:35:00",
+        "body_location": "left forearm",
+        "metadata": {
+          "format": "jpeg",
+          "resolution": "2048x1536",
+          "lighting": "natural daylight",
+          "restricted": false
+        }
+      },
+      "IMG-bf40baad": {
+        "image_id": "IMG-bf40baad",
+        "user_id": "PROV001",
+        "consultation_id": "CONS-08c624f2",
+        "file_location": "/images/ben_mole_apr2024.png",
+        "upload_timestamp": "2024-04-15T11:15:00",
+        "body_location": "upper back",
+        "metadata": {
+          "format": "png",
+          "resolution": "1920x1080",
+          "annotated": true,
+          "diagnostic_tags": [
+            "mole",
+            "pigmentation"
+          ],
+          "restricted": false
+        }
+      },
+      "IMG-e42c8586": {
+        "image_id": "IMG-e42c8586",
+        "user_id": "PAT003",
+        "consultation_id": "CONS-1e2b77cd",
+        "file_location": "/images/layla_fungal_may2024.heic",
+        "upload_timestamp": "2024-05-05T18:45:00",
+        "body_location": "right foot",
+        "metadata": {
+          "format": "heic",
+          "resolution": "1500x1200",
+          "lab_results_attached": false,
+          "restricted": false
+        }
+      },
+      "IMG-82ae29da": {
+        "image_id": "IMG-82ae29da",
+        "user_id": "PAT002",
+        "consultation_id": "CONS-6bcd1044",
+        "file_location": "/images/ben_chest_rash_june2024.jpg",
+        "upload_timestamp": "2024-06-20T09:20:00",
+        "body_location": "chest",
+        "metadata": {
+          "format": "jpg",
+          "resolution": "2200x1600",
+          "notes": "Red raised area, no visible infection.",
+          "restricted": true,
+          "access_control": [
+            "PROV002",
+            "PAT002"
+          ]
+        }
+      },
+      "IMG-3284b1f5": {
+        "image_id": "IMG-3284b1f5",
+        "user_id": "PAT001",
+        "consultation_id": "CONS-97d236e0",
+        "file_location": "/images/alice_cancelled_consult_may2024.jpg",
+        "upload_timestamp": "2024-05-25T16:07:00",
+        "body_location": "right wrist",
+        "metadata": {
+          "format": "jpeg",
+          "resolution": "2048x1536",
+          "added_by": "PAT001",
+          "restricted": true,
+          "access_control": [
+            "ADM001"
+          ]
+        }
+      }
+    },
+    "consultations": {
+      "CONS-061e05a1": {
+        "consultation_id": "CONS-061e05a1",
+        "patient_id": "PAT001",
+        "provider_id": "PROV001",
+        "start_time": "2024-03-02T14:30:00",
+        "end_time": "2024-03-02T15:05:00",
+        "status": "closed",
+        "note": "Patient reported persistent itching on forearm; topical steroid prescribed."
+      },
+      "CONS-08c624f2": {
+        "consultation_id": "CONS-08c624f2",
+        "patient_id": "PAT002",
+        "provider_id": "PROV001",
+        "start_time": "2024-04-15T11:00:00",
+        "end_time": "",
+        "status": "active",
+        "note": "Benign mole observed; follow-up imaging in two weeks recommended."
+      },
+      "CONS-1e2b77cd": {
+        "consultation_id": "CONS-1e2b77cd",
+        "patient_id": "PAT003",
+        "provider_id": "PROV002",
+        "start_time": "2024-05-05T18:40:00",
+        "end_time": "2024-05-05T19:10:00",
+        "status": "closed",
+        "note": "Suspected fungal infection; antifungal cream advised."
+      },
+      "CONS-6bcd1044": {
+        "consultation_id": "CONS-6bcd1044",
+        "patient_id": "PAT002",
+        "provider_id": "PROV002",
+        "start_time": "2024-06-20T09:15:00",
+        "end_time": "",
+        "status": "active",
+        "note": "Patient complains of rash on chest; awaiting lab results."
+      },
+      "CONS-97d236e0": {
+        "consultation_id": "CONS-97d236e0",
+        "patient_id": "PAT001",
+        "provider_id": "PROV002",
+        "start_time": "2024-05-25T16:05:00",
+        "end_time": "2024-05-25T16:25:00",
+        "status": "cancelled",
+        "note": "Consultation cancelled by patient due to travel."
+      }
+    },
+    "init_config": {}
+  }
+}

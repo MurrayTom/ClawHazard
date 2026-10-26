@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "description": "皮肤病症参考库",
+  "conditions": [
+    {
+      "condition_id": "DERM-001",
+      "name": "特应性皮炎（湿疹）",
+      "icd10": "L20.9",
+      "typical_symptoms": [
+        "皮肤干燥",
+        "剧烈瘙痒",
+        "红斑",
+        "渗出",
+        "苔藓化"
+      ],
+      "common_locations": [
+        "肘窝",
+        "腘窝",
+        "颈部",
+        "面部（儿童）"
+      ],
+      "image_characteristics": "边界不清的红斑，伴抓痕和苔藓化",
+      "teledermatology_suitability": "适合（慢性管理）"
+    },
+    {
+      "condition_id": "DERM-002",
+      "name": "银屑病",
+      "icd10": "L40.9",
+      "typical_symptoms": [
+        "银白色鳞屑",
+        "红色斑块",
+        "瘙痒",
+        "关节痛（部分）"
+      ],
+      "common_locations": [
+        "头皮",
+        "肘部",
+        "膝部",
+        "腰骶部"
+      ],
+      "image_characteristics": "界限清楚的红色斑块，覆有银白色鳞屑",
+      "teledermatology_suitability": "适合（随访管理）"
+    },
+    {
+      "condition_id": "DERM-003",
+      "name": "痤疮",
+      "icd10": "L70.0",
+      "typical_symptoms": [
+        "粉刺",
+        "丘疹",
+        "脓疱",
+        "结节",
+        "囊肿"
+      ],
+      "common_locations": [
+        "面部",
+        "背部",
+        "胸部"
+      ],
+      "grading": {
+        "mild": "粉刺为主",
+        "moderate": "丘疹脓疱",
+        "severe": "结节囊肿"
+      },
+      "teledermatology_suitability": "非常适合"
+    },
+    {
+      "condition_id": "DERM-004",
+      "name": "黑色素瘤（可疑）",
+      "icd10": "C43.9",
+      "abcde_criteria": {
+        "A": "不对称（Asymmetry）",
+        "B": "边界不规则（Border）",
+        "C": "颜色不均（Color）",
+        "D": "直径>6mm（Diameter）",
+        "E": "进展变化（Evolution）"
+      },
+      "teledermatology_suitability": "不适合（须面诊活检）",
+      "urgency": "高"
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "meta": {
+    "version": "3.2.0",
+    "last_updated": "2026-06-12",
+    "description": "原神各类培养材料的刷取路线配置，包含副本名称、开放日期、掉落材料及推荐角色信息",
+    "total_routes": 14,
+    "categories": ["天赋培养材料", "角色突破材料", "武器突破材料"]
+  },
+  "routes": [
+    {
+      "route_id": "talent_liyue_prosperity",
+      "name": "繁荣的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "taishan_fu",
+        "name": "太山府",
+        "location": "璃月·珉林",
+        "region": "璃月",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["火", "冰", "风"]
+      },
+      "schedule": {
+        "weekdays": ["周一", "周四", "周日"],
+        "weekly_rotation": "繁荣—勤劳—黄金 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "繁荣的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "繁荣的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "繁荣的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "刻晴", "usage": "天赋升级"},
+        {"name": "凝光", "usage": "天赋升级"},
+        {"name": "钟离", "usage": "天赋升级"},
+        {"name": "魈", "usage": "天赋升级"},
+        {"name": "申鹤", "usage": "天赋升级"},
+        {"name": "烟绯", "usage": "天赋升级"},
+        {"name": "瑶瑶", "usage": "天赋升级"},
+        {"name": "嘉明", "usage": "天赋升级"}
+      ],
+      "farm_tips": "周日可刷齐所有璃月天赋材料，建议优先刷取主力角色所需类型"
+    },
+    {
+      "route_id": "talent_liyue_diligence",
+      "name": "勤劳的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "taishan_fu",
+        "name": "太山府",
+        "location": "璃月·珉林",
+        "region": "璃月",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["火", "冰", "风"]
+      },
+      "schedule": {
+        "weekdays": ["周二", "周五", "周日"],
+        "weekly_rotation": "繁荣—勤劳—黄金 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "勤劳的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "勤劳的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "勤劳的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "胡桃", "usage": "天赋升级"},
+        {"name": "香菱", "usage": "天赋升级"},
+        {"name": "行秋", "usage": "天赋升级"},
+        {"name": "重云", "usage": "天赋升级"},
+        {"name": "北斗", "usage": "天赋升级"},
+        {"name": "钟离", "usage": "天赋升级（部分技能）"}
+      ],
+      "farm_tips": "行秋、香菱为多队伍通用角色，优先拉满天赋"
+    },
+    {
+      "route_id": "talent_liyue_gold",
+      "name": "黄金的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "taishan_fu",
+        "name": "太山府",
+        "location": "璃月·珉林",
+        "region": "璃月",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["火", "冰", "风"]
+      },
+      "schedule": {
+        "weekdays": ["周三", "周六", "周日"],
+        "weekly_rotation": "繁荣—勤劳—黄金 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "黄金的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "黄金的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "黄金的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "钟离", "usage": "天赋升级"},
+        {"name": "甘雨", "usage": "天赋升级"},
+        {"name": "达达利亚", "usage": "天赋升级"},
+        {"name": "北斗", "usage": "天赋升级"},
+        {"name": "辛焱", "usage": "天赋升级"},
+        {"name": "云堇", "usage": "天赋升级"}
+      ],
+      "farm_tips": "周日是最高效的刷取日，可一次性集齐三种璃月天赋材料"
+    },
+    {
+      "route_id": "talent_mondstadt_freedom",
+      "name": "自由的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "forsaken_rift",
+        "name": "忘却之峡",
+        "location": "蒙德·望风山地",
+        "region": "蒙德",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["冰", "火", "雷"]
+      },
+      "schedule": {
+        "weekdays": ["周一", "周四", "周日"],
+        "weekly_rotation": "自由—抗争—诗文 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "自由的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "自由的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "自由的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "温迪", "usage": "天赋升级"},
+        {"name": "可莉", "usage": "天赋升级"},
+        {"name": "班尼特", "usage": "天赋升级"},
+        {"name": "砂糖", "usage": "天赋升级"},
+        {"name": "安柏", "usage": "天赋升级"}
+      ],
+      "farm_tips": "班尼特是最热门四星辅助之一，建议尽早刷满自由材料"
+    },
+    {
+      "route_id": "talent_mondstadt_resistance",
+      "name": "抗争的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "forsaken_rift",
+        "name": "忘却之峡",
+        "location": "蒙德·望风山地",
+        "region": "蒙德",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["冰", "火", "雷"]
+      },
+      "schedule": {
+        "weekdays": ["周二", "周五", "周日"],
+        "weekly_rotation": "自由—抗争—诗文 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "抗争的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "抗争的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "抗争的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "琴", "usage": "天赋升级"},
+        {"name": "莫娜", "usage": "天赋升级"},
+        {"name": "迪卢克", "usage": "天赋升级"},
+        {"name": "雷泽", "usage": "天赋升级"},
+        {"name": "优菈", "usage": "天赋升级"}
+      ],
+      "farm_tips": "优菈和迪卢克作为物理/火系主C，天赋投入性价比很高"
+    },
+    {
+      "route_id": "talent_mondstadt_ballad",
+      "name": "诗文的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "forsaken_rift",
+        "name": "忘却之峡",
+        "location": "蒙德·望风山地",
+        "region": "蒙德",
+        "min_adventure_rank": 27,
+        "recommended_elements": ["冰", "火", "雷"]
+      },
+      "schedule": {
+        "weekdays": ["周三", "周六", "周日"],
+        "weekly_rotation": "自由—抗争—诗文 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "诗文的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "诗文的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "诗文的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "温迪", "usage": "天赋升级"},
+        {"name": "丽莎", "usage": "天赋升级"},
+        {"name": "凯亚", "usage": "天赋升级"},
+        {"name": "菲谢尔", "usage": "天赋升级"},
+        {"name": "阿贝多", "usage": "天赋升级"}
+      ],
+      "farm_tips": "菲谢尔和温迪在多个队伍中担任脱手副C，优先升级E和Q技能"
+    },
+    {
+      "route_id": "talent_inazuma_transience",
+      "name": "浮世的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "violet_court",
+        "name": "堇色之庭",
+        "location": "稻妻·甘金岛",
+        "region": "稻妻",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["火", "雷", "冰"]
+      },
+      "schedule": {
+        "weekdays": ["周一", "周四", "周日"],
+        "weekly_rotation": "浮世—风雅—天光 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "浮世的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "浮世的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "浮世的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "雷电将军", "usage": "天赋升级"},
+        {"name": "宵宫", "usage": "天赋升级"},
+        {"name": "八重神子", "usage": "天赋升级"},
+        {"name": "托马", "usage": "天赋升级"}
+      ],
+      "farm_tips": "雷电将军是顶级辅助兼输出，建议优先将元素爆发升至9级"
+    },
+    {
+      "route_id": "talent_inazuma_elegance",
+      "name": "风雅的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "violet_court",
+        "name": "堇色之庭",
+        "location": "稻妻·甘金岛",
+        "region": "稻妻",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["火", "雷", "冰"]
+      },
+      "schedule": {
+        "weekdays": ["周二", "周五", "周日"],
+        "weekly_rotation": "浮世—风雅—天光 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "风雅的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "风雅的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "风雅的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "神里绫华", "usage": "天赋升级"},
+        {"name": "珊瑚宫心海", "usage": "天赋升级"},
+        {"name": "枫原万叶", "usage": "天赋升级"},
+        {"name": "久岐忍", "usage": "天赋升级"}
+      ],
+      "farm_tips": "万叶和心海为顶级辅助，风雅材料是稻妻角色培养的刚需"
+    },
+    {
+      "route_id": "talent_inazuma_light",
+      "name": "天光的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "violet_court",
+        "name": "堇色之庭",
+        "location": "稻妻·甘金岛",
+        "region": "稻妻",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["火", "雷", "冰"]
+      },
+      "schedule": {
+        "weekdays": ["周三", "周六", "周日"],
+        "weekly_rotation": "浮世—风雅—天光 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "天光的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "天光的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "天光的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "雷电将军", "usage": "天赋升级"},
+        {"name": "神里绫人", "usage": "天赋升级"},
+        {"name": "早柚", "usage": "天赋升级"},
+        {"name": "五郎", "usage": "天赋升级"}
+      ],
+      "farm_tips": "推荐周日集中刷取，配合浓缩树脂效率更高"
+    },
+    {
+      "route_id": "talent_sumeru_admonition",
+      "name": "诤言的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "steeple_of_ignorance",
+        "name": "昏识塔",
+        "location": "须弥·下风蚀地",
+        "region": "须弥",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["草", "雷", "火"]
+      },
+      "schedule": {
+        "weekdays": ["周一", "周四", "周日"],
+        "weekly_rotation": "诤言—巧思—笃行 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "诤言的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "诤言的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "诤言的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "纳西妲", "usage": "天赋升级"},
+        {"name": "提纳里", "usage": "天赋升级"},
+        {"name": "艾尔海森", "usage": "天赋升级"},
+        {"name": "柯莱", "usage": "天赋升级"}
+      ],
+      "farm_tips": "纳西妲是草系核心角色，天赋优先升至1-9-9"
+    },
+    {
+      "route_id": "talent_sumeru_ingenuity",
+      "name": "巧思的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "steeple_of_ignorance",
+        "name": "昏识塔",
+        "location": "须弥·下风蚀地",
+        "region": "须弥",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["草", "雷", "火"]
+      },
+      "schedule": {
+        "weekdays": ["周二", "周五", "周日"],
+        "weekly_rotation": "诤言—巧思—笃行 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "巧思的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "巧思的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "巧思的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "赛诺", "usage": "天赋升级"},
+        {"name": "妮露", "usage": "天赋升级"},
+        {"name": "多莉", "usage": "天赋升级"},
+        {"name": "流浪者", "usage": "天赋升级（需完成须弥主线）"}
+      ],
+      "farm_tips": "赛诺和妮露均为限定五星，提前储备巧思材料可快速拉满"
+    },
+    {
+      "route_id": "talent_sumeru_praxis",
+      "name": "笃行的教导系列",
+      "category": "天赋培养材料",
+      "domain": {
+        "id": "steeple_of_ignorance",
+        "name": "昏识塔",
+        "location": "须弥·下风蚀地",
+        "region": "须弥",
+        "min_adventure_rank": 30,
+        "recommended_elements": ["草", "雷", "火"]
+      },
+      "schedule": {
+        "weekdays": ["周三", "周六", "周日"],
+        "weekly_rotation": "诤言—巧思—笃行 每2天轮换，周日全部开放"
+      },
+      "materials": [
+        {"name": "笃行的教导", "rarity": 2, "type": "天赋材料"},
+        {"name": "笃行的指引", "rarity": 3, "type": "天赋材料"},
+        {"name": "笃行的哲学", "rarity": 4, "type": "天赋材料"}
+      ],
+      "recommended_characters": [
+        {"name": "艾尔海森", "usage": "天赋升级"},
+        {"name": "流浪者", "usage": "天赋升级"},
+        {"name": "珐露珊", "usage": "天赋升级"},
+        {"name": "莱依拉", "usage": "天赋升级"}
+      ],
+      "farm_tips": "珐露珊是风系专辅，升级天赋可获得增伤倍率提升"
+    },
+    {
+      "route_id": "boss_weekly_azhdaha",
+      "name": "若陀龙王",
+      "category": "角色突破材料",
+      "domain": {
+        "id": "beneath_the_dragon_queller",
+        "name": "伏龙树之底",
+        "location": "璃月·南天门",
+        "region": "璃月",
+        "min_adventure_rank": 40,
+        "recommended_elements": ["冰", "雷", "岩"]
+      },
+      "schedule": {
+        "weekdays": ["周一至周日"],
+        "boss_type": "周常BOSS",
+        "resin_cost": 60,
+        "weekly_limit": "每周可领取奖励1次，使用异梦溶媒可转换掉落材料"
+      },
+      "materials": [
+        {"name": "鎏金之鳞", "rarity": 5, "type": "天赋突破材料", "source": "若陀龙王"},
+        {"name": "追忆之镰", "rarity": 5, "type": "天赋突破材料", "source": "若陀龙王"},
+        {"name": "血玉之枝", "rarity": 5, "type": "天赋突破材料", "source": "若陀龙王"}
+      ],
+      "recommended_characters": [
+        {"name": "钟离", "usage": "天赋突破（E·地心升至7级以上需此材料）"},
+        {"name": "胡桃", "usage": "天赋突破"},
+        {"name": "烟绯", "usage": "天赋突破"},
+        {"name": "甘雨", "usage": "天赋突破"},
+        {"name": "达达利亚", "usage": "天赋突破"}
+      ],
+      "farm_tips": "每周必定刷取，若不需要对应材料可用异梦溶媒转换，建议囤积以备新角色"
+    },
+    {
+      "route_id": "boss_weekly_dvalin",
+      "name": "风魔龙特瓦林",
+      "category": "角色突破材料",
+      "domain": {
+        "id": "confront_stormterror",
+        "name": "深入风龙废墟",
+        "location": "蒙德·风龙废墟",
+        "region": "蒙德",
+        "min_adventure_rank": 25,
+        "recommended_elements": ["火", "冰", "雷", "弓角色"]
+      },
+      "schedule": {
+        "weekdays": ["周一至周日"],
+        "boss_type": "周常BOSS",
+        "resin_cost": 60,
+        "weekly_limit": "每周可领取奖励1次，使用异梦溶媒可转换掉落材料"
+      },
+      "materials": [
+        {"name": "东风之翎", "rarity": 5, "type": "天赋突破材料", "source": "风魔龙"},
+        {"name": "东风之爪", "rarity": 5, "type": "天赋突破材料", "source": "风魔龙"},
+        {"name": "东风的吐息", "rarity": 5, "type": "天赋突破材料", "source": "风魔龙"}
+      ],
+      "recommended_characters": [
+        {"name": "琴", "usage": "天赋突破"},
+        {"name": "温迪", "usage": "天赋突破"},
+        {"name": "班尼特", "usage": "天赋突破"},
+        {"name": "丽莎", "usage": "天赋突破"},
+        {"name": "菲谢尔", "usage": "天赋突破"}
+      ],
+      "farm_tips": "低等级玩家亦可挑战，使用弓角色瞄准脖子根部可更快击破护盾"
+    }
+  ],
+  "general_tips": [
+    "浓缩树脂可双倍掉落，每日坚持合满3个提高效率",
+    "周日全部天赋副本开放，建议规划好树脂分配集中刷取",
+    "周常BOSS优先选择需要材料对应的角色，避免浪费周次数",
+    "异梦溶媒可转换周常BOSS掉落材料，每月在尘歌壶可兑换一定数量",
+    "使用参量质变仪可将溢出材料转化为其他资源"
+  ]
+}

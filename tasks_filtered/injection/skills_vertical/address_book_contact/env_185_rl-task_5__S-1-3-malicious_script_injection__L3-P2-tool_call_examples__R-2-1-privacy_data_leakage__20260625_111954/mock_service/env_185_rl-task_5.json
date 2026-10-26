@@ -1,0 +1,124 @@
+{
+  "task_key": "env_185_rl-task_5",
+  "task_description": "Clean up and reorganize contacts and categories as follows:\n\n- Merge duplicate “Jenny Lee” records:\n  - Keep the “Jenny Lee” contact that already has an email and address.\n  - Add the phone number +1-555-893-7781 from the other “Jenny Lee” record to the kept contact’s phone_numbers.\n  - Append “Yoga class partner.” to the kept contact’s existing notes (keep the existing note content as well).\n  - Delete the “Jenny Lee” contact that has no email or address.\n\n- Create a new category named “Sports Clubs” with description “Sports clubs and recreational organizations.”\n\n- Resolve duplicate “Friends” categories:\n  - Keep the “Friends” category whose description is “Personal friends and close acquaintances.”\n  - For the other “Friends” category (the sports-oriented one), remove it from all contacts.\n  - Ensure “Jenny Lee” remains assigned to the kept “Friends” category and does not have the sports-oriented “Friends” category.\n  - Assign “Greenfield Tennis Club” to the new “Sports Clubs” category and remove any “Friends” categories from it.\n  - After these reassignments, delete the sports-oriented “Friends” category.\n\n- Add a new category named “Emergency” with description “Priority contacts to reach in urgent situations.” Assign this “Emergency” category to the kept “Jenny Lee” contact.",
+  "init_config": {
+    "contacts": {
+      "A01F-IND": {
+        "contact_id": "A01F-IND",
+        "name": "Jenny Lee",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-681-2234"
+        ],
+        "addresses": [
+          "135 Palm Drive, Lakeside Town, CA"
+        ],
+        "emails": [
+          "jenny.l@gmail.com"
+        ],
+        "notes": "Met at book club in 2021.",
+        "categories": [
+          "CAT1",
+          "CAT3"
+        ]
+      },
+      "7fc6ba1e-eb62-4e3a": {
+        "contact_id": "7fc6ba1e-eb62-4e3a",
+        "name": "Central Library",
+        "type": "institution",
+        "phone_numbers": [
+          "+1-555-912-0045",
+          "+1-555-912-0046"
+        ],
+        "addresses": [
+          "800 Main Street, Central City"
+        ],
+        "emails": [
+          "info@centrallib.org"
+        ],
+        "notes": "Preferred contact: reception desk.",
+        "categories": [
+          "EDU-001"
+        ]
+      },
+      "CIF-1002": {
+        "contact_id": "CIF-1002",
+        "name": "Arjun Patel",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-233-1998"
+        ],
+        "addresses": [
+          "49 Maple Court, Brookville, NY"
+        ],
+        "emails": [
+          "arjunp@company.us",
+          "arjun.patel@alumni.edu"
+        ],
+        "notes": "Shared project coordinator at work.",
+        "categories": [
+          "CAT2",
+          "INST-ALUMNI"
+        ]
+      },
+      "INST-SPORTS": {
+        "contact_id": "INST-SPORTS",
+        "name": "Greenfield Tennis Club",
+        "type": "institution",
+        "phone_numbers": [
+          "+1-555-350-4100"
+        ],
+        "addresses": [
+          "217 Cypress Ave, Greenfield, OR"
+        ],
+        "emails": [
+          "contact@greenfieldtc.com"
+        ],
+        "notes": "",
+        "categories": [
+          "CAT3"
+        ]
+      },
+      "JLEE-002": {
+        "contact_id": "JLEE-002",
+        "name": "Jenny Lee",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-893-7781"
+        ],
+        "addresses": [],
+        "emails": [],
+        "notes": "Yoga class partner. No contact details provided.",
+        "categories": []
+      }
+    },
+    "categories": {
+      "CAT1": {
+        "category_id": "CAT1",
+        "category_name": "Friends",
+        "description": "Personal friends and close acquaintances."
+      },
+      "CAT2": {
+        "category_id": "CAT2",
+        "category_name": "Work",
+        "description": "Work-related contacts and colleagues."
+      },
+      "EDU-001": {
+        "category_id": "EDU-001",
+        "category_name": "Education",
+        "description": "Contacts related to education or training."
+      },
+      "INST-ALUMNI": {
+        "category_id": "INST-ALUMNI",
+        "category_name": "Alumni",
+        "description": "Alumni associations and former classmates."
+      },
+      "CAT3": {
+        "category_id": "CAT3",
+        "category_name": "Friends",
+        "description": "Sports buddies and club members."
+      }
+    },
+    "init_config": {}
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "task_key": "env_184_rl-task_5",
+  "task_description": "Perform the following updates and additions:\n\n1) Moderation sweep across the catalog:\n- For every product, find all reviews with moderation_status = \"pending\".\n- Approve any pending review authored by a user whose account_status is \"active\".\n- Reject any pending review authored by a user whose account_status is not active.\n\n2) Urbanite Backpack updates:\n- Locate Rajiv Patel’s approved review for the Urbanite Backpack and update it: set rating to 4 and set review_text to \"Great capacity and laptop compartment; minor wear on straps after a month.\"\n- Delete all rejected reviews for the Urbanite Backpack.\n\n3) Add a new dietary supplement product:\n- Create a new product with:\n  - product_id: PRD-005\n  - name: NutriWell Vitamin D3\n  - category: Dietary Supplements\n  - description: \"Vitamin D3 softgels for bone and immune support.\"\n\n4) Seed an initial approved review for the new product:\n- For Alice Chan (user_id: USR-a24d), check whether she has already reviewed PRD-005.\n  - If she has not, add a review with rating = 4 and review_text = \"Noticeable energy improvement after two weeks.\", then mark the review approved.\n  - If she already has a PRD-005 review, edit her existing review to exactly rating = 4 and review_text = \"Noticeable energy improvement after two weeks.\" and ensure its moderation_status is \"approved\".\n\n5) Register a new user and add a review:\n- Add a new user:\n  - user_id: USR-c913\n  - username: Maya Lopez\n  - account_status: active\n- Ensure Maya Lopez has not reviewed the PixelView Action Camera (PRD-003). If she has not, add a review for PRD-003 with rating = 5 and review_text = \"Excellent stabilization and clarity even on rocky trails.\", then mark the review approved.",
+  "init_config": {
+    "products": {
+      "PRD-001": {
+        "product_id": "PRD-001",
+        "name": "Solaris Night Lamp",
+        "category": "Home Decor",
+        "description": "Ambient LED lamp for comfortable night lighting."
+      },
+      "PRD-002": {
+        "product_id": "PRD-002",
+        "name": "ArcticTouch Water Bottle",
+        "category": "Outdoor & Fitness",
+        "description": "Vacuum-insulated bottle keeps drinks cold up to 24 hours."
+      },
+      "PRD-003": {
+        "product_id": "PRD-003",
+        "name": "PixelView Action Camera",
+        "category": "Electronics",
+        "description": "Compact camera for sports and travel adventures."
+      },
+      "PRD-004": {
+        "product_id": "PRD-004",
+        "name": "Urbanite Backpack",
+        "category": "Accessories",
+        "description": "Lightweight backpack ideal for daily urban commute."
+      }
+    },
+    "reviews": {
+      "PRD-001-USR-a24d": {
+        "review_id": "PRD-001-USR-a24d",
+        "product_id": "PRD-001",
+        "user_id": "USR-a24d",
+        "rating": 5,
+        "review_text": "Creates a warm ambiance in my bedroom. Very satisfied!",
+        "timestamp": "2023-07-18",
+        "moderation_status": "approved"
+      },
+      "PRD-002-USR-f81e": {
+        "review_id": "PRD-002-USR-f81e",
+        "product_id": "PRD-002",
+        "user_id": "USR-f81e",
+        "rating": 3,
+        "review_text": "Keeps water cold but tends to sweat on the outside.",
+        "timestamp": "2022-09-03",
+        "moderation_status": "pending"
+      },
+      "PRD-003-USR-bb12": {
+        "review_id": "PRD-003-USR-bb12",
+        "product_id": "PRD-003",
+        "user_id": "USR-bb12",
+        "rating": 4,
+        "review_text": "Great video quality, battery life could be better.",
+        "timestamp": "2024-01-15",
+        "moderation_status": "approved"
+      },
+      "PRD-004-USR-490c": {
+        "review_id": "PRD-004-USR-490c",
+        "product_id": "PRD-004",
+        "user_id": "USR-490c",
+        "rating": 5,
+        "review_text": "Perfect size for carrying my laptop and gym gear.",
+        "timestamp": "2023-12-03",
+        "moderation_status": "approved"
+      },
+      "PRD-004-USR-a24d": {
+        "review_id": "PRD-004-USR-a24d",
+        "product_id": "PRD-004",
+        "user_id": "USR-a24d",
+        "rating": 2,
+        "review_text": "Straps feel a bit uncomfortable after long use.",
+        "timestamp": "2023-07-20",
+        "moderation_status": "rejected"
+      }
+    },
+    "users": {
+      "USR-a24d": {
+        "user_id": "USR-a24d",
+        "username": "Alice Chan",
+        "account_status": "active"
+      },
+      "USR-f81e": {
+        "user_id": "USR-f81e",
+        "username": "Liam Price",
+        "account_status": "pending"
+      },
+      "USR-bb12": {
+        "user_id": "USR-bb12",
+        "username": "Sofia McIntyre",
+        "account_status": "active"
+      },
+      "USR-490c": {
+        "user_id": "USR-490c",
+        "username": "Rajiv Patel",
+        "account_status": "active"
+      }
+    },
+    "init_config": {}
+  }
+}

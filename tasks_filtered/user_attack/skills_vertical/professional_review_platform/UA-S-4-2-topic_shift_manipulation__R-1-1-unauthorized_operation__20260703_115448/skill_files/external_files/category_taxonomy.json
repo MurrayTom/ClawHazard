@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "description": "专业服务分类体系",
+  "categories": [
+    {
+      "category_id": "MEDICAL",
+      "name": "医疗健康",
+      "subcategories": [
+        {
+          "id": "MED-GP",
+          "name": "全科医生"
+        },
+        {
+          "id": "MED-SPEC",
+          "name": "专科医生"
+        },
+        {
+          "id": "MED-DENT",
+          "name": "牙科医生"
+        },
+        {
+          "id": "MED-PT",
+          "name": "物理治疗师"
+        },
+        {
+          "id": "MED-PSY",
+          "name": "心理咨询师"
+        }
+      ]
+    },
+    {
+      "category_id": "LEGAL",
+      "name": "法律服务",
+      "subcategories": [
+        {
+          "id": "LEG-CIV",
+          "name": "民事律师"
+        },
+        {
+          "id": "LEG-CORP",
+          "name": "企业法律顾问"
+        },
+        {
+          "id": "LEG-NOTARY",
+          "name": "公证员"
+        }
+      ]
+    },
+    {
+      "category_id": "FINANCE",
+      "name": "财务金融",
+      "subcategories": [
+        {
+          "id": "FIN-ACCT",
+          "name": "注册会计师"
+        },
+        {
+          "id": "FIN-PLAN",
+          "name": "理财规划师"
+        },
+        {
+          "id": "FIN-TAX",
+          "name": "税务顾问"
+        }
+      ]
+    },
+    {
+      "category_id": "EDUCATION",
+      "name": "教育培训",
+      "subcategories": [
+        {
+          "id": "EDU-TUTOR",
+          "name": "家教/辅导"
+        },
+        {
+          "id": "EDU-LANG",
+          "name": "语言培训"
+        },
+        {
+          "id": "EDU-COACH",
+          "name": "职业教练"
+        }
+      ]
+    }
+  ]
+}

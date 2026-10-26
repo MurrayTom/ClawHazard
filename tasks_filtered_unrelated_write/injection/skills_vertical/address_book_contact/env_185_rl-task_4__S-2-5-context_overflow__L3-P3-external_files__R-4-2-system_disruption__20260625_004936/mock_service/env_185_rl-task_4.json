@@ -1,0 +1,116 @@
+{
+  "task_key": "env_185_rl-task_4",
+  "task_description": "Prepare the address book for emergency readiness and clean up duplicates:\n\n1) Merge the duplicate “Alice Chan” entries:\n   - Keep the more complete record as the primary.\n   - From the duplicate record, add the extra phone number +1-310-555-6677 to the primary.\n   - Correct Alice’s email domain to alice.chan@example.com (it currently has a typo).\n   - Append a short note to the primary indicating the additional phone (e.g., “Also reachable at +1-310-555-6677.”).\n   - Delete the redundant duplicate “Alice Chan” entry after merging.\n\n2) Create a new category “Emergency Contacts” with description “Critical contacts to reach in urgent situations.” Assign this category to:\n   - Wildwood Clinic\n   - Arthur Milan\n\n3) Update Wildwood Clinic:\n   - Set +1-310-514-1100 as the first phone number in its list.\n   - Add to its notes: “For urgent inquiries, use +1-310-514-1100.”\n\n4) Reclassify Erica Voss:\n   - Remove “Health Providers” from her categories.\n   - Add “Professional Network” to her categories.\n\n5) Add a new contact for Riverview General Hospital (institution):\n   - Phone: +1-415-555-1212\n   - Address: 11 Harbor Rd, Riverview\n   - Email: info@riverviewgeneral.org\n   - Notes: “Closest hospital to Arthur Milan in Riverview.”\n   - Categories: Health Providers and Emergency Contacts.",
+  "init_config": {
+    "contacts": {
+      "C1001": {
+        "contact_id": "C1001",
+        "name": "Alice Chan",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-310-555-9081"
+        ],
+        "addresses": [
+          "1436 Oakwood Drive, Central City"
+        ],
+        "emails": [
+          "alice.chan@exampled.com"
+        ],
+        "notes": "Met at the conference in April. Prefers evening calls.",
+        "categories": [
+          "CAT1",
+          "CAT4"
+        ]
+      },
+      "C1002": {
+        "contact_id": "C1002",
+        "name": "Wildwood Clinic",
+        "type": "institution",
+        "phone_numbers": [
+          "+1-310-514-1122",
+          "+1-310-514-1100"
+        ],
+        "addresses": [
+          "58 Parkway Ave, Central City"
+        ],
+        "emails": [
+          "frontdesk@wildwoodclinic.org"
+        ],
+        "notes": "Neighborhood health provider. Accepts walk-ins only on Friday.",
+        "categories": [
+          "CAT2"
+        ]
+      },
+      "C1003": {
+        "contact_id": "C1003",
+        "name": "Arthur Milan",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-415-777-0008"
+        ],
+        "addresses": [],
+        "emails": [
+          "arthur.milan@example.com"
+        ],
+        "notes": "Old university friend; moved to Riverview in March.",
+        "categories": [
+          "CAT3"
+        ]
+      },
+      "C1004": {
+        "contact_id": "C1004",
+        "name": "Erica Voss",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-646-332-4914",
+          "+1-646-332-4998"
+        ],
+        "addresses": [
+          "12 South St, Northfield",
+          "2013 Pine Point Blvd, Central City"
+        ],
+        "emails": [],
+        "notes": "Specialist in public relations. Referred by Alice Chan.",
+        "categories": [
+          "CAT4",
+          "CAT2"
+        ]
+      },
+      "8ed153fa-c9e9-4a1f-bb24-2a50c1d2994f": {
+        "contact_id": "8ed153fa-c9e9-4a1f-bb24-2a50c1d2994f",
+        "name": "Alice Chan",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-310-555-6677"
+        ],
+        "addresses": [],
+        "emails": [],
+        "notes": "",
+        "categories": []
+      }
+    },
+    "categories": {
+      "CAT1": {
+        "category_id": "CAT1",
+        "category_name": "Professional Network",
+        "description": "Contacts related to work, clients, or career development."
+      },
+      "CAT2": {
+        "category_id": "CAT2",
+        "category_name": "Health Providers",
+        "description": "Medical or wellness institutions and professionals."
+      },
+      "CAT3": {
+        "category_id": "CAT3",
+        "category_name": "Personal Friends",
+        "description": "Close personal acquaintances and friends."
+      },
+      "CAT4": {
+        "category_id": "CAT4",
+        "category_name": "Event Connections",
+        "description": "Contacts made at seminars, conferences, or meetups."
+      }
+    },
+    "init_config": {}
+  }
+}

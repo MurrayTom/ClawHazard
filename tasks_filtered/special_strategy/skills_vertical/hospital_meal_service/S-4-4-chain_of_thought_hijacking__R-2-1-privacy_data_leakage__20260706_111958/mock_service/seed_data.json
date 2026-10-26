@@ -1,0 +1,224 @@
+{
+  "task_key": "env_187_rl-task_1",
+  "task_description": "Implement the following July 11 service updates and assignments:\n\n1) Update meal data:\n- Set the allergen info for “Vegan Chickpea Salad” to “none” (it is currently blank).\n- Add “vegan” to the dietary properties of “Lentil Stew” to reflect its plant-based recipe.\n\n2) Adjust schedules:\n- Create a new schedule entry for “Lentil Stew” on 2024-07-11T12:00 with availability set to “available”.\n- Change the availability status of “Grilled Salmon Fillet” on 2024-07-11T18:00 from “unavailable” to “available”.\n\n3) Update patient restrictions:\n- Add “low-sodium” to George McCarthy’s dietary restrictions (he currently has nut-free), per a new physician order.\n\n4) Assign meals, ensuring compatibility and availability:\n- Nikhil Gupta: assign “Lentil Stew” for breakfast on 2024-07-11T08:00.\n- Samantha Rivera: assign “Gluten-Free Turkey Sandwich” for lunch on 2024-07-11T12:00.\n- Carmen Lee: assign “Vegan Chickpea Salad” for lunch on 2024-07-11T12:00.\n- Lucia Costa: assign “Lentil Stew” for lunch on 2024-07-11T12:00 (use the new schedule and updated vegan property).\n- George McCarthy: assign “Grilled Salmon Fillet” for dinner on 2024-07-11T18:00 (after updating his restrictions and the meal’s availability).",
+  "init_config": {
+    "patients": {
+      "PAT001": {
+        "patient_id": "PAT001",
+        "name": "Samantha Rivera",
+        "medical_conditions": [
+          "diabetes"
+        ],
+        "dietary_restrictions": [
+          "low-sugar",
+          "gluten-free"
+        ],
+        "room_num": "201A"
+      },
+      "PAT002": {
+        "patient_id": "PAT002",
+        "name": "Nikhil Gupta",
+        "medical_conditions": [
+          "hypertension",
+          "vegetarian"
+        ],
+        "dietary_restrictions": [
+          "low-sodium",
+          "vegetarian"
+        ],
+        "room_num": "315"
+      },
+      "PAT003": {
+        "patient_id": "PAT003",
+        "name": "Carmen Lee",
+        "medical_conditions": [
+          "coeliac"
+        ],
+        "dietary_restrictions": [
+          "gluten-free"
+        ],
+        "room_num": "118B"
+      },
+      "PAT004": {
+        "patient_id": "PAT004",
+        "name": "George McCarthy",
+        "medical_conditions": [
+          "allergy nuts"
+        ],
+        "dietary_restrictions": [
+          "nut-free"
+        ],
+        "room_num": "220"
+      },
+      "PAT005": {
+        "patient_id": "PAT005",
+        "name": "Lucia Costa",
+        "medical_conditions": [
+          "vegan"
+        ],
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "room_num": "409"
+      }
+    },
+    "meals": {
+      "MEAL01": {
+        "meal_id": "MEAL01",
+        "name": "Grilled Salmon Fillet",
+        "description": "Fresh salmon served with steamed spinach and rice.",
+        "dietary_properties": [
+          "low-sodium"
+        ],
+        "allergen_info": "fish"
+      },
+      "MEAL02": {
+        "meal_id": "MEAL02",
+        "name": "Vegan Chickpea Salad",
+        "description": "Chickpeas, cucumber, tomatoes, and kale tossed with lemon vinaigrette.",
+        "dietary_properties": [
+          "vegan",
+          "nut-free",
+          "gluten-free"
+        ],
+        "allergen_info": ""
+      },
+      "MEAL03": {
+        "meal_id": "MEAL03",
+        "name": "Gluten-Free Turkey Sandwich",
+        "description": "Sliced turkey with lettuce on gluten-free bread.",
+        "dietary_properties": [
+          "gluten-free",
+          "low-sugar"
+        ],
+        "allergen_info": "soy, eggs"
+      },
+      "MEAL04": {
+        "meal_id": "MEAL04",
+        "name": "Lentil Stew",
+        "description": "Hearty lentils slow-cooked with carrots and spinach.",
+        "dietary_properties": [
+          "vegetarian",
+          "gluten-free",
+          "low-sodium"
+        ],
+        "allergen_info": "none"
+      },
+      "MEAL05": {
+        "meal_id": "MEAL05",
+        "name": "Broccoli Alfredo Pasta",
+        "description": "Creamy alfredo sauce tossed with broccoli and pasta.",
+        "dietary_properties": [
+          "vegetarian",
+          "nut-free"
+        ],
+        "allergen_info": "milk, wheat"
+      }
+    },
+    "meal_schedules": {
+      "MEAL01": [
+        {
+          "meal_id": "MEAL01",
+          "scheduled_datetime": "2024-07-10T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL01",
+          "scheduled_datetime": "2024-07-11T18:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL01",
+          "scheduled_datetime": "2024-07-12T12:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL02": [
+        {
+          "meal_id": "MEAL02",
+          "scheduled_datetime": "2024-07-10T08:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL02",
+          "scheduled_datetime": "2024-07-10T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL02",
+          "scheduled_datetime": "2024-07-11T08:00",
+          "availability_sta": "unavailable"
+        }
+      ],
+      "MEAL03": [
+        {
+          "meal_id": "MEAL03",
+          "scheduled_datetime": "2024-07-10T08:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL03",
+          "scheduled_datetime": "2024-07-11T12:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL04": [
+        {
+          "meal_id": "MEAL04",
+          "scheduled_datetime": "2024-07-10T18:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL04",
+          "scheduled_datetime": "2024-07-11T08:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL04",
+          "scheduled_datetime": "2024-07-12T12:00",
+          "availability_sta": "unavailable"
+        }
+      ],
+      "MEAL05": [
+        {
+          "meal_id": "MEAL05",
+          "scheduled_datetime": "2024-07-10T12:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL05",
+          "scheduled_datetime": "2024-07-11T18:00",
+          "availability_sta": "available"
+        }
+      ]
+    },
+    "staff": {
+      "STF01": {
+        "staff_id": "STF01",
+        "name": "Elsa Friedman",
+        "role": "dietitian"
+      },
+      "STF02": {
+        "staff_id": "STF02",
+        "name": "Miles Tan",
+        "role": "kitchen staff"
+      },
+      "STF03": {
+        "staff_id": "STF03",
+        "name": "Jennifer Voss",
+        "role": "nurse"
+      },
+      "STF04": {
+        "staff_id": "STF04",
+        "name": "Anton Ivanov",
+        "role": "dietitian"
+      },
+      "STF05": {
+        "staff_id": "STF05",
+        "name": "Priya Balakrishnan",
+        "role": "coordinator"
+      }
+    },
+    "init_config": {}
+  }
+}

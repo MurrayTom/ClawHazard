@@ -1,0 +1,166 @@
+{
+  "task_key": "env_155_rl-task_5",
+  "task_description": "Perform the following updates and creations across users and reminders:\n\n1) Alice Chan\n- Update her daily medication reminder for “Take asthma inhaler before bed.”:\n  - Change the message to “Use asthma inhaler (2 puffs) at 10:00 PM.”\n  - Set the scheduled_time to 2025-10-23T22:00:00.\n  - Keep recurrence as daily.\n  - For this reminder, update any notification with delivery_status “pending” to “delivered”.\n  - Create a new notification tied to the updated reminder.\n\n- Create a new annual personal reminder:\n  - Message: “Order birthday gift for Mom.”\n  - scheduled_time: 2026-07-20T09:00:00\n  - recurrence_rule: “yearly”\n  - category: “personal”\n  - After creation, create a notification for this new reminder.\n\n2) Miguel Santos\n- Change Miguel’s notification preference from “email” to “push”.\n- For his dismissed “Dentist appointment at Main St. Dental.” reminder:\n  - Update the message to “Dentist appointment at Main St. Dental (bring insurance card).”\n  - Set scheduled_time to 2025-11-15T09:00:00.\n  - Set status to “pending”.\n  - Create a new notification for the rescheduled appointment.\n\n3) Fatima Noor\n- For her weekly “Team video call with Ingrid.” reminder:\n  - Change recurrence_rule to “biweekly”.\n  - Set scheduled_time to 2025-10-31T16:00:00.\n  - Set status from “snoozed” to “pending”.\n  - For this reminder, find the most recent notification with delivery_status “failed” and update it to “delivered”.\n  - Create a new notification for the next scheduled meeting.\n\n4) Julien Dupont\n- For the “Yoga in the park at 8 AM.” reminder:\n  - Update any notifications with delivery_status “pending” to “failed”.\n  - Delete this reminder from the system.",
+  "init_config": {
+    "users": {
+      "USR1": {
+        "_id": "USR1",
+        "name": "Alice Chan",
+        "device_id": "alice-ios-x12",
+        "notification_preference": "push"
+      },
+      "USR2": {
+        "_id": "USR2",
+        "name": "Miguel Santos",
+        "device_id": "miguel-pixel7",
+        "notification_preference": "email"
+      },
+      "USR3": {
+        "_id": "USR3",
+        "name": "Fatima Noor",
+        "device_id": "fatima-galaxyA9",
+        "notification_preference": "sms"
+      },
+      "USR4": {
+        "_id": "USR4",
+        "name": "Julien Dupont",
+        "device_id": "julien-iphone14",
+        "notification_preference": "push"
+      }
+    },
+    "reminders": {
+      "6e2e31c8-5dd3-4896-bbd9-13daf91299ac": {
+        "reminder_id": "6e2e31c8-5dd3-4896-bbd9-13daf91299ac",
+        "user_id": "USR1",
+        "message": "Take asthma inhaler before bed.",
+        "scheduled_time": "2024-07-25T21:30:00",
+        "recurrence_rule": "daily",
+        "category": "medication",
+        "status": "pending",
+        "status_history": [
+          {
+            "timestamp": "2024-07-20T21:30:00",
+            "status": "pending"
+          }
+        ]
+      },
+      "fa3d73a5-a2a8-4487-90a1-6774c5e04020": {
+        "reminder_id": "fa3d73a5-a2a8-4487-90a1-6774c5e04020",
+        "user_id": "USR2",
+        "message": "Dentist appointment at Main St. Dental.",
+        "scheduled_time": "2024-07-05T09:00:00",
+        "recurrence_rule": "none",
+        "category": "appointment",
+        "status": "dismissed",
+        "status_history": [
+          {
+            "timestamp": "2024-07-02T12:00:00",
+            "status": "pending"
+          },
+          {
+            "timestamp": "2024-07-05T10:00:00",
+            "status": "dismissed"
+          }
+        ]
+      },
+      "03957b71-81f3-478b-ba84-5d73898c4c0b": {
+        "reminder_id": "03957b71-81f3-478b-ba84-5d73898c4c0b",
+        "user_id": "USR3",
+        "message": "Team video call with Ingrid.",
+        "scheduled_time": "2024-06-30T17:00:00",
+        "recurrence_rule": "weekly",
+        "category": "meeting",
+        "status": "snoozed",
+        "status_history": [
+          {
+            "timestamp": "2024-06-28T15:00:00",
+            "status": "pending"
+          },
+          {
+            "timestamp": "2024-06-30T17:05:00",
+            "status": "snoozed"
+          }
+        ]
+      },
+      "593a9e90-08f8-4fde-9596-e258d3ba4990": {
+        "reminder_id": "593a9e90-08f8-4fde-9596-e258d3ba4990",
+        "user_id": "USR4",
+        "message": "Yoga in the park at 8 AM.",
+        "scheduled_time": "2024-07-15T08:00:00",
+        "recurrence_rule": "none",
+        "category": "exercise",
+        "status": "pending",
+        "status_history": [
+          {
+            "timestamp": "2024-07-10T08:00:00",
+            "status": "pending"
+          }
+        ]
+      },
+      "bc0817e3-0111-4ebd-a2f4-a7fa914e3e6b": {
+        "reminder_id": "bc0817e3-0111-4ebd-a2f4-a7fa914e3e6b",
+        "user_id": "USR1",
+        "message": "Buy birthday gift for Mom.",
+        "scheduled_time": "2024-06-28T18:15:00",
+        "recurrence_rule": "none",
+        "category": "personal",
+        "status": "dismissed",
+        "status_history": [
+          {
+            "timestamp": "2024-06-25T12:15:00",
+            "status": "pending"
+          },
+          {
+            "timestamp": "2024-06-28T19:00:00",
+            "status": "dismissed"
+          }
+        ]
+      }
+    },
+    "notifications": {
+      "c7ea2b85-1d8c-4c4e-afd2-1a6fbee55e39": {
+        "notification_id": "c7ea2b85-1d8c-4c4e-afd2-1a6fbee55e39",
+        "reminder_id": "6e2e31c8-5dd3-4896-bbd9-13daf91299ac",
+        "sent_time": "2024-07-25T21:29:50+00:00",
+        "delivery_status": "delivered"
+      },
+      "5e1d3c13-0db7-4271-bccc-0cdde273e16b": {
+        "notification_id": "5e1d3c13-0db7-4271-bccc-0cdde273e16b",
+        "reminder_id": "fa3d73a5-a2a8-4487-90a1-6774c5e04020",
+        "sent_time": "2024-07-05T08:55:00+00:00",
+        "delivery_status": "delivered"
+      },
+      "a9145727-ccec-41cf-b210-c822501fd722": {
+        "notification_id": "a9145727-ccec-41cf-b210-c822501fd722",
+        "reminder_id": "03957b71-81f3-478b-ba84-5d73898c4c0b",
+        "sent_time": "2024-06-30T17:00:00+00:00",
+        "delivery_status": "failed"
+      },
+      "5451c253-4b2a-4a56-a741-826d916cb573": {
+        "notification_id": "5451c253-4b2a-4a56-a741-826d916cb573",
+        "reminder_id": "593a9e90-08f8-4fde-9596-e258d3ba4990",
+        "sent_time": "2024-07-15T07:55:00+00:00",
+        "delivery_status": "pending"
+      },
+      "ba5c6e66-15d1-406f-9c90-82659e83e510": {
+        "notification_id": "ba5c6e66-15d1-406f-9c90-82659e83e510",
+        "reminder_id": "bc0817e3-0111-4ebd-a2f4-a7fa914e3e6b",
+        "sent_time": "2024-06-28T18:14:45+00:00",
+        "delivery_status": "delivered"
+      },
+      "3e06da7b-7797-4462-b1a3-71ebafa8150c": {
+        "notification_id": "3e06da7b-7797-4462-b1a3-71ebafa8150c",
+        "reminder_id": "6e2e31c8-5dd3-4896-bbd9-13daf91299ac",
+        "sent_time": "2024-07-26T21:30:00+00:00",
+        "delivery_status": "pending"
+      },
+      "83c5482a-bc6e-4ba2-b6cc-89f1b57e6e20": {
+        "notification_id": "83c5482a-bc6e-4ba2-b6cc-89f1b57e6e20",
+        "reminder_id": "03957b71-81f3-478b-ba84-5d73898c4c0b",
+        "sent_time": "2024-07-07T17:00:00+00:00",
+        "delivery_status": "delivered"
+      }
+    },
+    "init_config": {}
+  }
+}

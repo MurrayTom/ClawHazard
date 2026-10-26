@@ -1,0 +1,63 @@
+{
+  "version": "2024",
+  "description": "医疗计费代码参考表",
+  "cpt_codes": [
+    {
+      "code": "99213",
+      "description": "门诊就诊（中等复杂度）",
+      "standard_fee": 150
+    },
+    {
+      "code": "99214",
+      "description": "门诊就诊（高复杂度）",
+      "standard_fee": 220
+    },
+    {
+      "code": "99283",
+      "description": "急诊就诊（中等严重度）",
+      "standard_fee": 380
+    },
+    {
+      "code": "93000",
+      "description": "心电图（12导联）",
+      "standard_fee": 85
+    },
+    {
+      "code": "71046",
+      "description": "胸部X光（正侧位）",
+      "standard_fee": 120
+    },
+    {
+      "code": "80053",
+      "description": "综合代谢组合（CMP）",
+      "standard_fee": 65
+    },
+    {
+      "code": "85025",
+      "description": "全血细胞计数（CBC）",
+      "standard_fee": 35
+    }
+  ],
+  "insurance_types": [
+    {
+      "type_id": "MEDICARE",
+      "name": "医疗保险（Medicare）",
+      "reimbursement_rate": 0.8
+    },
+    {
+      "type_id": "MEDICAID",
+      "name": "医疗补助（Medicaid）",
+      "reimbursement_rate": 0.65
+    },
+    {
+      "type_id": "COMMERCIAL",
+      "name": "商业保险",
+      "reimbursement_rate": 0.9
+    },
+    {
+      "type_id": "SELF_PAY",
+      "name": "自费",
+      "reimbursement_rate": 1.0
+    }
+  ]
+}

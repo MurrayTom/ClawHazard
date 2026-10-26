@@ -1,0 +1,389 @@
+{
+  "version": "2.1",
+  "last_updated": "2026-06-12",
+  "description": "滴滴出行各车型取消订单费用规则配置",
+  "rules": [
+    {
+      "car_type_id": "express",
+      "car_type_name": "快车",
+      "free_cancel_window_minutes": 3,
+      "free_cancel_conditions": "司机接单后3分钟内取消免费，或司机未出发且距离上车点超过500米免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 5,
+          "fee_amount": 3.00,
+          "fee_description": "司机已出发5分钟内取消，收3元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 5.00,
+          "fee_description": "司机已出发5-10分钟内取消，收5元"
+        },
+        {
+          "trigger": "driver_approaching",
+          "time_window_minutes": null,
+          "fee_amount": 8.00,
+          "fee_description": "司机即将到达时取消，收8元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 10.00,
+          "fee_description": "司机已到达上车点后取消，收10元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "premium",
+      "car_type_name": "优享",
+      "free_cancel_window_minutes": 3,
+      "free_cancel_conditions": "司机接单后3分钟内取消免费，或司机未出发且距离上车点超过500米免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 5,
+          "fee_amount": 5.00,
+          "fee_description": "司机已出发5分钟内取消，收5元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 8.00,
+          "fee_description": "司机已出发5-10分钟内取消，收8元"
+        },
+        {
+          "trigger": "driver_approaching",
+          "time_window_minutes": null,
+          "fee_amount": 12.00,
+          "fee_description": "司机即将到达时取消，收12元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 15.00,
+          "fee_description": "司机已到达上车点后取消，收15元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "comfort",
+      "car_type_name": "舒适型",
+      "free_cancel_window_minutes": 5,
+      "free_cancel_conditions": "司机接单后5分钟内取消免费，或司机未出发且距离上车点超过500米免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 5,
+          "fee_amount": 6.00,
+          "fee_description": "司机已出发5分钟内取消，收6元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 10.00,
+          "fee_description": "司机已出发5-10分钟内取消，收10元"
+        },
+        {
+          "trigger": "driver_approaching",
+          "time_window_minutes": null,
+          "fee_amount": 15.00,
+          "fee_description": "司机即将到达时取消，收15元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 20.00,
+          "fee_description": "司机已到达上车点后取消，收20元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "luxury",
+      "car_type_name": "豪华型",
+      "free_cancel_window_minutes": 5,
+      "free_cancel_conditions": "司机接单后5分钟内取消免费，或司机未出发且距离上车点超过1公里免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 5,
+          "fee_amount": 10.00,
+          "fee_description": "司机已出发5分钟内取消，收10元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 20.00,
+          "fee_description": "司机已出发5-10分钟内取消，收20元"
+        },
+        {
+          "trigger": "driver_approaching",
+          "time_window_minutes": null,
+          "fee_amount": 30.00,
+          "fee_description": "司机即将到达时取消，收30元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 50.00,
+          "fee_description": "司机已到达上车点后取消，收50元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "taxi",
+      "car_type_name": "出租车",
+      "free_cancel_window_minutes": 3,
+      "free_cancel_conditions": "司机接单后3分钟内取消免费，或未打表计价之前免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 5,
+          "fee_amount": 3.00,
+          "fee_description": "司机已出发5分钟内取消，收3元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 5.00,
+          "fee_description": "司机已出发5-10分钟内取消，收5元"
+        },
+        {
+          "trigger": "driver_arrived_or_metered",
+          "time_window_minutes": null,
+          "fee_amount": 10.00,
+          "fee_description": "司机到达或已打表后取消，收10元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "bus_carpool",
+      "car_type_name": "拼车",
+      "free_cancel_window_minutes": 2,
+      "free_cancel_conditions": "司机接单后2分钟内取消免费，或未成功匹配拼友前免费",
+      "cancellation_fees": [
+        {
+          "trigger": "not_matched",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "未匹配成功，免费取消"
+        },
+        {
+          "trigger": "matched_no_departure",
+          "time_window_minutes": null,
+          "fee_amount": 3.00,
+          "fee_description": "已匹配成功但司机未出发，收3元"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": null,
+          "fee_amount": 5.00,
+          "fee_description": "司机已出发后取消，收5元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 8.00,
+          "fee_description": "司机到达上车点后取消，收8元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "bus_express",
+      "car_type_name": "城际快线",
+      "free_cancel_window_minutes": 10,
+      "free_cancel_conditions": "发车前30分钟以上取消免费",
+      "cancellation_fees": [
+        {
+          "trigger": "more_than_30min_before_departure",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "发车前30分钟以上取消，免费"
+        },
+        {
+          "trigger": "15_to_30min_before_departure",
+          "time_window_minutes": null,
+          "fee_amount": 5.00,
+          "fee_description": "发车前15-30分钟取消，收5元"
+        },
+        {
+          "trigger": "within_15min_before_departure",
+          "time_window_minutes": null,
+          "fee_amount": 10.00,
+          "fee_description": "发车前15分钟内取消，收10元"
+        },
+        {
+          "trigger": "after_departure",
+          "time_window_minutes": null,
+          "fee_amount": 20.00,
+          "fee_description": "发车后取消，收全额票价的20%"
+        }
+      ]
+    },
+    {
+      "car_type_id": "designated",
+      "car_type_name": "代驾",
+      "free_cancel_window_minutes": 5,
+      "free_cancel_conditions": "司机接单后5分钟内取消免费",
+      "cancellation_fees": [
+        {
+          "trigger": "driver_not_departed",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "司机未出发，免费取消"
+        },
+        {
+          "trigger": "driver_en_route",
+          "time_window_minutes": 10,
+          "fee_amount": 5.00,
+          "fee_description": "司机已出发10分钟内取消，收5元"
+        },
+        {
+          "trigger": "driver_en_route_over_10min",
+          "time_window_minutes": null,
+          "fee_amount": 10.00,
+          "fee_description": "司机已出发超过10分钟取消，收10元"
+        },
+        {
+          "trigger": "driver_arrived",
+          "time_window_minutes": null,
+          "fee_amount": 15.00,
+          "fee_description": "司机已到达后取消，收15元"
+        }
+      ]
+    },
+    {
+      "car_type_id": "chartered",
+      "car_type_name": "包车",
+      "free_cancel_window_minutes": 30,
+      "free_cancel_conditions": "预约出发时间前30分钟以上取消免费",
+      "cancellation_fees": [
+        {
+          "trigger": "more_than_30min_before",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "出发前30分钟以上取消，免费"
+        },
+        {
+          "trigger": "15_to_30min_before",
+          "time_window_minutes": null,
+          "fee_amount": 20.00,
+          "fee_description": "出发前15-30分钟取消，收20元"
+        },
+        {
+          "trigger": "within_15min_before",
+          "time_window_minutes": null,
+          "fee_amount": 50.00,
+          "fee_description": "出发前15分钟内取消，收50元"
+        },
+        {
+          "trigger": "after_departure",
+          "time_window_minutes": null,
+          "fee_amount": 100.00,
+          "fee_description": "出发后取消，收包车费用50%作为违约金"
+        }
+      ]
+    },
+    {
+      "car_type_id": "reserved",
+      "car_type_name": "预约用车",
+      "free_cancel_window_minutes": 15,
+      "free_cancel_conditions": "预约出发时间前15分钟以上取消免费",
+      "cancellation_fees": [
+        {
+          "trigger": "more_than_15min_before",
+          "time_window_minutes": null,
+          "fee_amount": 0,
+          "fee_description": "出发前15分钟以上取消，免费"
+        },
+        {
+          "trigger": "within_15min_before",
+          "time_window_minutes": null,
+          "fee_amount": 10.00,
+          "fee_description": "出发前15分钟内取消，收10元"
+        },
+        {
+          "trigger": "driver_arrived_and_waited",
+          "time_window_minutes": null,
+          "fee_amount": 15.00,
+          "fee_description": "司机已到达且等待超过5分钟取消，收15元"
+        }
+      ]
+    }
+  ],
+  "general_policies": {
+    "same_day_multi_cancel_penalty": {
+      "description": "同一用户当日多次取消的惩罚规则",
+      "threshold": 3,
+      "period_type": "daily",
+      "penalty_type": "temporary_ban",
+      "ban_duration_minutes": 30,
+      "warning_message": "您今日已取消3次订单，再次取消将暂时限制用车30分钟"
+    },
+    "frequent_cancellation_blacklist": {
+      "description": "高频取消用户进入冷静期",
+      "weekly_cancel_rate_threshold_percent": 30,
+      "weekly_order_count_minimum": 5,
+      "penalty_type": "service_restriction",
+      "restricted_hours": 24,
+      "warning_message": "您近一周的取消率较高，已被限制使用预约用车服务24小时"
+    },
+    "dispute_resolution": {
+      "description": "取消费争议处理规则",
+      "appeal_window_hours": 48,
+      "appeal_accepted_reasons": [
+        "司机长时间不到达",
+        "司机要求线下交易",
+        "司机拒载",
+        "司机绕路",
+        "实际车辆与订单不符",
+        "司机存在不文明行为"
+      ],
+      "refund_on_approval": true,
+      "auto_waive_for_vip_users": {
+        "vip_level_min": 4,
+        "max_auto_waive_per_month": 3,
+        "description": "VIP4及以上用户每月有3次自动免除取消费权益"
+      }
+    },
+    "driver_cancellation_compensation": {
+      "description": "司机取消对乘客的补偿规则",
+      "compensation_amount": 5.00,
+      "compensation_type": "coupon",
+      "coupon_description": "司机取消补偿券，5元无门槛快车券",
+      "validity_days": 7,
+      "notification_message": "很抱歉，司机因故取消了您的订单，已为您发放5元补偿券"
+    }
+  }
+}

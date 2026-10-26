@@ -1,0 +1,129 @@
+{
+  "task_key": "env_169_rl-task_4",
+  "task_description": "Triage and close all currently pending disputes by assigning a resolver, updating their resolution statuses with clear details, and timestamping the actions.\n\nScope:\n- Disputes to process: dsp-c913f70a-0a5b-44c7 (BILL-1001) and dsp-4cdaf638-affe-4b3d (BILL-1002).\n- Use authorized resolver: Harriet Young (operator_id: op-harriet-young).\n\nRequired actions:\n1) For dispute dsp-c913f70a-0a5b-44c7 (BILL-1001, reason: “The subscription fee was billed twice for March.”):\n   - Validate the dispute’s link to its billing item.\n   - Confirm the allowed resolution status values, then set resolution_status to “accepted”.\n   - Add resolution_details explaining: “Duplicate March subscription charge reversed; credit of $249.99 applied to account; upcoming invoice corrected.”\n   - Assign resolver_id to op-harriet-young.\n   - Record the resolution timestamp.\n\n2) For dispute dsp-4cdaf638-affe-4b3d (BILL-1002, reason: “Incorrect amount charged for hardware replacement.”):\n   - Validate the dispute’s link to its billing item and review existing disputes for BILL-1002 (note: dsp-f9a4e458-e1fe-43ab is already resolved with a partial refund for missed service).\n   - Confirm the allowed resolution status values, then set resolution_status to “rejected”.\n   - Add resolution_details indicating: the dispute reason mismatches the billed item (BILL-1002 is a hardware maintenance fee for $87.50), reference the prior resolved dispute dsp-f9a4e458-e1fe-43ab on the same item, and instruct the submitter to open a new dispute referencing the correct billing item if hardware replacement charges are in question.\n   - Assign resolver_id to op-harriet-young.\n   - Record the resolution timestamp.\n\nConstraints:\n- Only use allowed resolution_status values.\n- Ensure operator authorization is respected and each update is properly timestamped.\n- Do not modify any other disputes outside the two specified pending records.",
+  "init_config": {
+    "billing_items": {
+      "BILL-1001": {
+        "billing_item_id": "BILL-1001",
+        "amount": 249.99,
+        "description": "Monthly service subscription for Central Plaza.",
+        "billing_date": "2024-03-10"
+      },
+      "BILL-1002": {
+        "billing_item_id": "BILL-1002",
+        "amount": 87.5,
+        "description": "Hardware maintenance fee.",
+        "billing_date": "2024-04-15"
+      },
+      "BILL-1003": {
+        "billing_item_id": "BILL-1003",
+        "amount": 1299.0,
+        "description": "Annual cloud service renewal.",
+        "billing_date": "2023-12-01"
+      },
+      "BILL-1004": {
+        "billing_item_id": "BILL-1004",
+        "amount": 15.32,
+        "description": "Overage charge for data usage.",
+        "billing_date": "2024-05-02"
+      },
+      "BILL-1005": {
+        "billing_item_id": "BILL-1005",
+        "amount": 587.25,
+        "description": "One-time setup fee for Lakeshore location.",
+        "billing_date": "2024-01-19"
+      }
+    },
+    "disputes": {
+      "dsp-c913f70a-0a5b-44c7": {
+        "dispute_id": "dsp-c913f70a-0a5b-44c7",
+        "billing_item_id": "BILL-1001",
+        "dispute_reason": "The subscription fee was billed twice for March.",
+        "submitter_id": "usr-lindsey-ren",
+        "submit_date": "2024-03-12",
+        "resolution_status": "pending",
+        "resolution_details": "",
+        "resolver_id": "",
+        "resolution_date": ""
+      },
+      "dsp-f9a4e458-e1fe-43ab": {
+        "dispute_id": "dsp-f9a4e458-e1fe-43ab",
+        "billing_item_id": "BILL-1002",
+        "dispute_reason": "Service was not provided on maintenance day.",
+        "submitter_id": "usr-carlos-kim",
+        "submit_date": "2024-04-17",
+        "resolution_status": "resolved",
+        "resolution_details": "Partial refund issued for missed service.",
+        "resolver_id": "op-jayne-roberts",
+        "resolution_date": "2024-04-19T15:12:34"
+      },
+      "dsp-15fac687-90e1-45b8": {
+        "dispute_id": "dsp-15fac687-90e1-45b8",
+        "billing_item_id": "BILL-1003",
+        "dispute_reason": "Renewal date does not match contract terms.",
+        "submitter_id": "usr-arvind-singh",
+        "submit_date": "2023-12-03",
+        "resolution_status": "accepted",
+        "resolution_details": "Corrected renewal date as per agreement.",
+        "resolver_id": "op-harriet-young",
+        "resolution_date": "2023-12-05T09:47:21"
+      },
+      "dsp-41ffd2b7-0fb4-4408": {
+        "dispute_id": "dsp-41ffd2b7-0fb4-4408",
+        "billing_item_id": "BILL-1004",
+        "dispute_reason": "Disputing unexpected data overage charges for May.",
+        "submitter_id": "usr-samantha-levy",
+        "submit_date": "2024-05-03",
+        "resolution_status": "rejected",
+        "resolution_details": "Usage records confirm charges are correct.",
+        "resolver_id": "op-jayne-roberts",
+        "resolution_date": "2024-05-05T11:01:59"
+      },
+      "dsp-8ac74474-723e-4fbb": {
+        "dispute_id": "dsp-8ac74474-723e-4fbb",
+        "billing_item_id": "BILL-1005",
+        "dispute_reason": "Setup fee was supposed to be waived for Lakeshore.",
+        "submitter_id": "usr-frank-oda",
+        "submit_date": "2024-01-22",
+        "resolution_status": "in_review",
+        "resolution_details": "Awaiting supporting documents from customer.",
+        "resolver_id": "op-harriet-young",
+        "resolution_date": ""
+      },
+      "dsp-4cdaf638-affe-4b3d": {
+        "dispute_id": "dsp-4cdaf638-affe-4b3d",
+        "billing_item_id": "BILL-1002",
+        "dispute_reason": "Incorrect amount charged for hardware replacement.",
+        "submitter_id": "usr-zhi-liang",
+        "submit_date": "2024-04-16",
+        "resolution_status": "pending",
+        "resolution_details": "",
+        "resolver_id": "",
+        "resolution_date": ""
+      }
+    },
+    "operators": {
+      "op-jayne-roberts": {
+        "operator_id": "op-jayne-roberts",
+        "name": "Jayne Roberts",
+        "role": "resolver"
+      },
+      "op-harriet-young": {
+        "operator_id": "op-harriet-young",
+        "name": "Harriet Young",
+        "role": "resolver"
+      },
+      "op-matt-davies": {
+        "operator_id": "op-matt-davies",
+        "name": "Matt Davies",
+        "role": "manager"
+      },
+      "op-lee-salem": {
+        "operator_id": "op-lee-salem",
+        "name": "Lee Salem",
+        "role": "viewer"
+      }
+    },
+    "init_config": {}
+  }
+}

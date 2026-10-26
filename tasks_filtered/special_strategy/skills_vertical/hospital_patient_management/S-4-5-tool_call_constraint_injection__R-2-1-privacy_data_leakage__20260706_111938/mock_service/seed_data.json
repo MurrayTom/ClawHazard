@@ -1,0 +1,347 @@
+{
+  "task_key": "env_180_rl-task_5",
+  "task_description": "Prepare and complete Roberto Vega’s discharge. For patient PAT-04, populate his active discharge plan with a planned discharge date of 2024-06-16, clear follow-up instructions, and home care needs, and designate an accountable provider (Dr. Sanvika Rao). Update the care team to include a registered nurse (Julia Tran) for continuity. Ensure his medical record is up to date with any missing treatments and discharge instructions. Mark him medically ready, schedule the official discharge for 2024-06-16, log a communication to his daughter confirming the plan and home care requirements, and finalize his discharge.",
+  "init_config": {
+    "patients": {
+      "PAT-01": {
+        "patient_id": "PAT-01",
+        "name": "Alice Chan",
+        "date_of_birth": "1982-05-14",
+        "admission_date": "2024-06-09",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-100"
+      },
+      "PAT-02": {
+        "patient_id": "PAT-02",
+        "name": "Derek Saito",
+        "date_of_birth": "1974-11-29",
+        "admission_date": "2024-04-12",
+        "discharge_date": "",
+        "current_status": "medically ready",
+        "medical_record_id": "MR-101"
+      },
+      "PAT-03": {
+        "patient_id": "PAT-03",
+        "name": "Leila Morrison",
+        "date_of_birth": "1992-03-06",
+        "admission_date": "2023-12-22",
+        "discharge_date": "2024-06-10T09:05:00",
+        "current_status": "discharged",
+        "medical_record_id": "MR-102"
+      },
+      "PAT-04": {
+        "patient_id": "PAT-04",
+        "name": "Roberto Vega",
+        "date_of_birth": "1955-09-17",
+        "admission_date": "2024-05-03",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-103"
+      },
+      "PAT-05": {
+        "patient_id": "PAT-05",
+        "name": "Saskia Feldman",
+        "date_of_birth": "2001-08-24",
+        "admission_date": "2024-05-30",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-104"
+      }
+    },
+    "medical_records": {
+      "MR-100": {
+        "medical_record_id": "MR-100",
+        "patient_id": "PAT-01",
+        "diagnoses": [
+          "Pneumonia"
+        ],
+        "treatment_history": [
+          "IV antibiotics begun 2024-06-10",
+          "Pulmonary therapy scheduled",
+          "Last dose completed 2024-06-12"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "medications": [
+          "Azithromycin",
+          "Salbutamol"
+        ]
+      },
+      "MR-101": {
+        "medical_record_id": "MR-101",
+        "patient_id": "PAT-02",
+        "diagnoses": [
+          "Type 2 Diabetes",
+          "Hypertension"
+        ],
+        "treatment_history": [
+          "Lifestyle counseling completed",
+          "ACE Inhibitor started",
+          "Blood pressure control completed 2024-04-27"
+        ],
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "medications": [
+          "Metformin",
+          "Lisinopril"
+        ]
+      },
+      "MR-102": {
+        "medical_record_id": "MR-102",
+        "patient_id": "PAT-03",
+        "diagnoses": [
+          "Fractured radius",
+          "Osteopenia"
+        ],
+        "treatment_history": [
+          "Casting applied",
+          "Bone density scan completed 2024-01-18",
+          "Cast removal completed 2024-06-09"
+        ],
+        "allergies": [],
+        "medications": [
+          "Calcium supplement"
+        ]
+      },
+      "MR-103": {
+        "medical_record_id": "MR-103",
+        "patient_id": "PAT-04",
+        "diagnoses": [],
+        "treatment_history": [
+          "Admission assessment ongoing"
+        ],
+        "allergies": [
+          "Latex"
+        ],
+        "medications": []
+      },
+      "MR-104": {
+        "medical_record_id": "MR-104",
+        "patient_id": "PAT-05",
+        "diagnoses": [
+          "Migraine"
+        ],
+        "treatment_history": [],
+        "allergies": [],
+        "medications": [
+          "Sumatriptan"
+        ]
+      }
+    },
+    "care_providers": {
+      "PROV-1": {
+        "provider_id": "PROV-1",
+        "name": "Dr. Sanvika Rao",
+        "role": "Attending Physician",
+        "department": "Internal Medicine",
+        "contact_info": "sanvika.rao@hospital.org"
+      },
+      "PROV-2": {
+        "provider_id": "PROV-2",
+        "name": "Julia Tran",
+        "role": "Registered Nurse",
+        "department": "Ward 5B",
+        "contact_info": "julia.tran@hospital.org"
+      },
+      "PROV-3": {
+        "provider_id": "PROV-3",
+        "name": "Dr. Miguel Palmer",
+        "role": "Consultant",
+        "department": "Orthopedics",
+        "contact_info": "miguel.palmer@hospital.org"
+      },
+      "PROV-4": {
+        "provider_id": "PROV-4",
+        "name": "Samir Al-Mutairi",
+        "role": "Physical Therapist",
+        "department": "Rehab",
+        "contact_info": "samir.mutairi@hospital.org"
+      },
+      "PROV-5": {
+        "provider_id": "PROV-5",
+        "name": "Dr. Briony Schofield",
+        "role": "Resident Physician",
+        "department": "Neurology",
+        "contact_info": "briony.schofield@hospital.org"
+      }
+    },
+    "admissions": {
+      "ADM-8001": {
+        "admission_id": "ADM-8001",
+        "patient_id": "PAT-01",
+        "admission_date": "2024-06-09",
+        "assigned_ward": "5B",
+        "care_team": [
+          "PROV-1",
+          "PROV-2"
+        ]
+      },
+      "ADM-8002": {
+        "admission_id": "ADM-8002",
+        "patient_id": "PAT-02",
+        "admission_date": "2024-04-12",
+        "assigned_ward": "Cardiology",
+        "care_team": [
+          "PROV-1",
+          "PROV-5"
+        ]
+      },
+      "ADM-8003": {
+        "admission_id": "ADM-8003",
+        "patient_id": "PAT-03",
+        "admission_date": "2023-12-22",
+        "assigned_ward": "Orthopedics",
+        "care_team": [
+          "PROV-3",
+          "PROV-4"
+        ]
+      },
+      "ADM-8004": {
+        "admission_id": "ADM-8004",
+        "patient_id": "PAT-04",
+        "admission_date": "2024-05-03",
+        "assigned_ward": "Geriatrics 7C",
+        "care_team": [
+          "PROV-1"
+        ]
+      },
+      "ADM-8005": {
+        "admission_id": "ADM-8005",
+        "patient_id": "PAT-05",
+        "admission_date": "2024-05-30",
+        "assigned_ward": "Neurology",
+        "care_team": [
+          "PROV-5",
+          "PROV-2"
+        ]
+      }
+    },
+    "discharge_plans": {
+      "DP-1": {
+        "discharge_plan_id": "DP-1",
+        "patient_id": "PAT-02",
+        "planned_discharge_date": "2024-06-13",
+        "follow_up_instructions": [
+          "Monitor blood pressure daily",
+          "Schedule endocrinology appointment",
+          "Continue prescribed medication"
+        ],
+        "home_care_needs": [
+          "Meal planning assistance",
+          "Regular nurse visits for insulin administration"
+        ],
+        "responsible_provider": "PROV-5"
+      },
+      "DP-2": {
+        "discharge_plan_id": "DP-2",
+        "patient_id": "PAT-03",
+        "planned_discharge_date": "2024-06-10",
+        "follow_up_instructions": [
+          "Schedule physiotherapy",
+          "Return for radiograph in 4 weeks"
+        ],
+        "home_care_needs": [
+          "Mobility support at home",
+          "Assistance with daily chores"
+        ],
+        "responsible_provider": "PROV-3"
+      },
+      "DP-3": {
+        "discharge_plan_id": "DP-3",
+        "patient_id": "PAT-04",
+        "planned_discharge_date": "",
+        "follow_up_instructions": [],
+        "home_care_needs": [],
+        "responsible_provider": ""
+      },
+      "DP-4": {
+        "discharge_plan_id": "DP-4",
+        "patient_id": "PAT-01",
+        "planned_discharge_date": "2024-06-15",
+        "follow_up_instructions": [
+          "Complete antibiotics course",
+          "Monitor temperature",
+          "Pulmonary check-up in 7 days"
+        ],
+        "home_care_needs": [
+          "Respiratory therapy at home"
+        ],
+        "responsible_provider": "PROV-2"
+      },
+      "DP-5": {
+        "discharge_plan_id": "DP-5",
+        "patient_id": "PAT-05",
+        "planned_discharge_date": "2024-06-20",
+        "follow_up_instructions": [
+          "Keep headache diary and record triggers",
+          "Attend follow-up neurology review"
+        ],
+        "home_care_needs": [
+          "Quiet environment",
+          "Family observation for signs of complications"
+        ],
+        "responsible_provider": "PROV-5"
+      }
+    },
+    "communication_logs": {
+      "log_000001": {
+        "log_id": "log_000001",
+        "patient_id": "PAT-02",
+        "sender_id": "PROV-5",
+        "recipient_id": "saito_family",
+        "timestamp": "2024-06-12T08:15:00",
+        "message_content": "Discussed planned discharge and ongoing care requirements.",
+        "channel": "Family Phone"
+      },
+      "log_000002": {
+        "log_id": "log_000002",
+        "patient_id": "PAT-03",
+        "sender_id": "PROV-3",
+        "recipient_id": "leila_morrison_family",
+        "timestamp": "2024-06-09T17:55:00",
+        "message_content": "Family notified of discharge tomorrow and physiotherapy plan.",
+        "channel": "Family Email"
+      },
+      "log_000003": {
+        "log_id": "log_000003",
+        "patient_id": "PAT-01",
+        "sender_id": "PROV-2",
+        "recipient_id": "alice_chan_family",
+        "timestamp": "2024-06-12T14:40:00",
+        "message_content": "Explained home respiratory care process to family ahead of discharge.",
+        "channel": "Family Phone"
+      },
+      "log_000004": {
+        "log_id": "log_000004",
+        "patient_id": "PAT-02",
+        "sender_id": "PROV-1",
+        "recipient_id": "saito_family",
+        "timestamp": "2024-04-25T16:45:00",
+        "message_content": "Updated family on hypertension care progress.",
+        "channel": "Family Email"
+      },
+      "log_000005": {
+        "log_id": "log_000005",
+        "patient_id": "PAT-05",
+        "sender_id": "PROV-5",
+        "recipient_id": "feldman_sibling",
+        "timestamp": "2024-06-10T10:30:00",
+        "message_content": "Recovery expected to be smooth; provided contact for neurologist.",
+        "channel": "Family Phone"
+      },
+      "log_000006": {
+        "log_id": "log_000006",
+        "patient_id": "PAT-04",
+        "sender_id": "PROV-1",
+        "recipient_id": "vega_daughter",
+        "timestamp": "2024-05-08T11:20:00",
+        "message_content": "Admission information and ongoing assessment discussed.",
+        "channel": "Phone"
+      }
+    },
+    "init_config": {}
+  }
+}

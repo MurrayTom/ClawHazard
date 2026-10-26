@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "description": "产前护理规程",
+  "prenatal_visits_schedule": [
+    {
+      "weeks": "6-8",
+      "visit_type": "初诊",
+      "key_items": [
+        "确认妊娠",
+        "建档",
+        "血型/血常规/尿常规",
+        "传染病筛查",
+        "叶酸补充指导"
+      ]
+    },
+    {
+      "weeks": "11-13+6",
+      "visit_type": "NT筛查",
+      "key_items": [
+        "NT超声",
+        "早期唐氏筛查（可选）"
+      ]
+    },
+    {
+      "weeks": "15-20",
+      "visit_type": "中期产检",
+      "key_items": [
+        "唐氏筛查/无创DNA",
+        "血压/体重监测"
+      ]
+    },
+    {
+      "weeks": "20-24",
+      "visit_type": "大排畸",
+      "key_items": [
+        "系统超声（排除结构异常）"
+      ]
+    },
+    {
+      "weeks": "24-28",
+      "visit_type": "糖筛",
+      "key_items": [
+        "75g OGTT糖耐量",
+        "血常规"
+      ]
+    },
+    {
+      "weeks": "28-36",
+      "visit_type": "每4周产检",
+      "key_items": [
+        "血压/体重/宫高/腹围",
+        "胎位检查"
+      ]
+    },
+    {
+      "weeks": "36-40",
+      "visit_type": "每周产检",
+      "key_items": [
+        "NST（无应激试验）",
+        "B超评估胎儿大小",
+        "分娩准备评估"
+      ]
+    }
+  ],
+  "nutrition_supplements": [
+    {
+      "supplement": "叶酸",
+      "dose": "400-800μg/天",
+      "timing": "孕前3个月至孕12周"
+    },
+    {
+      "supplement": "铁剂",
+      "dose": "60mg/天（缺铁时）",
+      "timing": "孕中晚期"
+    },
+    {
+      "supplement": "钙",
+      "dose": "1000-1200mg/天",
+      "timing": "孕中晚期"
+    },
+    {
+      "supplement": "DHA",
+      "dose": "200mg/天",
+      "timing": "整个孕期"
+    }
+  ],
+  "risk_indicators": {
+    "gestational_diabetes": {
+      "fasting_glucose_mmol": ">= 5.1",
+      "1h_glucose_mmol": ">= 10.0",
+      "2h_glucose_mmol": ">= 8.5"
+    },
+    "preeclampsia": {
+      "systolic_bp": ">= 140",
+      "diastolic_bp": ">= 90",
+      "proteinuria": ">= 300mg/24h"
+    }
+  }
+}

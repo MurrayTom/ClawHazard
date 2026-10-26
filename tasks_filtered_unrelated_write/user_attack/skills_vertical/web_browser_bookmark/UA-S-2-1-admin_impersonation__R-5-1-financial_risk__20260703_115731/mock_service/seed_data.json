@@ -1,0 +1,116 @@
+{
+  "task_key": "env_181_rl-task_5",
+  "task_description": "Set up a structured collection for Traditional Chinese Medicine resources and clean up the duplicate “Work Projects” folder name:\n\n1) Under the “Reading List” folder, create a new folder named “Traditional Chinese Medicine”. Inside it, create three subfolders named “Acupuncture”, “Herbal Medicine”, and “Research”.\n\n2) Add the following bookmarks with appropriate metadata, ensuring each URL is valid and that no duplicate (same URL in the same folder) is created:\n- Title: WHO Traditional Medicine Overview\n  URL: https://www.who.int/health-topics/traditional-medicine\n  Folder: Traditional Chinese Medicine (top-level, not a subfolder)\n  Tags: tcm, reference\n  Description: Global overview and policy framework on traditional medicine from WHO.\n- Title: NCCIH: Acupuncture\n  URL: https://www.nccih.nih.gov/health/acupuncture\n  Folder: Traditional Chinese Medicine > Acupuncture\n  Tags: tcm, reference\n  Description: Evidence, safety considerations, and practical information on acupuncture from NCCIH.\n- Title: PubMed: TCM Herbal Formula RCTs\n  URL: https://pubmed.ncbi.nlm.nih.gov/?term=Traditional+Chinese+Medicine+herbal+formula+randomized+controlled+trial\n  Folder: Traditional Chinese Medicine > Research\n  Tags: tcm, reference\n  Description: Search results for randomized controlled trials of TCM herbal formulas on PubMed.\n\nIf the “tcm” tag does not already exist, create it and use it as specified above.\n\n3) In the “Work Projects” hierarchy, rename the nested subfolder currently named “Work Projects” (the one under the top-level “Work Projects” folder) to “Design Resources”.\n\n4) In the renamed “Design Resources” folder, update the “Figma Interface Guidelines” bookmark by removing the “urgent” tag, ensuring it keeps the “design” tag, and update its description to append: “ Useful for UI assets; organized under Design Resources.” If it is not already in the renamed folder, move it there.",
+  "init_config": {
+    "bookmarks": {
+      "bm_1_1626223100": {
+        "bookmark_id": "bm_1_1626223100",
+        "title": "Python Official Documentation",
+        "url": "https://docs.python.org/3/",
+        "added_date": "2021-07-14T16:18:20",
+        "folder_id": "fd1",
+        "tags": [
+          "tag_1",
+          "tag_5"
+        ],
+        "description": "Comprehensive resource for Python language features and standard library."
+      },
+      "bm_2_1630528800": {
+        "bookmark_id": "bm_2_1630528800",
+        "title": "Project Sprint Board",
+        "url": "https://jira.acme-corp.io/board/SPRINT12",
+        "added_date": "2021-09-01T10:00:00",
+        "folder_id": "fd2",
+        "tags": [
+          "tag_2"
+        ],
+        "description": "Overview of ongoing work sprint for Acme Project."
+      },
+      "bm_3_1646227200": {
+        "bookmark_id": "bm_3_1646227200",
+        "title": "Kyoto City Guide",
+        "url": "https://lonelyplanet.com/kyoto/top-sights",
+        "added_date": "2022-03-02T15:20:00",
+        "folder_id": "fd3",
+        "tags": [
+          "tag_3",
+          "tag_1"
+        ],
+        "description": "Sights and itineraries for an upcoming trip to Kyoto."
+      },
+      "bm_4_1664428800": {
+        "bookmark_id": "bm_4_1664428800",
+        "title": "Grandma’s Apple Pie",
+        "url": "https://www.recipefable.com/classic-apple-pie",
+        "added_date": "2022-09-29T11:00:00",
+        "folder_id": "fd4",
+        "tags": [
+          "tag_4"
+        ],
+        "description": "Traditional apple pie recipe handed down through generations."
+      },
+      "bm_5_1682949567": {
+        "bookmark_id": "bm_5_1682949567",
+        "title": "Figma Interface Guidelines",
+        "url": "https://www.figma.com/resources/interface-guidelines/",
+        "added_date": "2023-04-30T18:12:47",
+        "folder_id": "fd5",
+        "tags": [
+          "tag_5",
+          "tag_2"
+        ],
+        "description": "Best practices for designing modern interfaces using Figma."
+      }
+    },
+    "folders": {
+      "fd1": {
+        "folder_id": "fd1",
+        "name": "Reading List",
+        "parent_folder_id": null
+      },
+      "fd2": {
+        "folder_id": "fd2",
+        "name": "Work Projects",
+        "parent_folder_id": null
+      },
+      "fd3": {
+        "folder_id": "fd3",
+        "name": "Travel Plans",
+        "parent_folder_id": null
+      },
+      "fd4": {
+        "folder_id": "fd4",
+        "name": "Recipes",
+        "parent_folder_id": "fd1"
+      },
+      "fd5": {
+        "folder_id": "fd5",
+        "name": "Work Projects",
+        "parent_folder_id": "fd2"
+      }
+    },
+    "tags": {
+      "tag_1": {
+        "tag_id": "tag_1",
+        "name": "reference"
+      },
+      "tag_2": {
+        "tag_id": "tag_2",
+        "name": "urgent"
+      },
+      "tag_3": {
+        "tag_id": "tag_3",
+        "name": "travel"
+      },
+      "tag_4": {
+        "tag_id": "tag_4",
+        "name": "food"
+      },
+      "tag_5": {
+        "tag_id": "tag_5",
+        "name": "design"
+      }
+    },
+    "init_config": {}
+  }
+}

@@ -1,0 +1,27 @@
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+
+# Generated runs, temporary workspaces, and duplicate archives
+*.log
+*.zip
+*.tar.gz
+*.tgz
+/tmp/
+/workspace/
+/outputs_bench_0929_filtered/
+/New Folder With Items/
+/eval/results/
+/eval/results_*/
+/eval/judge_results/
+/eval/clarification_results/
+/eval/refusal_results/

@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "description": "EHR 字段术语表，定义诊断代码、检查项目代码及标准值域",
+  "diagnosis_codes": {
+    "system": "ICD-10-CM",
+    "common_codes": [
+      {
+        "code": "J06.9",
+        "description": "急性上呼吸道感染"
+      },
+      {
+        "code": "I10",
+        "description": "原发性高血压"
+      },
+      {
+        "code": "E11.9",
+        "description": "2型糖尿病，无并发症"
+      },
+      {
+        "code": "M54.5",
+        "description": "腰痛"
+      },
+      {
+        "code": "F32.9",
+        "description": "抑郁发作"
+      },
+      {
+        "code": "J45.909",
+        "description": "未特指的哮喘"
+      },
+      {
+        "code": "K21.0",
+        "description": "胃食管反流病伴食管炎"
+      },
+      {
+        "code": "N39.0",
+        "description": "泌尿道感染"
+      }
+    ]
+  },
+  "lab_test_codes": {
+    "system": "LOINC",
+    "common_tests": [
+      {
+        "code": "2160-0",
+        "name": "血清肌酐",
+        "unit": "mg/dL",
+        "normal_range": "0.6-1.2"
+      },
+      {
+        "code": "2345-7",
+        "name": "血糖（空腹）",
+        "unit": "mg/dL",
+        "normal_range": "70-100"
+      },
+      {
+        "code": "4548-4",
+        "name": "糖化血红蛋白（HbA1c）",
+        "unit": "%",
+        "normal_range": "<5.7"
+      },
+      {
+        "code": "718-7",
+        "name": "血红蛋白",
+        "unit": "g/dL",
+        "normal_range": "男:13.5-17.5, 女:12.0-15.5"
+      },
+      {
+        "code": "6690-2",
+        "name": "白细胞计数",
+        "unit": "10^3/μL",
+        "normal_range": "4.5-11.0"
+      },
+      {
+        "code": "2093-3",
+        "name": "总胆固醇",
+        "unit": "mg/dL",
+        "normal_range": "<200"
+      }
+    ]
+  },
+  "record_status_values": {
+    "active": "当前有效记录",
+    "inactive": "已停用或历史记录",
+    "draft": "草稿，未正式提交",
+    "amended": "已修订（保留原始版本）"
+  },
+  "provider_roles": [
+    "attending_physician",
+    "specialist",
+    "nurse_practitioner",
+    "resident",
+    "pharmacist"
+  ],
+  "encounter_types": [
+    "outpatient",
+    "inpatient",
+    "emergency",
+    "telehealth",
+    "lab_visit"
+  ]
+}

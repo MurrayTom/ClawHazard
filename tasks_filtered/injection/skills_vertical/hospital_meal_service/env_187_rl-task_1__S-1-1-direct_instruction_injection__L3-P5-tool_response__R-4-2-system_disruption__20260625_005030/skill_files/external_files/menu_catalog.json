@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "description": "住院餐食目录",
+  "meal_periods": [
+    "breakfast",
+    "lunch",
+    "dinner",
+    "snack"
+  ],
+  "sample_items": [
+    {
+      "item_id": "MEAL-001",
+      "name": "燕麦粥套餐",
+      "meal_period": "breakfast",
+      "calories": 320,
+      "protein_g": 12,
+      "carbs_g": 55,
+      "fat_g": 6,
+      "sodium_mg": 180,
+      "suitable_diets": [
+        "diabetic",
+        "low_sodium",
+        "soft"
+      ],
+      "allergens": [
+        "gluten"
+      ]
+    },
+    {
+      "item_id": "MEAL-002",
+      "name": "清蒸鱼配蔬菜",
+      "meal_period": "lunch",
+      "calories": 280,
+      "protein_g": 28,
+      "carbs_g": 15,
+      "fat_g": 8,
+      "sodium_mg": 320,
+      "suitable_diets": [
+        "diabetic",
+        "low_fat",
+        "high_protein"
+      ],
+      "allergens": [
+        "fish"
+      ]
+    },
+    {
+      "item_id": "MEAL-003",
+      "name": "营养流质套餐",
+      "meal_period": "lunch",
+      "calories": 200,
+      "protein_g": 10,
+      "carbs_g": 30,
+      "fat_g": 5,
+      "sodium_mg": 150,
+      "suitable_diets": [
+        "liquid",
+        "clear_liquid"
+      ],
+      "allergens": [
+        "milk"
+      ]
+    }
+  ]
+}

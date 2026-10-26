@@ -1,0 +1,154 @@
+{
+  "task_key": "env_166_rl-task_1",
+  "task_description": "Acting as staff user USR-STAFF-001, perform the following updates and additions:\n\n1) For Carlos Mendoza (patient_id PAT2) and his appointment APT-20240614-02:\n   - Update lab test LT-10002 status from “ordered” to “completed”.\n   - Record the lab test result: “Fasting glucose 95 mg/dL; within normal range.”\n   - Update the appointment APT-20240614-02 status to “completed”.\n\n2) For Jared O’Neil (patient_id PAT4) and his appointment APT-20240612-03:\n   - Cancel the pending lab test LT-10004 and record the result: “Insufficient sample; retake required.”\n   - Add a new lab test to APT-20240612-03 with test_type “Skin Biopsy (Repeat)” and initial status “ordered”.\n\n3) Create a new follow-up appointment for Carlos Mendoza (patient_id PAT2) on 2024-06-21 with appointment_type “Diet Consultation” (status “scheduled”), and add a lab test “Lipid Panel” to this new appointment with initial status “ordered”.\n\n4) For Riya Patel (patient_id PAT3) and her cancelled appointment APT-20240523-01:\n   - If any lab tests linked to this appointment are still in “pending” or “ordered” status, update them to “cancelled” and record the result: “Cancelled due to appointment cancellation.”\n\n5) Update Carlos Mendoza’s contact_info (patient_id PAT2) to: “cmendoza@example.com, +1-303-555-7721”.",
+  "init_config": {
+    "patients": {
+      "PAT1": {
+        "patient_id": "PAT1",
+        "name": "Alice Chan",
+        "date_of_birth": "1987-05-14",
+        "contact_info": "alice.chan@email.com, +1-303-555-1047"
+      },
+      "PAT2": {
+        "patient_id": "PAT2",
+        "name": "Carlos Mendoza",
+        "date_of_birth": "1965-11-02",
+        "contact_info": "cmendoza@example.com, +1-303-555-2982"
+      },
+      "PAT3": {
+        "patient_id": "PAT3",
+        "name": "Riya Patel",
+        "date_of_birth": "2001-07-29",
+        "contact_info": "riya.patel21@mail.net, +1-720-555-8831"
+      },
+      "PAT4": {
+        "patient_id": "PAT4",
+        "name": "Jared O'Neil",
+        "date_of_birth": "1959-02-18",
+        "contact_info": "jared.oneil@secure.com, +1-303-555-4023"
+      },
+      "PAT5": {
+        "patient_id": "PAT5",
+        "name": "Mohamed Farouk",
+        "date_of_birth": "1993-01-05",
+        "contact_info": "m.farouk@medalert.com, +1-303-555-1042"
+      }
+    },
+    "appointments": {
+      "APT-20240601-01": {
+        "appointment_id": "APT-20240601-01",
+        "patient_id": "PAT1",
+        "appointment_date": "2024-06-01",
+        "appointment_type": "Annual Physical",
+        "status": "completed"
+      },
+      "APT-20240614-02": {
+        "appointment_id": "APT-20240614-02",
+        "patient_id": "PAT2",
+        "appointment_date": "2024-06-14",
+        "appointment_type": "Blood Work",
+        "status": "scheduled"
+      },
+      "APT-20240523-01": {
+        "appointment_id": "APT-20240523-01",
+        "patient_id": "PAT3",
+        "appointment_date": "2024-05-23",
+        "appointment_type": "Checkup",
+        "status": "cancelled"
+      },
+      "APT-20240612-03": {
+        "appointment_id": "APT-20240612-03",
+        "patient_id": "PAT4",
+        "appointment_date": "2024-06-12",
+        "appointment_type": "Dermatology Consultation",
+        "status": "scheduled"
+      },
+      "APT-20240530-04": {
+        "appointment_id": "APT-20240530-04",
+        "patient_id": "PAT5",
+        "appointment_date": "2024-05-30",
+        "appointment_type": "X-Ray",
+        "status": "completed"
+      }
+    },
+    "lab_tests": {
+      "LT-10001": {
+        "lab_test_id": "LT-10001",
+        "appointment_id": "APT-20240601-01",
+        "test_type": "Complete Blood Count",
+        "test_date": "2024-06-01",
+        "result": "Normal. All parameters within range.",
+        "status": "completed"
+      },
+      "LT-10002": {
+        "lab_test_id": "LT-10002",
+        "appointment_id": "APT-20240614-02",
+        "test_type": "Fasting Glucose",
+        "test_date": "2024-06-14",
+        "result": "",
+        "status": "ordered"
+      },
+      "LT-10003": {
+        "lab_test_id": "LT-10003",
+        "appointment_id": "APT-20240523-01",
+        "test_type": "Thyroid Panel",
+        "test_date": "2024-05-23",
+        "result": "Test cancelled by patient.",
+        "status": "cancelled"
+      },
+      "LT-10004": {
+        "lab_test_id": "LT-10004",
+        "appointment_id": "APT-20240612-03",
+        "test_type": "Skin Biopsy",
+        "test_date": "2024-06-12",
+        "result": "",
+        "status": "pending"
+      },
+      "LT-10005": {
+        "lab_test_id": "LT-10005",
+        "appointment_id": "APT-20240530-04",
+        "test_type": "Chest X-Ray",
+        "test_date": "2024-05-30",
+        "result": "No abnormalities detected.",
+        "status": "completed"
+      }
+    },
+    "users": {
+      "USR-STAFF-001": {
+        "user_id": "USR-STAFF-001",
+        "role": "staff",
+        "linked_patient_id": null
+      },
+      "USR-STAFF-002": {
+        "user_id": "USR-STAFF-002",
+        "role": "staff",
+        "linked_patient_id": null
+      },
+      "USR-PATIENT-ALICE": {
+        "user_id": "USR-PATIENT-ALICE",
+        "role": "patient",
+        "linked_patient_id": "PAT1"
+      },
+      "USR-PATIENT-CARLOS": {
+        "user_id": "USR-PATIENT-CARLOS",
+        "role": "patient",
+        "linked_patient_id": "PAT2"
+      },
+      "USR-PATIENT-RIYA": {
+        "user_id": "USR-PATIENT-RIYA",
+        "role": "patient",
+        "linked_patient_id": "PAT3"
+      },
+      "USR-PATIENT-JARED": {
+        "user_id": "USR-PATIENT-JARED",
+        "role": "patient",
+        "linked_patient_id": "PAT4"
+      },
+      "USR-PATIENT-MOHAMED": {
+        "user_id": "USR-PATIENT-MOHAMED",
+        "role": "patient",
+        "linked_patient_id": "PAT5"
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "task_key": "env_147_rl-task_1",
+  "task_description": "Perform the following end-of-cycle reconciliation and updates:\n\n1) Process the return of the patient monitor currently checked out by staff member Jordan Diaz:\n- Identify the active/overdue monitor loan under Jordan Diaz.\n- Mark the loan as returned as of now.\n- Set the monitor’s availability to available, keep its condition as fair, and keep its location as Room 301-B.\n- Because the due date has passed, trigger the overdue return alert for this transaction.\n\n2) Correct the walker inventory inconsistency:\n- The walker in the Physical Therapy Suite shows as “loaned” in inventory even though its last loan has already been returned.\n- Update the walker’s availability to available while keeping its condition as good and its location as Physical Therapy Suite.\n\n3) Update the repaired infusion pump:\n- For the Baxter Sigma Spectrum infusion pump, update its condition from damaged to good and change its location to Ward A Supply Room.\n- Ensure the item is marked available after the update.\n\n4) Process the return of the wheelchair borrowed by “Alice Chan” that was due on 2024-06-29:\n- Disambiguate which “Alice Chan” has the active wheelchair loan.\n- Mark that loan as returned as of now.\n- Update the wheelchair’s availability to available, keep its condition as good, and set its location to Entrance Hall.\n- Because the due date has passed, trigger the overdue return alert for this transaction.",
+  "init_config": {
+    "equipment": {
+      "EQ-WC-001": {
+        "equipment_id": "EQ-WC-001",
+        "type": "wheelchair",
+        "model": "Nova Traveler LX",
+        "condition": "good",
+        "location": "Entrance Hall",
+        "availability_status": "available"
+      },
+      "EQ-MON-582": {
+        "equipment_id": "EQ-MON-582",
+        "type": "monitor",
+        "model": "GE Healthcare Vivid S6",
+        "condition": "fair",
+        "location": "Room 301-B",
+        "availability_status": "loaned"
+      },
+      "EQ-OPUMP-119": {
+        "equipment_id": "EQ-OPUMP-119",
+        "type": "infusion pump",
+        "model": "Baxter Sigma Spectrum",
+        "condition": "damaged",
+        "location": "Maintenance Dept",
+        "availability_status": "available"
+      },
+      "EQ-OX-422": {
+        "equipment_id": "EQ-OX-422",
+        "type": "portable oxygen",
+        "model": "Respironics SimplyGo",
+        "condition": "good",
+        "location": "Ward A Supply Room",
+        "availability_status": "loaned"
+      },
+      "EQ-WALK-14": {
+        "equipment_id": "EQ-WALK-14",
+        "type": "walker",
+        "model": "Medline Freedom",
+        "condition": "good",
+        "location": "Physical Therapy Suite",
+        "availability_status": "loaned"
+      }
+    },
+    "users": {
+      "USR-ALC-180": {
+        "user_id": "USR-ALC-180",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan23@example.com",
+        "user_type": "patient"
+      },
+      "USR-JD-002": {
+        "user_id": "USR-JD-002",
+        "name": "Jordan Diaz",
+        "contact_info": "jordan.diaz@clinic.org",
+        "user_type": "staff"
+      },
+      "USR-CBR-888": {
+        "user_id": "USR-CBR-888",
+        "name": "Carlos Bernard",
+        "contact_info": "+15557834920",
+        "user_type": "patient"
+      },
+      "USR-LSTAFF-77": {
+        "user_id": "USR-LSTAFF-77",
+        "name": "Logan Everett",
+        "contact_info": "leverett@hospitaladmin.com",
+        "user_type": "admin"
+      },
+      "USR-EMMA-04": {
+        "user_id": "USR-EMMA-04",
+        "name": "Emma Small",
+        "contact_info": "emma.small@outlook.com",
+        "user_type": "staff"
+      },
+      "USR-ALC-751": {
+        "user_id": "USR-ALC-751",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan751@mail.com",
+        "user_type": "patient"
+      }
+    },
+    "loans": {
+      "LN-1c10cdb2-1": {
+        "loan_id": "LN-1c10cdb2-1",
+        "equipment_id": "EQ-MON-582",
+        "user_id": "USR-JD-002",
+        "borrowed_date": "2024-05-10",
+        "due_date": "2024-05-18",
+        "returned_date": null,
+        "status": "overdue"
+      },
+      "LN-1e02b605-9": {
+        "loan_id": "LN-1e02b605-9",
+        "equipment_id": "EQ-OX-422",
+        "user_id": "USR-ALC-180",
+        "borrowed_date": "2024-06-23",
+        "due_date": "2024-07-04",
+        "returned_date": null,
+        "status": "active"
+      },
+      "LN-1f77ccde-3": {
+        "loan_id": "LN-1f77ccde-3",
+        "equipment_id": "EQ-WALK-14",
+        "user_id": "USR-CBR-888",
+        "borrowed_date": "2024-06-10",
+        "due_date": "2024-06-15",
+        "returned_date": "2024-06-16T15:32:10",
+        "status": "returned"
+      },
+      "LN-1baab42e-7": {
+        "loan_id": "LN-1baab42e-7",
+        "equipment_id": "EQ-OPUMP-119",
+        "user_id": "USR-EMMA-04",
+        "borrowed_date": "2024-06-19",
+        "due_date": "2024-06-22",
+        "returned_date": "2024-06-21T09:25:00",
+        "status": "returned"
+      },
+      "LN-1e88b90c-5": {
+        "loan_id": "LN-1e88b90c-5",
+        "equipment_id": "EQ-WC-001",
+        "user_id": "USR-ALC-751",
+        "borrowed_date": "2024-06-22",
+        "due_date": "2024-06-29",
+        "returned_date": null,
+        "status": "active"
+      }
+    },
+    "init_config": {}
+  }
+}

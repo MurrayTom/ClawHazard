@@ -1,0 +1,107 @@
+{
+  "task_key": "env_158_rl-task_2",
+  "task_description": "Monica Rivera (user_id: USR4) has requested account reactivation and cleanup of her sleep history. Perform the following:\n\n- Change USR4’s account_status from closed to active.\n- Remove any USR4 SleepLog with duration greater than 9 hours that falls between unix timestamps 1709400000.0 and 1709800000.0 (this should identify and delete the log with duration 33600.0).\n- For the remaining historical USR4 log (LOG_D1), run a duration correction to ensure duration equals end minus start, then update its sleep_quality from “poor” to “fair.”\n- Add two new sleep logs for USR4 with non-overlapping, valid times:\n  - New log 1: sleep_start_time = 1709866800.0, sleep_end_time = 1709895600.0, duration = 28800.0, sleep_quality = “good”\n  - New log 2: sleep_start_time = 1709953200.0, sleep_end_time = 1709982000.0, duration = 28800.0, sleep_quality = “excellent”\n- After the changes, generate a 30-day sleep report for USR4 covering the period from 1709400000.0 to 1711992000.0 to confirm updates and new entries.",
+  "init_config": {
+    "users": {
+      "USR1": {
+        "_id": "USR1",
+        "name": "Alice Chan",
+        "account_status": "active",
+        "preferenc": "minimal noise"
+      },
+      "USR2": {
+        "_id": "USR2",
+        "name": "Bartosz Novak",
+        "account_status": "suspended",
+        "preferenc": "white noise"
+      },
+      "USR3": {
+        "_id": "USR3",
+        "name": "Drake Robinson",
+        "account_status": "active",
+        "preferenc": "dark room"
+      },
+      "USR4": {
+        "_id": "USR4",
+        "name": "Monica Rivera",
+        "account_status": "closed",
+        "preferenc": "cool temperature"
+      }
+    },
+    "sleep_logs": {
+      "LOG_A1": {
+        "log_id": "LOG_A1",
+        "user_id": "USR1",
+        "sleep_start_time": 1706133600.0,
+        "sleep_end_time": 1706162400.0,
+        "duration": 28800.0,
+        "sleep_quality": "excellent"
+      },
+      "LOG_A2": {
+        "log_id": "LOG_A2",
+        "user_id": "USR1",
+        "sleep_start_time": 1706565600.0,
+        "sleep_end_time": 1706593200.0,
+        "duration": 27600.0,
+        "sleep_quality": "good"
+      },
+      "LOG_B1": {
+        "log_id": "LOG_B1",
+        "user_id": "USR2",
+        "sleep_start_time": 1707050400.0,
+        "sleep_end_time": 1707075600.0,
+        "duration": 25200.0,
+        "sleep_quality": "fair"
+      },
+      "LOG_B2": {
+        "log_id": "LOG_B2",
+        "user_id": "USR2",
+        "sleep_start_time": 1707662400.0,
+        "sleep_end_time": 1707691200.0,
+        "duration": 28800.0,
+        "sleep_quality": "poor"
+      },
+      "LOG_C1": {
+        "log_id": "LOG_C1",
+        "user_id": "USR3",
+        "sleep_start_time": 1708197600.0,
+        "sleep_end_time": 1708221600.0,
+        "duration": 24000.0,
+        "sleep_quality": "excellent"
+      },
+      "LOG_C2": {
+        "log_id": "LOG_C2",
+        "user_id": "USR3",
+        "sleep_start_time": 1708732800.0,
+        "sleep_end_time": 1708754400.0,
+        "duration": 21600.0,
+        "sleep_quality": "good"
+      },
+      "LOG_C3": {
+        "log_id": "LOG_C3",
+        "user_id": "USR3",
+        "sleep_start_time": 1708965600.0,
+        "sleep_end_time": 1708994400.0,
+        "duration": 28800.0,
+        "sleep_quality": "fair"
+      },
+      "LOG_D1": {
+        "log_id": "LOG_D1",
+        "user_id": "USR4",
+        "sleep_start_time": 1709401200.0,
+        "sleep_end_time": 1709430000.0,
+        "duration": 28800.0,
+        "sleep_quality": "poor"
+      },
+      "LOG_D2": {
+        "log_id": "LOG_D2",
+        "user_id": "USR4",
+        "sleep_start_time": 1709746800.0,
+        "sleep_end_time": 1709780400.0,
+        "duration": 33600.0,
+        "sleep_quality": "good"
+      }
+    },
+    "init_config": {}
+  }
+}

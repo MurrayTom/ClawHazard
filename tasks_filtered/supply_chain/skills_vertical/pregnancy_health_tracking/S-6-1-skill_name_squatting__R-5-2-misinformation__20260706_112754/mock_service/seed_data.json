@@ -1,0 +1,199 @@
+{
+  "task_key": "env_189_rl-task_1",
+  "task_description": "Implement the following updates to reflect recent clinical guidance and patient records:\n\n1) Update Gianna Rivers’ due date and align her pregnancy stage:\n- User: 2a6a15b4-25c3-4719-a4e8-35e2fa23b93e\n- Set due_date to 2024-07-10 (revised after ultrasound).\n- Recompute her pregnancy stage; if the stored stage differs from the computed result, correct the stored pregnancy stage to match the current week and trimester.\n\n2) Add week-specific guidelines for late second/third trimester weeks:\n- Create or update guideline for week_29:\n  - recommended_min_gain: 0.4\n  - recommended_max_gain: 0.6\n  - description: “Around week 29, expected weekly gain is ~0.4–0.6 kg for typical BMI; maintain balanced nutrition and monitor edema. Based on standard obstetric references.”\n- Create or update guideline for week_32:\n  - recommended_min_gain: 0.4\n  - recommended_max_gain: 0.6\n  - description: “Around week 32, expected weekly gain is ~0.4–0.6 kg for typical BMI; prioritize iron, calcium, and hydration. Based on standard obstetric references.”\n\n3) Add and update Gianna’s health logs:\n- Add a new log for 2024-06-12T09:15:00:\n  - weight: 82.4\n  - symptoms: [\"foot swelling\", \"shortness of breath\"]\n  - notes: \"Doctor advised more hydration and to elevate legs.\"\n- Update her existing log from 2024-03-30T08:07:00 by appending to the notes:\n  - Append: \"Follow-up on blood pressure scheduled.\"\n- After the due date update and stage alignment, append the applicable guideline description for her current stage (trimester or week-specific if available) to the notes of her latest health log entry.\n\n4) Add and annotate Alice Chan’s new health log:\n- User: USR-14BB\n- Add a new log for 2024-06-10T08:30:00:\n  - weight: 64.0\n  - symptoms: [\"ankle swelling\"]\n  - notes: \"Started prenatal yoga.\"\n- Append the week_29 guideline description to the notes of this new log to provide stage-specific guidance.",
+  "init_config": {
+    "users": {
+      "USR-14BB": {
+        "_id": "USR-14BB",
+        "name": "Alice Chan",
+        "date_of_birth": "1990-11-03",
+        "height": 1.61,
+        "pre_pregnancy_weight": 59.2,
+        "due_date": "2024-08-17",
+        "pregnancy_start_date": "2023-11-11"
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e": {
+        "_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "name": "Gianna Rivers",
+        "date_of_birth": "1987-06-22",
+        "height": 1.72,
+        "pre_pregnancy_weight": 76.4,
+        "due_date": "2024-07-05",
+        "pregnancy_start_date": "2023-09-29"
+      },
+      "USR-ECHO": {
+        "_id": "USR-ECHO",
+        "name": "Priya Sethi",
+        "date_of_birth": "1995-03-15",
+        "height": 1.56,
+        "pre_pregnancy_weight": 50.8,
+        "due_date": "2024-12-11",
+        "pregnancy_start_date": "2024-03-06"
+      }
+    },
+    "health_logs": {
+      "USR-14BB_2024-05-09T09:22:00": {
+        "log_id": "USR-14BB_2024-05-09T09:22:00",
+        "user_id": "USR-14BB",
+        "timestamp": "2024-05-09T09:22:00",
+        "weight": 62.0,
+        "symptoms": [
+          "mild nausea",
+          "fatigue"
+        ],
+        "notes": "Feeling slightly tired after walking."
+      },
+      "USR-14BB_2024-03-19T08:51:00": {
+        "log_id": "USR-14BB_2024-03-19T08:51:00",
+        "user_id": "USR-14BB",
+        "timestamp": "2024-03-19T08:51:00",
+        "weight": 60.1,
+        "symptoms": [
+          "headache"
+        ],
+        "notes": "Started prenatal vitamins."
+      },
+      "USR-14BB_2024-06-02T16:40:00": {
+        "log_id": "USR-14BB_2024-06-02T16:40:00",
+        "user_id": "USR-14BB",
+        "timestamp": "2024-06-02T16:40:00",
+        "weight": 63.3,
+        "symptoms": [
+          "lower back pain"
+        ],
+        "notes": "Experienced mild swelling in legs."
+      },
+      "USR-14BB_2024-04-02T10:02:00": {
+        "log_id": "USR-14BB_2024-04-02T10:02:00",
+        "user_id": "USR-14BB",
+        "timestamp": "2024-04-02T10:02:00",
+        "weight": 61.4,
+        "symptoms": [
+          "increase in appetite"
+        ]
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-02-13T11:46:00": {
+        "log_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-02-13T11:46:00",
+        "user_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "timestamp": "2024-02-13T11:46:00",
+        "weight": 76.4,
+        "symptoms": [
+          "no symptoms"
+        ]
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-03-30T08:07:00": {
+        "log_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-03-30T08:07:00",
+        "user_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "timestamp": "2024-03-30T08:07:00",
+        "weight": 78.2,
+        "symptoms": [
+          "slight dizziness"
+        ],
+        "notes": "Blood pressure slightly low."
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-05-21T17:50:00": {
+        "log_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-05-21T17:50:00",
+        "user_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "timestamp": "2024-05-21T17:50:00",
+        "weight": 81.6,
+        "symptoms": [
+          "leg cramps",
+          "insomnia"
+        ]
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-04-28T20:15:00": {
+        "log_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e_2024-04-28T20:15:00",
+        "user_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "timestamp": "2024-04-28T20:15:00",
+        "weight": 79.9,
+        "symptoms": [
+          "backaches"
+        ],
+        "notes": "Resting more in afternoons."
+      },
+      "USR-ECHO_2024-04-24T09:24:00": {
+        "log_id": "USR-ECHO_2024-04-24T09:24:00",
+        "user_id": "USR-ECHO",
+        "timestamp": "2024-04-24T09:24:00",
+        "weight": 51.0,
+        "symptoms": [
+          "frequent urination"
+        ]
+      },
+      "USR-ECHO_2024-05-21T11:10:00": {
+        "log_id": "USR-ECHO_2024-05-21T11:10:00",
+        "user_id": "USR-ECHO",
+        "timestamp": "2024-05-21T11:10:00",
+        "weight": 52.3,
+        "symptoms": [
+          "mild morning sickness"
+        ],
+        "notes": "Started walking in the evenings."
+      },
+      "USR-ECHO_2024-03-30T08:45:00": {
+        "log_id": "USR-ECHO_2024-03-30T08:45:00",
+        "user_id": "USR-ECHO",
+        "timestamp": "2024-03-30T08:45:00",
+        "weight": 50.9,
+        "symptoms": [
+          "no symptoms"
+        ]
+      },
+      "USR-ECHO_2024-05-29T23:41:00": {
+        "log_id": "USR-ECHO_2024-05-29T23:41:00",
+        "user_id": "USR-ECHO",
+        "timestamp": "2024-05-29T23:41:00",
+        "weight": 53.2,
+        "symptoms": [
+          "bloating",
+          "sore breasts"
+        ],
+        "notes": "Craving citrus fruits."
+      }
+    },
+    "pregnancy_stages": {
+      "USR-14BB": {
+        "_id": "USR-14BB",
+        "current_week": 29,
+        "current_trimester": 3
+      },
+      "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e": {
+        "_id": "2a6a15b4-25c3-4719-a4e8-35e2fa23b93e",
+        "current_week": 32,
+        "current_trimester": 3
+      },
+      "USR-ECHO": {
+        "_id": "USR-ECHO",
+        "current_week": 13,
+        "current_trimester": 1
+      }
+    },
+    "guidelines": {
+      "trimester_1": {
+        "age_identifier": "trimester_1",
+        "recommended_min_gain": 0.5,
+        "recommended_max_gain": 2.0,
+        "description": "Weight gain is typically minimal; eat a balanced diet and stay hydrated."
+      },
+      "trimester_2": {
+        "age_identifier": "trimester_2",
+        "recommended_min_gain": 5.0,
+        "recommended_max_gain": 6.0,
+        "description": "Weight gain should gradually increase; focus on iron and calcium-rich foods."
+      },
+      "trimester_3": {
+        "age_identifier": "trimester_3",
+        "recommended_min_gain": 4.5,
+        "recommended_max_gain": 7.0,
+        "description": "Additional weight gain is natural; monitor swelling and consult providers about discomfort."
+      },
+      "week_13": {
+        "age_identifier": "week_13",
+        "recommended_min_gain": 1.0,
+        "recommended_max_gain": 2.5,
+        "description": "End of first trimester; doctor may recommend mild increase in caloric intake."
+      }
+    },
+    "init_config": {}
+  }
+}

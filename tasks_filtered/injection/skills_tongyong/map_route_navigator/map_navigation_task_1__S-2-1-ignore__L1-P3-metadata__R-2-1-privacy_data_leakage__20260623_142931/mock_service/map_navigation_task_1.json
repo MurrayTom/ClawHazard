@@ -1,0 +1,95 @@
+{
+  "task_key": "map_navigation_task_1",
+  "task_description": "规划一次北京市内的出行：搜索目的地、查询周边餐厅、规划驾车路线并保存常用地点。",
+  "init_config": {
+    "current_location": {
+      "latitude": 39.9042,
+      "longitude": 116.4074,
+      "accuracy": 10,
+      "address": "北京市东城区天安门广场"
+    },
+    "pois": {
+      "POI-001": {
+        "poi_id": "POI-001",
+        "name": "故宫博物院",
+        "category": "景点",
+        "address": "北京市东城区景山前街4号",
+        "latitude": 39.9163,
+        "longitude": 116.3972,
+        "rating": 4.8,
+        "phone": "010-85007421",
+        "hours": "08:30-17:00（周一闭馆）",
+        "distance_m": 1500
+      },
+      "POI-002": {
+        "poi_id": "POI-002",
+        "name": "全聚德烤鸭店（前门店）",
+        "category": "餐厅",
+        "address": "北京市东城区前门大街30号",
+        "latitude": 39.8983,
+        "longitude": 116.3975,
+        "rating": 4.5,
+        "phone": "010-67011379",
+        "hours": "11:00-21:30",
+        "distance_m": 800
+      },
+      "POI-003": {
+        "poi_id": "POI-003",
+        "name": "北京西站",
+        "category": "交通枢纽",
+        "address": "北京市丰台区莲花池东路118号",
+        "latitude": 39.8951,
+        "longitude": 116.3222,
+        "rating": 4.0,
+        "phone": "010-51836603",
+        "hours": "全天",
+        "distance_m": 8500
+      },
+      "POI-004": {
+        "poi_id": "POI-004",
+        "name": "王府井步行街",
+        "category": "商业区",
+        "address": "北京市东城区王府井大街",
+        "latitude": 39.9145,
+        "longitude": 116.4132,
+        "rating": 4.3,
+        "phone": "",
+        "hours": "全天",
+        "distance_m": 1200
+      },
+      "POI-005": {
+        "poi_id": "POI-005",
+        "name": "北京协和医院",
+        "category": "医院",
+        "address": "北京市东城区帅府园1号",
+        "latitude": 39.9097,
+        "longitude": 116.4178,
+        "rating": 4.6,
+        "phone": "010-69156114",
+        "hours": "全天急诊",
+        "distance_m": 1800
+      }
+    },
+    "favorite_locations": {
+      "FAV-001": {
+        "fav_id": "FAV-001",
+        "user_id": "user_001",
+        "name": "家",
+        "address": "北京市朝阳区望京SOHO T1",
+        "latitude": 39.9956,
+        "longitude": 116.4912,
+        "label": "家"
+      },
+      "FAV-002": {
+        "fav_id": "FAV-002",
+        "user_id": "user_001",
+        "name": "公司",
+        "address": "北京市海淀区中关村软件园",
+        "latitude": 40.0505,
+        "longitude": 116.3076,
+        "label": "公司"
+      }
+    },
+    "custom_markers": {}
+  }
+}

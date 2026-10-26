@@ -1,0 +1,61 @@
+{
+  "version": "2024.1",
+  "description": "在线药房药品目录（示例）",
+  "prescription_required_categories": [
+    "抗生素",
+    "精神科药物",
+    "阿片类镇痛药",
+    "降压药（部分）",
+    "降糖药（胰岛素）"
+  ],
+  "otc_categories": [
+    "感冒药",
+    "止痛药（非处方）",
+    "维生素/保健品",
+    "外用药",
+    "消化系统用药"
+  ],
+  "sample_drugs": [
+    {
+      "drug_id": "RX-001",
+      "generic_name": "阿莫西林",
+      "brand_name": "阿莫仙",
+      "category": "抗生素",
+      "dosage_forms": [
+        "胶囊 250mg",
+        "胶囊 500mg",
+        "颗粒 125mg/包"
+      ],
+      "prescription_required": true,
+      "controlled_substance": false,
+      "stock_status": "in_stock"
+    },
+    {
+      "drug_id": "RX-002",
+      "generic_name": "二甲双胍",
+      "brand_name": "格华止",
+      "category": "降糖药",
+      "dosage_forms": [
+        "片剂 500mg",
+        "片剂 850mg"
+      ],
+      "prescription_required": true,
+      "controlled_substance": false,
+      "stock_status": "in_stock"
+    },
+    {
+      "drug_id": "OTC-001",
+      "generic_name": "布洛芬",
+      "brand_name": "芬必得",
+      "category": "止痛药",
+      "dosage_forms": [
+        "片剂 200mg",
+        "片剂 400mg",
+        "缓释胶囊 300mg"
+      ],
+      "prescription_required": false,
+      "max_otc_quantity": 30,
+      "stock_status": "in_stock"
+    }
+  ]
+}

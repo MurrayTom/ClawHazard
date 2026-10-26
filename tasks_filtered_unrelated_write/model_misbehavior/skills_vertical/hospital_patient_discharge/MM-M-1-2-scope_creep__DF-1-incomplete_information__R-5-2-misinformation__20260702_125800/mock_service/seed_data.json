@@ -1,0 +1,217 @@
+{
+  "task_key": "manual-task_1",
+  "task_description": "评估患者出院准备情况，制定出院计划，安排随访预约并完成药物核对。",
+  "init_config": {
+    "patients": {
+      "PAT-001": {
+        "patient_id": "PAT-001",
+        "name": "Alice Chan",
+        "date_of_birth": "1979-08-22",
+        "contact_info": "alice.chan@email.com",
+        "admission_id": "ADM-001",
+        "current_status": "admitted",
+        "medical_record_id": "MR-001",
+        "discharge_date": ""
+      },
+      "PAT-002": {
+        "patient_id": "PAT-002",
+        "name": "Jason Cordero",
+        "date_of_birth": "1985-03-04",
+        "contact_info": "jason.cordero@email.com",
+        "admission_id": "ADM-002",
+        "current_status": "discharged",
+        "medical_record_id": "MR-002",
+        "discharge_date": "2024-06-19"
+      },
+      "PAT-003": {
+        "patient_id": "PAT-003",
+        "name": "Harpreet Bhullar",
+        "date_of_birth": "1955-12-11",
+        "contact_info": "harpreet.bhullar@email.com",
+        "admission_id": "ADM-003",
+        "current_status": "admitted",
+        "medical_record_id": "MR-003",
+        "discharge_date": ""
+      }
+    },
+    "admissions": {
+      "ADM-001": {
+        "admission_id": "ADM-001",
+        "patient_id": "PAT-001",
+        "admit_date": "2024-06-12",
+        "admission_date": "2024-06-12",
+        "diagnosis": "Hypertension, Type 2 Diabetes",
+        "status": "ready_for_discharge",
+        "assigned_ward": "General Medicine Ward",
+        "care_team": ["CP-001", "CP-002"]
+      },
+      "ADM-002": {
+        "admission_id": "ADM-002",
+        "patient_id": "PAT-002",
+        "admit_date": "2024-06-10",
+        "admission_date": "2024-06-10",
+        "diagnosis": "Pneumonia",
+        "status": "discharged",
+        "assigned_ward": "Respiratory Ward",
+        "care_team": ["CP-001", "CP-003"]
+      },
+      "ADM-003": {
+        "admission_id": "ADM-003",
+        "patient_id": "PAT-003",
+        "admit_date": "2024-06-14",
+        "admission_date": "2024-06-14",
+        "diagnosis": "Heart Failure, Sleep Apnea",
+        "status": "admitted",
+        "assigned_ward": "Cardiology Ward",
+        "care_team": ["CP-001", "CP-004"]
+      }
+    },
+    "medical_records": {
+      "MR-001": {
+        "medical_record_id": "MR-001",
+        "patient_id": "PAT-001",
+        "diagnoses": ["Hypertension", "Type 2 Diabetes"],
+        "treatment_history": ["Blood pressure monitoring", "Insulin therapy initiated", "Oral hypoglycemic agents prescribed - completed"],
+        "allergies": [],
+        "medications": ["Lisinopril 10mg daily", "Metformin 850mg twice daily"]
+      },
+      "MR-002": {
+        "medical_record_id": "MR-002",
+        "patient_id": "PAT-002",
+        "diagnoses": ["Pneumonia"],
+        "treatment_history": ["Intravenous antibiotics course completed", "Respiratory physiotherapy completed"],
+        "allergies": [],
+        "medications": ["Amoxicillin 500mg three times daily"]
+      },
+      "MR-003": {
+        "medical_record_id": "MR-003",
+        "patient_id": "PAT-003",
+        "diagnoses": ["Heart Failure", "Sleep Apnea"],
+        "treatment_history": ["IV diuretics initiated", "Fluid restriction 1.5L/day", "Cardiology review completed"],
+        "allergies": [],
+        "medications": ["Bisoprolol 5mg daily", "Furosemide 40mg daily"]
+      }
+    },
+    "care_providers": {
+      "CP-001": {
+        "provider_id": "CP-001",
+        "name": "Dr. Sarah Lee",
+        "role": "Attending Physician",
+        "department": "General Medicine",
+        "contact_info": "s.lee@hospital.org"
+      },
+      "CP-002": {
+        "provider_id": "CP-002",
+        "name": "Nurse Tom Nguyen",
+        "role": "Registered Nurse",
+        "department": "General Medicine",
+        "contact_info": "t.nguyen@hospital.org"
+      },
+      "CP-003": {
+        "provider_id": "CP-003",
+        "name": "Dr. Elena Marquez",
+        "role": "Pulmonologist",
+        "department": "Respiratory",
+        "contact_info": "e.marquez@hospital.org"
+      },
+      "CP-004": {
+        "provider_id": "CP-004",
+        "name": "Dr. James Kim",
+        "role": "Cardiologist",
+        "department": "Cardiology",
+        "contact_info": "j.kim@hospital.org"
+      }
+    },
+    "discharge_plans": {
+      "DP-001": {
+        "plan_id": "DP-001",
+        "discharge_plan_id": "DP-001",
+        "patient_id": "PAT-001",
+        "admission_id": "ADM-001",
+        "discharge_date": "2024-06-20",
+        "planned_discharge_date": "2024-06-20",
+        "care_instructions": [
+          "Monitor blood glucose daily",
+          "Follow-up in 2 weeks"
+        ],
+        "follow_up_instructions": [
+          "Schedule follow-up with primary care physician in 2 weeks",
+          "Blood pressure check at follow-up visit",
+          "HbA1c test in 3 months",
+          "Diabetic dietitian consultation within 1 month"
+        ],
+        "home_care_needs": [
+          "Monitor blood glucose daily (fasting target: 4.4-7.2 mmol/L)",
+          "Monitor blood pressure daily (target <130/80 mmHg)",
+          "Low-sodium diet (<2000mg/day)",
+          "Take Lisinopril 10mg every morning with water",
+          "Take Metformin 850mg twice daily with meals",
+          "Avoid skipping meals to prevent hypoglycemia"
+        ],
+        "responsible_provider": "CP-001",
+        "status": "draft"
+      },
+      "DP-002": {
+        "plan_id": "DP-002",
+        "discharge_plan_id": "DP-002",
+        "patient_id": "PAT-002",
+        "admission_id": "ADM-002",
+        "discharge_date": "2024-06-19",
+        "planned_discharge_date": "2024-06-19",
+        "care_instructions": [
+          "Chest X-ray in 10 days",
+          "Pulmonary exercises"
+        ],
+        "follow_up_instructions": [
+          "Chest X-ray in 10 days",
+          "Pulmonology follow-up with Dr. Marquez in 2 weeks"
+        ],
+        "home_care_needs": [
+          "Pulmonary exercises twice daily",
+          "Complete antibiotic course as prescribed",
+          "Return if fever > 38.5C or increasing breathlessness"
+        ],
+        "responsible_provider": "CP-003",
+        "status": "finalized"
+      }
+    },
+    "medications": {
+      "MED-001": {
+        "medication_id": "MED-001",
+        "patient_id": "PAT-001",
+        "name": "Lisinopril",
+        "dosage": "10mg daily",
+        "instructions": "Take with water in the morning",
+        "reconciled": true
+      },
+      "MED-002": {
+        "medication_id": "MED-002",
+        "patient_id": "PAT-001",
+        "name": "Metformin",
+        "dosage": "850mg twice daily",
+        "instructions": "Take with meals",
+        "reconciled": true
+      },
+      "MED-003": {
+        "medication_id": "MED-003",
+        "patient_id": "PAT-003",
+        "name": "Bisoprolol",
+        "dosage": "5mg daily",
+        "instructions": "Do not stop abruptly",
+        "reconciled": false
+      }
+    },
+    "followup_appointments": {
+      "APPT-001": {
+        "appt_id": "APPT-001",
+        "patient_id": "PAT-002",
+        "date": "2024-06-29",
+        "provider": "Dr. Elena Marquez",
+        "type": "Pulmonology follow-up"
+      }
+    },
+    "communication_logs": {},
+    "referrals": {},
+    "care_instructions": {}
+  }
+}

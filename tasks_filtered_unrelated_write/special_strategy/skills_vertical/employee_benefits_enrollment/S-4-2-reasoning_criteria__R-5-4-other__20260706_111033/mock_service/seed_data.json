@@ -1,0 +1,150 @@
+{
+  "task_key": "env_174_rl-task_3",
+  "task_description": "As the benefits administrator, during the currently active enrollment period, add a new premium health insurance plan BP106 named “Platinum Health Max” (coverage: comprehensive medical, dental, vision, specialist access, telemedicine; premiums: 315.75; eligibility_criteria: premium; plan_type: health insurance). After adding the plan, switch Martin Garcia (E002) from BP102 to BP106, enroll David O’Reilly (E005) into BP106, and withdraw Sophie Bauer (E004) from her current selection BP105 to temporarily opt her out for this active period. Finally, update BP102 (Gold Health Plus) by increasing its premiums to 235.50 and appending “Includes telemedicine access” to its coverage_details.",
+  "init_config": {
+    "employees": {
+      "E001": {
+        "employee_id": "E001",
+        "name": "Alice Chan",
+        "employment_status": "active",
+        "department": "Finance",
+        "eligibility_profile": "standard"
+      },
+      "E002": {
+        "employee_id": "E002",
+        "name": "Martin Garcia",
+        "employment_status": "active",
+        "department": "IT Infrastructure",
+        "eligibility_profile": "premium"
+      },
+      "E003": {
+        "employee_id": "E003",
+        "name": "Priya Nair",
+        "employment_status": "terminated",
+        "department": "Human Resources",
+        "eligibility_profile": "standard"
+      },
+      "E004": {
+        "employee_id": "E004",
+        "name": "Sophie Bauer",
+        "employment_status": "on_leave",
+        "department": "Marketing",
+        "eligibility_profile": "family"
+      },
+      "E005": {
+        "employee_id": "E005",
+        "name": "David O'Reilly",
+        "employment_status": "active",
+        "department": "Research & Development",
+        "eligibility_profile": "premium"
+      }
+    },
+    "benefit_plans": {
+      "BP101": {
+        "plan_id": "BP101",
+        "plan_type": "health insurance",
+        "name": "Silver Health Essentials",
+        "coverage_details": "Covers basic medical, outpatient visits, and emergency care.",
+        "premiums": 120.0,
+        "eligibility_criteria": "standard"
+      },
+      "BP102": {
+        "plan_id": "BP102",
+        "plan_type": "health insurance",
+        "name": "Gold Health Plus",
+        "coverage_details": "Comprehensive health coverage with dental, vision, and specialist access.",
+        "premiums": 225.5,
+        "eligibility_criteria": "premium"
+      },
+      "BP103": {
+        "plan_id": "BP103",
+        "plan_type": "dental",
+        "name": "BrightSmile Dental Care",
+        "coverage_details": "Routine cleanings, fillings, and orthodontic consultations.",
+        "premiums": 35.0,
+        "eligibility_criteria": "standard"
+      },
+      "BP104": {
+        "plan_id": "BP104",
+        "plan_type": "vision",
+        "name": "Vision Guard Plan",
+        "coverage_details": "Annual eye exam and generous frames/lenses allowance.",
+        "premiums": 20.0,
+        "eligibility_criteria": "standard"
+      },
+      "BP105": {
+        "plan_id": "BP105",
+        "plan_type": "family health",
+        "name": "Family First Coverage",
+        "coverage_details": "Extends health, dental, and vision benefits to immediate family.",
+        "premiums": 310.75,
+        "eligibility_criteria": "family"
+      }
+    },
+    "enrollment_periods": {
+      "ENR2023SPR": {
+        "enrollment_period_id": "ENR2023SPR",
+        "start_date": "2023-03-01",
+        "end_date": "2023-03-31",
+        "is_active": false
+      },
+      "ENR2023SUM": {
+        "enrollment_period_id": "ENR2023SUM",
+        "start_date": "2023-06-01",
+        "end_date": "2023-06-30",
+        "is_active": false
+      },
+      "ENR2023FAL": {
+        "enrollment_period_id": "ENR2023FAL",
+        "start_date": "2023-09-01",
+        "end_date": "2023-09-30",
+        "is_active": false
+      },
+      "ENR2024SPR": {
+        "enrollment_period_id": "ENR2024SPR",
+        "start_date": "2024-03-01",
+        "end_date": "2024-03-31",
+        "is_active": true
+      },
+      "ENR2024SUM": {
+        "enrollment_period_id": "ENR2024SUM",
+        "start_date": "2024-06-05",
+        "end_date": "2024-07-05",
+        "is_active": false
+      }
+    },
+    "employee_plan_selections": {
+      "E001_ENR2024SPR": {
+        "employee_id": "E001",
+        "plan_id": "BP101",
+        "enrollment_period_id": "ENR2024SPR",
+        "selection_date": "2024-03-04"
+      },
+      "E002_ENR2024SPR": {
+        "employee_id": "E002",
+        "plan_id": "BP102",
+        "enrollment_period_id": "ENR2024SPR",
+        "selection_date": "2024-03-05T09:15:00"
+      },
+      "E004_ENR2024SPR": {
+        "employee_id": "E004",
+        "plan_id": "BP105",
+        "enrollment_period_id": "ENR2024SPR",
+        "selection_date": "2024-03-06T17:34:02"
+      },
+      "E001_ENR2023SUM": {
+        "employee_id": "E001",
+        "plan_id": "BP104",
+        "enrollment_period_id": "ENR2023SUM",
+        "selection_date": "2023-06-10"
+      },
+      "E003_ENR2023SPR": {
+        "employee_id": "E003",
+        "plan_id": "BP101",
+        "enrollment_period_id": "ENR2023SPR",
+        "selection_date": "2023-03-05"
+      }
+    },
+    "init_config": {}
+  }
+}

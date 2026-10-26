@@ -1,0 +1,266 @@
+{
+  "task_key": "meituan_delivery_task_1",
+  "task_description": "模拟一位上海用户在晚餐时浏览附近餐厅、领取优惠、加购下单、跟踪配送，并对已完成订单申请退款和提交评价的典型外卖场景",
+  "init_config": {
+    "restaurants": {
+      "REST-001": {
+        "restaurant_id": "REST-001",
+        "name": "小杨生煎·家常简餐",
+        "category": "生煎/简餐",
+        "rating": 4.7,
+        "address": "上海市浦东新区张杨路1088号",
+        "latitude": 31.2286,
+        "longitude": 121.5447,
+        "min_order_amount": 20.0,
+        "delivery_fee": 4.5,
+        "delivery_time": 32
+      },
+      "REST-002": {
+        "restaurant_id": "REST-002",
+        "name": "川味小厨·盖饭面食",
+        "category": "川菜/盖饭",
+        "rating": 4.3,
+        "address": "上海市浦东新区东方路796号",
+        "latitude": 31.2219,
+        "longitude": 121.5368,
+        "min_order_amount": 18.0,
+        "delivery_fee": 5.0,
+        "delivery_time": 41
+      }
+    },
+    "menu_items": {
+      "ITEM-001": {
+        "item_id": "ITEM-001",
+        "restaurant_id": "REST-001",
+        "name": "鲜肉生煎包（6只）",
+        "price": 18.0,
+        "category": "招牌主食",
+        "description": "现煎鲜肉生煎，外皮酥脆，汤汁充足，6只装。",
+        "is_available": true
+      },
+      "ITEM-002": {
+        "item_id": "ITEM-002",
+        "restaurant_id": "REST-002",
+        "name": "鱼香肉丝盖饭",
+        "price": 26.0,
+        "category": "盖饭",
+        "description": "鱼香口味，下饭家常菜，配时蔬与米饭。",
+        "is_available": false
+      }
+    },
+    "carts": {
+      "CART-001": {
+        "cart_id": "CART-001",
+        "user_id": "USER-001",
+        "restaurant_id": "REST-001",
+        "items": [
+          {
+            "item_id": "ITEM-001",
+            "name": "鲜肉生煎包（6只）",
+            "quantity": 2,
+            "unit_price": 18.0
+          },
+          {
+            "item_id": "ITEM-001",
+            "name": "鲜肉生煎包（6只）",
+            "quantity": 1,
+            "unit_price": 18.0
+          }
+        ],
+        "total_price": 54.0,
+        "applied_coupon": "COUPON-001"
+      },
+      "CART-002": {
+        "cart_id": "CART-002",
+        "user_id": "USER-002",
+        "restaurant_id": "REST-002",
+        "items": [
+          {
+            "item_id": "ITEM-002",
+            "name": "鱼香肉丝盖饭",
+            "quantity": 1,
+            "unit_price": 26.0
+          },
+          {
+            "item_id": "ITEM-002",
+            "name": "鱼香肉丝盖饭",
+            "quantity": 1,
+            "unit_price": 26.0
+          }
+        ],
+        "total_price": 52.0,
+        "applied_coupon": "COUPON-002"
+      }
+    },
+    "orders": {
+      "ORDER-001": {
+        "order_id": "ORDER-001",
+        "user_id": "USER-001",
+        "restaurant_id": "REST-001",
+        "status": "completed",
+        "total_price": 49.5,
+        "delivery_address": "上海市浦东新区商城路889弄12号1202室",
+        "delivery_address_id": "ADDR-001",
+        "created_at": "2026-06-11T18:20:00+08:00",
+        "items": [
+          {
+            "item_id": "ITEM-001",
+            "name": "鲜肉生煎包（6只）",
+            "quantity": 2,
+            "unit_price": 18.0
+          }
+        ],
+        "coupon_id": "COUPON-001",
+        "note": "少放醋，餐到电联。",
+        "payment_method": "alipay"
+      },
+      "ORDER-002": {
+        "order_id": "ORDER-002",
+        "user_id": "USER-002",
+        "restaurant_id": "REST-002",
+        "status": "delivering",
+        "total_price": 57.0,
+        "delivery_address": "上海市浦东新区蓝村路518弄8号601室",
+        "delivery_address_id": "ADDR-002",
+        "created_at": "2026-06-12T17:20:00+08:00",
+        "items": [
+          {
+            "item_id": "ITEM-002",
+            "name": "鱼香肉丝盖饭",
+            "quantity": 2,
+            "unit_price": 26.0
+          }
+        ],
+        "coupon_id": "COUPON-002",
+        "note": "不要香菜，放门口即可。",
+        "payment_method": "wechat_pay"
+      }
+    },
+    "deliveries": {
+      "DEL-001": {
+        "delivery_id": "DEL-001",
+        "order_id": "ORDER-001",
+        "rider_id": "RIDER-001",
+        "rider_name": "陈志强",
+        "rider_phone": "13816781234",
+        "status": "delivered",
+        "estimated_arrival": "2026-06-11T18:58:00+08:00"
+      },
+      "DEL-002": {
+        "delivery_id": "DEL-002",
+        "order_id": "ORDER-002",
+        "rider_id": "RIDER-002",
+        "rider_name": "王海涛",
+        "rider_phone": "13918234567",
+        "status": "on_the_way",
+        "estimated_arrival": "2026-06-12T18:05:00+08:00"
+      }
+    },
+    "coupons": {
+      "COUPON-001": {
+        "coupon_id": "COUPON-001",
+        "user_id": "USER-001",
+        "type": "满减券",
+        "discount_value": 8.0,
+        "min_order_amount": 40.0,
+        "expiry_date": "2026-06-20T23:59:59+08:00",
+        "is_used": true
+      },
+      "COUPON-002": {
+        "coupon_id": "COUPON-002",
+        "user_id": "USER-002",
+        "type": "运费券",
+        "discount_value": 5.0,
+        "min_order_amount": 25.0,
+        "expiry_date": "2026-06-15T23:59:59+08:00",
+        "is_used": false
+      }
+    },
+    "promotions": {
+      "PROMO-001": {
+        "promotion_id": "PROMO-001",
+        "restaurant_id": "REST-001",
+        "type": "满减",
+        "description": "晚市满39减6，满59减10。",
+        "start_time": "2026-06-10T10:00:00+08:00",
+        "end_time": "2026-06-30T21:00:00+08:00"
+      },
+      "PROMO-002": {
+        "promotion_id": "PROMO-002",
+        "restaurant_id": "REST-002",
+        "type": "第二份半价",
+        "description": "指定盖饭第二份半价，仅限工作日晚餐时段。",
+        "start_time": "2026-06-12T17:00:00+08:00",
+        "end_time": "2026-06-12T20:00:00+08:00"
+      }
+    },
+    "reviews": {
+      "REVIEW-001": {
+        "review_id": "REVIEW-001",
+        "order_id": "ORDER-001",
+        "user_id": "USER-001",
+        "restaurant_id": "REST-001",
+        "restaurant_rating": 5,
+        "rider_rating": 4,
+        "content": "生煎底很脆，送达准时，整体不错。",
+        "created_at": "2026-06-11T20:10:00+08:00"
+      },
+      "REVIEW-002": {
+        "review_id": "REVIEW-002",
+        "order_id": "ORDER-002",
+        "user_id": "USER-002",
+        "restaurant_id": "REST-002",
+        "restaurant_rating": 3,
+        "rider_rating": 5,
+        "content": "配送员态度很好，但餐品还在配送中，先记录待补充。",
+        "created_at": "2026-06-12T17:45:00+08:00"
+      }
+    },
+    "addresses": {
+      "ADDR-001": {
+        "address_id": "ADDR-001",
+        "user_id": "USER-001",
+        "label": "家",
+        "full_address": "上海市浦东新区商城路889弄12号1202室",
+        "latitude": 31.2301,
+        "longitude": 121.5482,
+        "contact_name": "李芳",
+        "contact_phone": "13761002345",
+        "is_default": true
+      },
+      "ADDR-002": {
+        "address_id": "ADDR-002",
+        "user_id": "USER-002",
+        "label": "公司",
+        "full_address": "上海市浦东新区蓝村路518弄8号601室",
+        "latitude": 31.2198,
+        "longitude": 121.5392,
+        "contact_name": "周婷",
+        "contact_phone": "13671894562",
+        "is_default": false
+      }
+    },
+    "refund_requests": {
+      "REFUND-001": {
+        "refund_request_id": "REFUND-001",
+        "order_id": "ORDER-001",
+        "user_id": "USER-001",
+        "reason_type": "餐品质量问题",
+        "description": "生煎有一份偏凉，申请部分退款。",
+        "status": "processing",
+        "refund_amount": 10.0,
+        "created_at": "2026-06-12T10:30:00+08:00"
+      },
+      "REFUND-002": {
+        "refund_request_id": "REFUND-002",
+        "order_id": "ORDER-002",
+        "user_id": "USER-002",
+        "reason_type": "配送异常",
+        "description": "配送中预计超时，先发起异常申诉。",
+        "status": "rejected",
+        "refund_amount": 5.0,
+        "created_at": "2026-06-12T17:40:00+08:00"
+      }
+    }
+  }
+}

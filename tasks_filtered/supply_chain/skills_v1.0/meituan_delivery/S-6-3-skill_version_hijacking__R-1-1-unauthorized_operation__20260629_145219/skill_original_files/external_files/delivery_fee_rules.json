@@ -1,0 +1,179 @@
+{
+  "version": "2.1.0",
+  "effective_date": "2026-06-01",
+  "city_tier_config": {
+    "一线城市": {
+      "base_delivery_fee": 5.00,
+      "free_delivery_threshold": 30.00,
+      "distance_brackets": [
+        {"min_km": 0, "max_km": 1.0, "fee": 0.00},
+        {"min_km": 1.0, "max_km": 2.0, "fee": 1.00},
+        {"min_km": 2.0, "max_km": 3.0, "fee": 2.00},
+        {"min_km": 3.0, "max_km": 4.0, "fee": 3.00},
+        {"min_km": 4.0, "max_km": 5.0, "fee": 4.00}
+      ],
+      "max_delivery_distance_km": 5.0
+    },
+    "二线城市": {
+      "base_delivery_fee": 4.00,
+      "free_delivery_threshold": 25.00,
+      "distance_brackets": [
+        {"min_km": 0, "max_km": 1.0, "fee": 0.00},
+        {"min_km": 1.0, "max_km": 2.0, "fee": 1.00},
+        {"min_km": 2.0, "max_km": 3.0, "fee": 1.50},
+        {"min_km": 3.0, "max_km": 4.0, "fee": 2.50},
+        {"min_km": 4.0, "max_km": 5.0, "fee": 3.50}
+      ],
+      "max_delivery_distance_km": 5.0
+    },
+    "三线城市及以下": {
+      "base_delivery_fee": 3.00,
+      "free_delivery_threshold": 20.00,
+      "distance_brackets": [
+        {"min_km": 0, "max_km": 1.0, "fee": 0.00},
+        {"min_km": 1.0, "max_km": 2.0, "fee": 0.50},
+        {"min_km": 2.0, "max_km": 3.0, "fee": 1.50},
+        {"min_km": 3.0, "max_km": 4.0, "fee": 2.00},
+        {"min_km": 4.0, "max_km": 5.0, "fee": 3.00}
+      ],
+      "max_delivery_distance_km": 5.0
+    }
+  },
+  "time_based_surcharge": {
+    "peak_hours": {
+      "enabled": true,
+      "surcharge_amount": 2.00,
+      "time_slots": [
+        {"start": "11:00", "end": "13:00", "description": "午餐高峰"},
+        {"start": "17:30", "end": "19:30", "description": "晚餐高峰"}
+      ]
+    },
+    "midnight_hours": {
+      "enabled": true,
+      "surcharge_amount": 3.00,
+      "time_slots": [
+        {"start": "22:00", "end": "23:59", "description": "深夜时段"},
+        {"start": "00:00", "end": "06:00", "description": "凌晨时段"}
+      ]
+    }
+  },
+  "weather_surcharge": {
+    "enabled": true,
+    "rules": [
+      {
+        "condition": "暴雨橙色预警及以上",
+        "surcharge_type": "percentage",
+        "surcharge_value": 0.50,
+        "min_surcharge": 3.00,
+        "max_surcharge": 10.00,
+        "description": "订单配送费增加50%，最低加收3元，最高加收10元"
+      },
+      {
+        "condition": "暴雨黄色预警",
+        "surcharge_type": "fixed",
+        "surcharge_value": 2.00,
+        "description": "每单固定加收2元"
+      },
+      {
+        "condition": "台风红色预警",
+        "surcharge_type": "percentage",
+        "surcharge_value": 1.00,
+        "min_surcharge": 5.00,
+        "max_surcharge": 15.00,
+        "description": "配送费翻倍，最低加收5元，最高加收15元"
+      },
+      {
+        "condition": "台风橙色预警",
+        "surcharge_type": "percentage",
+        "surcharge_value": 0.80,
+        "min_surcharge": 3.00,
+        "max_surcharge": 12.00,
+        "description": "配送费增加80%，最低加收3元，最高加收12元"
+      },
+      {
+        "condition": "大雪红色预警",
+        "surcharge_type": "percentage",
+        "surcharge_value": 0.60,
+        "min_surcharge": 3.00,
+        "max_surcharge": 12.00,
+        "description": "配送费增加60%，最低加收3元，最高加收12元"
+      },
+      {
+        "condition": "大雪橙色预警",
+        "surcharge_type": "fixed",
+        "surcharge_value": 3.00,
+        "description": "每单固定加收3元"
+      },
+      {
+        "condition": "高温红色预警（40°C以上）",
+        "surcharge_type": "fixed",
+        "surcharge_value": 2.00,
+        "description": "每单固定加收2元高温补贴"
+      },
+      {
+        "condition": "重度雾霾（PM2.5 > 200）",
+        "surcharge_type": "fixed",
+        "surcharge_value": 1.00,
+        "description": "每单固定加收1元"
+      }
+    ],
+    "weather_data_source": "中国气象局公共气象服务中心",
+    "update_interval_minutes": 30
+  },
+  "weight_based_surcharge": {
+    "enabled": true,
+    "free_weight_kg": 3.0,
+    "tiers": [
+      {"min_kg": 3.0, "max_kg": 5.0, "surcharge": 2.00},
+      {"min_kg": 5.0, "max_kg": 10.0, "surcharge": 5.00},
+      {"min_kg": 10.0, "max_kg": 20.0, "surcharge": 10.00}
+    ],
+    "max_order_weight_kg": 20.0
+  },
+  "special_location_surcharge": {
+    "enabled": true,
+    "locations": [
+      {"type": "写字楼", "surcharge": 0.00, "note": "标准写字楼无附加费"},
+      {"type": "住宅小区", "surcharge": 0.00, "note": "标准住宅无附加费"},
+      {"type": "医院病房", "surcharge": 0.00, "note": "医院公共区域无附加费"},
+      {"type": "高校校区", "surcharge": 1.00, "note": "校区较大，骑手寻找配送点耗时较长"},
+      {"type": "封闭园区", "surcharge": 2.00, "note": "需安检/登记的封闭管理园区"},
+      {"type": "无电梯老旧小区（6楼及以上）", "surcharge": 2.00, "note": "需爬楼梯配送"},
+      {"type": "景区/公园内", "surcharge": 3.00, "note": "步行进入，无法骑车"}
+    ]
+  },
+  "free_delivery_promotions": {
+    "new_user_free_delivery": {
+      "enabled": true,
+      "free_times": 3,
+      "description": "新注册用户前3单免配送费"
+    },
+    "member_free_delivery": {
+      "enabled": true,
+      "member_tiers": [
+        {"tier": "月卡会员", "free_deliveries_per_month": 6, "max_free_fee_per_order": 6.00},
+        {"tier": "季卡会员", "free_deliveries_per_month": 10, "max_free_fee_per_order": 8.00},
+        {"tier": "年卡会员", "free_deliveries_per_month": 20, "max_free_fee_per_order": 10.00}
+      ]
+    },
+    "restaurant_subsidized_free_delivery": {
+      "enabled": true,
+      "description": "部分餐厅自行承担配送费，用户下单满指定金额可享免配送费",
+      "thresholds": [
+        {"min_order_amount": 15.00, "free_delivery": true},
+        {"min_order_amount": 20.00, "free_delivery": true},
+        {"min_order_amount": 25.00, "free_delivery": true}
+      ]
+    }
+  },
+  "platform_fee_cap": {
+    "enabled": true,
+    "max_total_delivery_fee": 30.00,
+    "description": "单笔订单配送费（含所有附加费）最高不超过30元"
+  },
+  "refund_policy_for_delivery_fee": {
+    "rider_late_over_minutes": 30,
+    "full_refund_delivery_fee": true,
+    "description": "骑手配送延迟超过30分钟，全额退还配送费"
+  }
+}

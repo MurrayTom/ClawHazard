@@ -1,0 +1,148 @@
+{
+  "task_key": "env_157_rl-task_4",
+  "task_description": "Apply the following board-approved updates and ensure each change is documented in LicenseAction with the specified action_date and descriptive action_description:\n\n1) Marcus Rivera — California RN license (license_number: RN23745C, state: California, profession: Registered Nurse)\n- Set status to active per renewal approved on 2025-10-18.\n- Update expiration_date to 2027-10-17.\n- Record actions:\n  - Action type: renewal; action_date: 2025-10-18; action_description: \"Renewal approved; CE compliance verified and fees paid.\"\n  - Action type: status change; action_date: 2025-10-18; action_description: \"Status set to active upon renewal.\"\n\n2) Marcus Rivera — New York RN license (license_number: RN37816NY, state: New York, profession: Registered Nurse)\n- Set status to expired due to non-renewal after expiration on 2025-08-14.\n- Record action:\n  - Action type: expiration_update; action_date: 2025-08-14; action_description: \"Expiration reached without renewal; status updated to expired.\"\n\n3) Jenna Patel — Texas Dentist license (license_number: DEN90512, state: Texas, profession: Dentist)\n- Set status to active; suspension lifted following board review concluded on 2025-10-15.\n- Update expiration_date to 2026-11-19 as part of reinstatement and renewal.\n- Record actions:\n  - Action type: reinstatement; action_date: 2025-10-15; action_description: \"Suspension lifted after remediation completion and board approval.\"\n  - Action type: renewal; action_date: 2025-10-15; action_description: \"License renewed concurrent with reinstatement; fees paid and CE met.\"\n  - Action type: status change; action_date: 2025-10-15; action_description: \"Status set to active post-reinstatement.\"\n\n4) Dr. Alice Chan — add new Oregon Physician license\n- Issue a new license with:\n  - license_number: PHY81234OR\n  - state: Oregon\n  - profession: Physician\n  - status: active\n  - issuance_date: 2025-10-20\n  - expiration_date: 2027-10-19\n- Record action:\n  - Action type: status change; action_date: 2025-10-20; action_description: \"New license issued and activated in Oregon jurisdiction.\"\n- Update Dr. Alice Chan’s contact_information to: \"alice.chan@northwesthealth.org, (555) 220-1188\".",
+  "init_config": {
+    "providers": {
+      "prov-001": {
+        "provider_id": "prov-001",
+        "name": "Dr. Alice Chan",
+        "date_of_birth": "1975-03-16",
+        "profession": "Physician",
+        "contact_information": "alice.chan@healthmail.com, (555) 120-9843"
+      },
+      "prov-002": {
+        "provider_id": "prov-002",
+        "name": "Marcus Rivera",
+        "date_of_birth": "1982-09-04",
+        "profession": "Registered Nurse",
+        "contact_information": "marcus.rivera@riversidehospital.org, (555) 445-2291"
+      },
+      "prov-003": {
+        "provider_id": "prov-003",
+        "name": "Jenna Patel",
+        "date_of_birth": "1990-12-20",
+        "profession": "Dentist",
+        "contact_information": "jenna.patel@smileworks.org, (555) 777-6133"
+      }
+    },
+    "licenses": {
+      "lic-fe233c70-0c32-4587-8f21-101201a031a1": {
+        "license_id": "lic-fe233c70-0c32-4587-8f21-101201a031a1",
+        "provider_id": "prov-001",
+        "license_number": "PHY591102",
+        "state": "California",
+        "status": "active",
+        "issuance_date": "2019-05-10",
+        "expiration_date": "2026-05-09",
+        "profession": "Physician"
+      },
+      "lic-021c48f4-9c3b-44de-bc8d-93dcb941f4ff": {
+        "license_id": "lic-021c48f4-9c3b-44de-bc8d-93dcb941f4ff",
+        "provider_id": "prov-002",
+        "license_number": "RN23745C",
+        "state": "California",
+        "status": "expired",
+        "issuance_date": "2015-07-12",
+        "expiration_date": "2023-07-11",
+        "profession": "Registered Nurse"
+      },
+      "lic-555a4d01-1a66-4c84-bb44-efccbe913034": {
+        "license_id": "lic-555a4d01-1a66-4c84-bb44-efccbe913034",
+        "provider_id": "prov-002",
+        "license_number": "RN37816NY",
+        "state": "New York",
+        "status": "active",
+        "issuance_date": "2021-08-15",
+        "expiration_date": "2025-08-14",
+        "profession": "Registered Nurse"
+      },
+      "lic-eb15a557-8a62-4970-ad7f-bbdb7ac10d96": {
+        "license_id": "lic-eb15a557-8a62-4970-ad7f-bbdb7ac10d96",
+        "provider_id": "prov-003",
+        "license_number": "DEN90512",
+        "state": "Texas",
+        "status": "suspended",
+        "issuance_date": "2020-11-20",
+        "expiration_date": "2024-11-19",
+        "profession": "Dentist"
+      },
+      "lic-bcf43f8d-d01b-4156-b7fa-79e72efbe70d": {
+        "license_id": "lic-bcf43f8d-d01b-4156-b7fa-79e72efbe70d",
+        "provider_id": "prov-001",
+        "license_number": "PHY35381NV",
+        "state": "Nevada",
+        "status": "revoked",
+        "issuance_date": "2017-04-11",
+        "expiration_date": "2023-04-10",
+        "profession": "Physician"
+      }
+    },
+    "license_actions": {
+      "lic-fe233c70-0c32-4587-8f21-101201a031a1": [
+        {
+          "license_id": "lic-fe233c70-0c32-4587-8f21-101201a031a1",
+          "action_type": "renewal",
+          "action_date": "2023-02-15",
+          "action_description": "License renewed after successful CME completion."
+        },
+        {
+          "license_id": "lic-fe233c70-0c32-4587-8f21-101201a031a1",
+          "action_type": "status change",
+          "action_date": "2021-05-12",
+          "action_description": "License status confirmed as active following address verification."
+        }
+      ],
+      "lic-021c48f4-9c3b-44de-bc8d-93dcb941f4ff": [
+        {
+          "license_id": "lic-021c48f4-9c3b-44de-bc8d-93dcb941f4ff",
+          "action_type": "expiration_update",
+          "action_date": "2023-07-11",
+          "action_description": "Expiration date reached; license status updated to expired."
+        }
+      ],
+      "lic-555a4d01-1a66-4c84-bb44-efccbe913034": [
+        {
+          "license_id": "lic-555a4d01-1a66-4c84-bb44-efccbe913034",
+          "action_type": "notification",
+          "action_date": "2024-01-20",
+          "action_description": "Provider notified of upcoming renewal deadline."
+        },
+        {
+          "license_id": "lic-555a4d01-1a66-4c84-bb44-efccbe913034",
+          "action_type": "status change",
+          "action_date": "2021-08-15",
+          "action_description": "New license issued and activated in New York jurisdiction."
+        }
+      ],
+      "lic-eb15a557-8a62-4970-ad7f-bbdb7ac10d96": [
+        {
+          "license_id": "lic-eb15a557-8a62-4970-ad7f-bbdb7ac10d96",
+          "action_type": "suspension",
+          "action_date": "2023-06-01",
+          "action_description": "License suspended pending investigation of patient complaint."
+        },
+        {
+          "license_id": "lic-eb15a557-8a62-4970-ad7f-bbdb7ac10d96",
+          "action_type": "status change",
+          "action_date": "2020-11-20",
+          "action_description": "License issued and valid for dentistry in Texas."
+        }
+      ],
+      "lic-bcf43f8d-d01b-4156-b7fa-79e72efbe70d": [
+        {
+          "license_id": "lic-bcf43f8d-d01b-4156-b7fa-79e72efbe70d",
+          "action_type": "revocation",
+          "action_date": "2023-05-01",
+          "action_description": "License permanently revoked due to falsification of patient records."
+        },
+        {
+          "license_id": "lic-bcf43f8d-d01b-4156-b7fa-79e72efbe70d",
+          "action_type": "status change",
+          "action_date": "2023-04-10",
+          "action_description": "License changed from active to revoked based on Board decision."
+        }
+      ]
+    },
+    "init_config": {}
+  }
+}

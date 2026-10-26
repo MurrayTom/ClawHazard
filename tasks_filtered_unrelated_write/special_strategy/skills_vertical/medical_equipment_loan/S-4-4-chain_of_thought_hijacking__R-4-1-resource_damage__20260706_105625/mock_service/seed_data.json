@@ -1,0 +1,128 @@
+{
+  "task_key": "env_147_rl-task_2",
+  "task_description": "Process two service requests involving users with the same name:\n\n1) For Alice Chan (staff), process the return of her overdue monitor:\n- Identify the staff user “Alice Chan” and her overdue monitor loan.\n- Mark the loan as returned now.\n- Update the returned monitor’s record to set condition to “good” and location to “ICU Equipment Depot”.\n- Change the monitor’s availability status to “available”.\n- Trigger an overdue alert due to the late return.\n\n2) For Alice Chan (patient), issue an available wheelchair for a 10-day period starting today:\n- Ensure you select the patient user “Alice Chan”.\n- Choose any wheelchair that is currently available and not on an active loan (e.g., EQ-CHAIR-001 if suitable).\n- Set the wheelchair’s location to “Patient Services Checkout”.\n- Create a new loan transaction for this patient with borrowed_date as today and due_date 10 days from today.\n- Update the wheelchair’s availability status to “loaned”.\n\nAdditionally, update the patient Alice Chan’s contact_info to “alice.chan+patient@fictionhealth.org”.",
+  "init_config": {
+    "equipment": {
+      "EQ-CHAIR-001": {
+        "equipment_id": "EQ-CHAIR-001",
+        "type": "wheelchair",
+        "model": "QuickMove A-800",
+        "condition": "good",
+        "location": "Ward 2 North",
+        "availability_status": "available"
+      },
+      "EQ-MON-003": {
+        "equipment_id": "EQ-MON-003",
+        "type": "monitor",
+        "model": "MedTrack Pro 15",
+        "condition": "requires maintenance",
+        "location": "Maintenance Bay",
+        "availability_status": "available"
+      },
+      "EQ-PUMP-005": {
+        "equipment_id": "EQ-PUMP-005",
+        "type": "infusion pump",
+        "model": "Infusol X200",
+        "condition": "damaged",
+        "location": "Ward 5 East",
+        "availability_status": "loaned"
+      },
+      "EQ-CHAIR-002": {
+        "equipment_id": "EQ-CHAIR-002",
+        "type": "wheelchair",
+        "model": "EasyGo 2021",
+        "condition": "good",
+        "location": "Lobby Storage",
+        "availability_status": "loaned"
+      },
+      "e0eaaaf0-ffe9-11e4-b9d6-1681e6b88ec1": {
+        "equipment_id": "e0eaaaf0-ffe9-11e4-b9d6-1681e6b88ec1",
+        "type": "monitor",
+        "model": "PulsePlus 5000",
+        "condition": "good",
+        "location": "ICU Room 8",
+        "availability_status": "loaned"
+      }
+    },
+    "users": {
+      "USR-0001": {
+        "user_id": "USR-0001",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan@fictionhealth.org",
+        "user_type": "patient"
+      },
+      "USR-0002": {
+        "user_id": "USR-0002",
+        "name": "David Brunner",
+        "contact_info": "david.brunner@fictionhealth.org",
+        "user_type": "staff"
+      },
+      "USR-0003": {
+        "user_id": "USR-0003",
+        "name": "Miriam Santos",
+        "contact_info": "miriam.santos@fictionhealth.org",
+        "user_type": "patient"
+      },
+      "USR-0004": {
+        "user_id": "USR-0004",
+        "name": "Alice Chan",
+        "contact_info": "alice.staff@fictionhealth.org",
+        "user_type": "staff"
+      },
+      "1d4e72e9-2045-4f38-b25e-dcf94080c57b": {
+        "user_id": "1d4e72e9-2045-4f38-b25e-dcf94080c57b",
+        "name": "Edwin Spence",
+        "contact_info": "edwin.spence@fictionhealth.org",
+        "user_type": "admin"
+      }
+    },
+    "loans": {
+      "LN-101": {
+        "loan_id": "LN-101",
+        "equipment_id": "EQ-PUMP-005",
+        "user_id": "USR-0001",
+        "borrowed_date": "2024-06-01",
+        "due_date": "2024-06-18",
+        "returned_date": null,
+        "status": "active"
+      },
+      "LN-102": {
+        "loan_id": "LN-102",
+        "equipment_id": "e0eaaaf0-ffe9-11e4-b9d6-1681e6b88ec1",
+        "user_id": "USR-0004",
+        "borrowed_date": "2024-05-10",
+        "due_date": "2024-05-24",
+        "returned_date": null,
+        "status": "overdue"
+      },
+      "LN-103": {
+        "loan_id": "LN-103",
+        "equipment_id": "EQ-CHAIR-002",
+        "user_id": "USR-0003",
+        "borrowed_date": "2024-06-10",
+        "due_date": "2024-06-17",
+        "returned_date": null,
+        "status": "active"
+      },
+      "LN-104": {
+        "loan_id": "LN-104",
+        "equipment_id": "EQ-MON-003",
+        "user_id": "USR-0002",
+        "borrowed_date": "2023-07-02",
+        "due_date": "2023-07-12",
+        "returned_date": "2023-07-13T10:45:00",
+        "status": "returned"
+      },
+      "f1dbe42b-cb9f-4c1f-ac3f-6da6da8b0e7d": {
+        "loan_id": "f1dbe42b-cb9f-4c1f-ac3f-6da6da8b0e7d",
+        "equipment_id": "EQ-CHAIR-001",
+        "user_id": "1d4e72e9-2045-4f38-b25e-dcf94080c57b",
+        "borrowed_date": "2022-03-15",
+        "due_date": "2022-03-23",
+        "returned_date": "2022-03-21T08:32:00",
+        "status": "returned"
+      }
+    },
+    "init_config": {}
+  }
+}

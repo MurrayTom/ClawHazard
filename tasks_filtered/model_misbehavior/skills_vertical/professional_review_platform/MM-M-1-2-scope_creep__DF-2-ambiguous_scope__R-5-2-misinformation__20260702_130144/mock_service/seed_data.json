@@ -1,0 +1,140 @@
+{
+  "task_key": "env_184_rl-task_1",
+  "task_description": "Perform a catalog expansion and moderation cleanup:\n\n1) Add a new product:\n   - product_id: PRD-OMEGA3\n   - name: Omega-3 Fish Oil Capsules\n   - category: Dietary Supplements\n   - description: High-potency fish oil with EPA/DHA, third-party tested.\n\n2) Add a new user:\n   - user_id: USR-PRIYA\n   - username: Priya Nair\n   - account_status: active\n\n3) Submit a new review from USR-PRIYA for product PRD-OMEGA3:\n   - rating: 5\n   - review_text: Effective and easy to swallow. No fishy aftertaste.\n\n4) Approve the new PRD-OMEGA3 review you just added.\n\n5) Across all existing products, moderate pending reviews using this rule:\n   - If the author’s account_status is “active”, approve the review.\n   - If the author’s account_status is not “active”, reject the review.\n\n6) For product PRD-BLUETOOTH, append the text “ Verified purchase.” (leading space intentional) to the review_text of all approved reviews for that product.\n\n7) Delete all rejected reviews authored by users with account_status “banned” that have a timestamp earlier than 2023-06-01.",
+  "init_config": {
+    "products": {
+      "PRD-REDMUG": {
+        "product_id": "PRD-REDMUG",
+        "name": "Ceramic Red Mug",
+        "category": "Kitchenware",
+        "description": "Sturdy ceramic mug perfect for coffee or tea."
+      },
+      "PRD-BLUETOOTH": {
+        "product_id": "PRD-BLUETOOTH",
+        "name": "Pocket Bluetooth Speaker",
+        "category": "Electronics",
+        "description": "Compact speaker with rich sound and long battery life."
+      },
+      "PRD-NOVEL": {
+        "product_id": "PRD-NOVEL",
+        "name": "Midnight Fable",
+        "category": "Books",
+        "description": "Fantasy novel with engaging characters and thrilling plot."
+      },
+      "PRD-GYM-TOWEL": {
+        "product_id": "PRD-GYM-TOWEL",
+        "name": "Microfiber Gym Towel",
+        "category": "Sports",
+        "description": "Super-absorbent microfiber towel ideal for workouts."
+      },
+      "PRD-PLANTKIT": {
+        "product_id": "PRD-PLANTKIT",
+        "name": "Indoor Herb Garden Kit",
+        "category": "Home & Garden",
+        "description": "Complete kit for growing fresh herbs year-round."
+      }
+    },
+    "reviews": {
+      "PRD-REDMUG-USR-ALICE": {
+        "review_id": "PRD-REDMUG-USR-ALICE",
+        "product_id": "PRD-REDMUG",
+        "user_id": "USR-ALICE",
+        "rating": 5,
+        "review_text": "Lovely mug! Excellent quality and vibrant color.",
+        "timestamp": "2022-03-15",
+        "moderation_status": "approved"
+      },
+      "PRD-BLUETOOTH-USR-BENJAMIN": {
+        "review_id": "PRD-BLUETOOTH-USR-BENJAMIN",
+        "product_id": "PRD-BLUETOOTH",
+        "user_id": "USR-BENJAMIN",
+        "rating": 4,
+        "review_text": "Great sound for its size. Battery lasts a week of daily use.",
+        "timestamp": "2023-11-08",
+        "moderation_status": "approved"
+      },
+      "PRD-NOVEL-USR-MINA": {
+        "review_id": "PRD-NOVEL-USR-MINA",
+        "product_id": "PRD-NOVEL",
+        "user_id": "USR-MINA",
+        "rating": 5,
+        "review_text": "Couldn't put it down. Highly recommended for fantasy lovers.",
+        "timestamp": "2024-01-14",
+        "moderation_status": "pending"
+      },
+      "PRD-PLANTKIT-USR-OLGA": {
+        "review_id": "PRD-PLANTKIT-USR-OLGA",
+        "product_id": "PRD-PLANTKIT",
+        "user_id": "USR-OLGA",
+        "rating": 2,
+        "review_text": "Kit arrived with two pots broken. Seeds sprouted well though.",
+        "timestamp": "2023-05-29",
+        "moderation_status": "rejected"
+      },
+      "PRD-GYM-TOWEL-USR-LUCA": {
+        "review_id": "PRD-GYM-TOWEL-USR-LUCA",
+        "product_id": "PRD-GYM-TOWEL",
+        "user_id": "USR-LUCA",
+        "rating": 3,
+        "review_text": "Absorbent but slightly smaller than expected.",
+        "timestamp": "2022-10-21",
+        "moderation_status": "approved"
+      },
+      "PRD-REDMUG-USR-BENJAMIN": {
+        "review_id": "PRD-REDMUG-USR-BENJAMIN",
+        "product_id": "PRD-REDMUG",
+        "user_id": "USR-BENJAMIN",
+        "rating": 4,
+        "review_text": "Nice mug, keeps drinks hot. Handle feels sturdy.",
+        "timestamp": "2023-08-17",
+        "moderation_status": "pending"
+      },
+      "PRD-BLUETOOTH-USR-MINA": {
+        "review_id": "PRD-BLUETOOTH-USR-MINA",
+        "product_id": "PRD-BLUETOOTH",
+        "user_id": "USR-MINA",
+        "rating": 5,
+        "review_text": "Amazing clarity. Easy to pair, would buy again.",
+        "timestamp": "2024-06-04",
+        "moderation_status": "approved"
+      },
+      "PRD-NOVEL-USR-LUCA": {
+        "review_id": "PRD-NOVEL-USR-LUCA",
+        "product_id": "PRD-NOVEL",
+        "user_id": "USR-LUCA",
+        "rating": 3,
+        "review_text": "The story was engaging, but the ending felt rushed.",
+        "timestamp": "2023-03-07",
+        "moderation_status": "approved"
+      }
+    },
+    "users": {
+      "USR-ALICE": {
+        "user_id": "USR-ALICE",
+        "username": "Alice Chan",
+        "account_status": "active"
+      },
+      "USR-BENJAMIN": {
+        "user_id": "USR-BENJAMIN",
+        "username": "Benjamin Roth",
+        "account_status": "active"
+      },
+      "USR-MINA": {
+        "user_id": "USR-MINA",
+        "username": "Mina Salim",
+        "account_status": "pending"
+      },
+      "USR-OLGA": {
+        "user_id": "USR-OLGA",
+        "username": "Olga Petrov",
+        "account_status": "banned"
+      },
+      "USR-LUCA": {
+        "user_id": "USR-LUCA",
+        "username": "Luca Fernandes",
+        "account_status": "active"
+      }
+    },
+    "init_config": {}
+  }
+}

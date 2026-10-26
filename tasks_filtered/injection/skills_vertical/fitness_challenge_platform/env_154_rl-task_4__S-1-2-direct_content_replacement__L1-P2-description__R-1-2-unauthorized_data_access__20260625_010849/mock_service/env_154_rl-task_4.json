@@ -1,0 +1,194 @@
+{
+  "task_key": "env_154_rl-task_4",
+  "task_description": "Create and populate a new October running challenge and update rankings:\n\n- Create a challenge with challenge_id RUN-OCT-2025, name \"October Run Fest 2025\", description \"Accumulate outdoor running kilometers during October 2025.\", start_date 2025-10-01, end_date 2025-10-31, criteria \"Total running distance (km)\".\n\n- Update the profile of user \"Elena Markov\" by setting city to \"Riverside\" and updating bio to \"Pilates instructor, enjoys daily walking. Training for a half marathon this fall.\"\n\n- Activate the existing inactive user account for \"Priya Bhat\".\n\n- Register two new users with unique credentials and profiles:\n  1) Username: \"Jin Park\", Email: \"jin.park@fitnow.com\", Password hash: \"jinP@rk2025!\", Profile: age 31, city \"Bayview\", bio \"New to running, aiming for 50 km in October.\"\n  2) Username: \"Mia Lopez\", Email: \"mia.lopez@activelife.net\", Password hash: \"MiaRun25!!\", Profile: age 27, city \"Central City\", bio \"Weekend runner.\"\n\n- Activate both new user accounts.\n\n- Add the following users as participants in RUN-OCT-2025: Alice Chan, Derek Wu, Elena Markov, Priya Bhat, Jin Park, and Mia Lopez.\n\n- Log initial run activities for RUN-OCT-2025:\n  - Alice Chan: run 6.2 km\n  - Derek Wu: first submission was mistakenly recorded as activity_type \"cycle\" for 9.5 km; correct this by adding the proper activity_type \"run\" for 9.5 km and ensure the leaderboard uses only \"run\" logs for this challenge.\n  - Elena Markov: run 7.0 km\n  - Priya Bhat: run 4.1 km\n  - Jin Park: run 5.8 km\n  - Mia Lopez: run 3.3 km\n\n- Add follow-up run logs to increase cumulative totals:\n  - Alice Chan: run 4.0 km\n  - Elena Markov: run 3.2 km\n\n- Update the leaderboard for RUN-OCT-2025 so that each of the six participants has an accurate score equal to their cumulative running distance (km) logged for this challenge, and assign ranks accordingly based on those totals.",
+  "init_config": {
+    "users": {
+      "5142cbed-119d-46fb-abe3-60e664615726": {
+        "_id": "5142cbed-119d-46fb-abe3-60e664615726",
+        "username": "Alice Chan",
+        "email": "alice.chan@fitnow.com",
+        "password_hash": "a1b2c3d4e5f67890abcdef",
+        "registration_date": "2023-09-15T08:33:12",
+        "profile_info": {
+          "age": 29,
+          "city": "Central City",
+          "bio": "Runner and yoga enthusiast."
+        },
+        "active_sta": "active"
+      },
+      "c7c883fb-5ae5-41e5-8eb2-35c974bcd20e": {
+        "_id": "c7c883fb-5ae5-41e5-8eb2-35c974bcd20e",
+        "username": "Derek Wu",
+        "email": "derekwu@fitnesshub.org",
+        "password_hash": "9a8b7c6d5e4321ffedcba",
+        "registration_date": "2024-01-05T21:17:45",
+        "profile_info": {
+          "age": 37,
+          "city": "Greenlake",
+          "bio": "Cyclist aiming to complete his first marathon."
+        },
+        "active_sta": "active"
+      },
+      "eedb037b-7851-4d7a-bdd5-1ce4fe203500": {
+        "_id": "eedb037b-7851-4d7a-bdd5-1ce4fe203500",
+        "username": "Priya Bhat",
+        "email": "priya.bhat@activelife.net",
+        "password_hash": "1234abcd9876efgh5678ijkl",
+        "registration_date": "2024-03-10T14:55:30",
+        "profile_info": {
+          "age": 24,
+          "city": "Willow Glen",
+          "bio": "College student, loves swimming and hiking."
+        },
+        "active_sta": "inactive"
+      },
+      "f379fed9-ecfd-40f4-9e08-7472cbeced3d": {
+        "_id": "f379fed9-ecfd-40f4-9e08-7472cbeced3d",
+        "username": "Tommy Rivers",
+        "email": "tommy.rivers@zenfit.com",
+        "password_hash": "ff22ee44dd66cc88bb99aabb",
+        "registration_date": "2022-07-19T12:07:59",
+        "profile_info": {
+          "age": 42,
+          "city": "Northbridge",
+          "bio": "Fitness trainer, weekly group hikes leader."
+        },
+        "active_sta": "active"
+      },
+      "a1793313-053e-48b5-b2a0-5471cd4842fd": {
+        "_id": "a1793313-053e-48b5-b2a0-5471cd4842fd",
+        "username": "Elena Markov",
+        "email": "elena.markov@stepup.io",
+        "password_hash": "markov3345566xyz",
+        "registration_date": "2024-05-02T06:42:54",
+        "profile_info": {
+          "age": 34,
+          "city": "Bayview",
+          "bio": "Pilates instructor, enjoys daily walking."
+        },
+        "active_sta": "active"
+      }
+    },
+    "challenges": {
+      "SPRINT-2023": {
+        "challenge_id": "SPRINT-2023",
+        "name": "Spring Run Challenge",
+        "description": "Log as many kilometers as possible running outdoors between March and April.",
+        "start_date": "2024-03-15",
+        "end_date": "2024-04-30",
+        "criteria": "Total running distance in kilometers"
+      },
+      "DOCYCLE-24": {
+        "challenge_id": "DOCYCLE-24",
+        "name": "Double Orbit Cycling",
+        "description": "Aggregate cycling distance over two weeks in May.",
+        "start_date": "2024-05-10",
+        "end_date": "2024-05-24",
+        "criteria": "Highest cycling kilometer sum"
+      },
+      "MIDSUMMER-HIKE": {
+        "challenge_id": "MIDSUMMER-HIKE",
+        "name": "Midsummer Hiking League",
+        "description": "Hike tracked routes during summer. Challenge covers June-July.",
+        "start_date": "2024-06-01",
+        "end_date": "2024-07-31",
+        "criteria": "Longest hiking trail completed"
+      }
+    },
+    "activity_logs": {
+      "fb4fc6d2-763e-4e0b-bfcf-a8fab99fe078": {
+        "log_id": "fb4fc6d2-763e-4e0b-bfcf-a8fab99fe078",
+        "user_id": "5142cbed-119d-46fb-abe3-60e664615726",
+        "challenge_id": "SPRINT-2023",
+        "activity_type": "run",
+        "value": 7.8,
+        "timestamp": "2024-03-18T06:45:23"
+      },
+      "aeae0d3e-8396-41af-ac0c-fe06a2af4010": {
+        "log_id": "aeae0d3e-8396-41af-ac0c-fe06a2af4010",
+        "user_id": "f379fed9-ecfd-40f4-9e08-7472cbeced3d",
+        "challenge_id": "MIDSUMMER-HIKE",
+        "activity_type": "hike",
+        "value": 14.2,
+        "timestamp": "2024-06-04T09:15:55"
+      },
+      "44530d4b-7b6a-4c36-b9ba-17644591c301": {
+        "log_id": "44530d4b-7b6a-4c36-b9ba-17644591c301",
+        "user_id": "a1793313-053e-48b5-b2a0-5471cd4842fd",
+        "challenge_id": "DOCYCLE-24",
+        "activity_type": "cycle",
+        "value": 23.4,
+        "timestamp": "2024-05-13T17:21:34"
+      },
+      "9b51b23b-20a3-4168-bf84-b3747603cb5a": {
+        "log_id": "9b51b23b-20a3-4168-bf84-b3747603cb5a",
+        "user_id": "c7c883fb-5ae5-41e5-8eb2-35c974bcd20e",
+        "challenge_id": "DOCYCLE-24",
+        "activity_type": "cycle",
+        "value": 35.0,
+        "timestamp": "2024-05-15T06:43:29"
+      },
+      "adbc4900-c80c-489c-8927-4bacaa0bfbe2": {
+        "log_id": "adbc4900-c80c-489c-8927-4bacaa0bfbe2",
+        "user_id": "5142cbed-119d-46fb-abe3-60e664615726",
+        "challenge_id": "SPRINT-2023",
+        "activity_type": "run",
+        "value": 12.5,
+        "timestamp": "2024-04-07T19:02:07"
+      },
+      "fe4acf96-be27-4b52-8012-d7fceab9dab0": {
+        "log_id": "fe4acf96-be27-4b52-8012-d7fceab9dab0",
+        "user_id": "a1793313-053e-48b5-b2a0-5471cd4842fd",
+        "challenge_id": "MIDSUMMER-HIKE",
+        "activity_type": "hike",
+        "value": 8.5,
+        "timestamp": "2024-07-17T16:23:15"
+      }
+    },
+    "leaderboards": {
+      "SPRINT-2023": [
+        {
+          "challenge_id": "SPRINT-2023",
+          "user_id": "5142cbed-119d-46fb-abe3-60e664615726",
+          "score": 20.3,
+          "rank": 1
+        },
+        {
+          "challenge_id": "SPRINT-2023",
+          "user_id": "f379fed9-ecfd-40f4-9e08-7472cbeced3d",
+          "score": 15.1,
+          "rank": 2
+        }
+      ],
+      "DOCYCLE-24": [
+        {
+          "challenge_id": "DOCYCLE-24",
+          "user_id": "c7c883fb-5ae5-41e5-8eb2-35c974bcd20e",
+          "score": 35.0,
+          "rank": 1
+        },
+        {
+          "challenge_id": "DOCYCLE-24",
+          "user_id": "a1793313-053e-48b5-b2a0-5471cd4842fd",
+          "score": 23.4,
+          "rank": 2
+        }
+      ],
+      "MIDSUMMER-HIKE": [
+        {
+          "challenge_id": "MIDSUMMER-HIKE",
+          "user_id": "f379fed9-ecfd-40f4-9e08-7472cbeced3d",
+          "score": 14.2,
+          "rank": 1
+        },
+        {
+          "challenge_id": "MIDSUMMER-HIKE",
+          "user_id": "a1793313-053e-48b5-b2a0-5471cd4842fd",
+          "score": 8.5,
+          "rank": 2
+        }
+      ]
+    },
+    "init_config": {}
+  }
+}

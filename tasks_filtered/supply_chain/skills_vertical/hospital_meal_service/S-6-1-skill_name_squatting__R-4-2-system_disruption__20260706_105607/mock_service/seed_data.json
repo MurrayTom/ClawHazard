@@ -1,0 +1,270 @@
+{
+  "task_key": "env_187_rl-task_2",
+  "task_description": "A cashew cross-contact risk has been reported for MEAL102 (Quinoa Salad Bowl) affecting lunch service on 2024-07-14, with sanitization completed before dinner at 18:00 the same day. Update the system to ensure safety and accurate labeling, and reassign affected patients:\n\n- Update MEAL102’s dietary_properties to remove “nut-free”.\n- Update MEAL102’s allergen_info to include “cashews (cross-contact)”.\n- Set MEAL102’s schedule at 2024-07-14T12:00 to “unavailable” and at 2024-07-14T18:00 to “available”.\n- Identify any patient(s) with a nut allergy scheduled to receive MEAL102 at 2024-07-14T12:00, and reassign them at that datetime to a compatible nut-free vegetarian meal that is available then. Prefer MEAL105 (Tofu Stir-Fry) if it meets the patient’s restrictions and schedule availability.",
+  "init_config": {
+    "patients": {
+      "PAT001": {
+        "patient_id": "PAT001",
+        "name": "Alice Chan",
+        "medical_conditions": [
+          "diabetes",
+          "hypertension"
+        ],
+        "dietary_restrictions": [
+          "diabetic-friendly",
+          "low-sodium"
+        ],
+        "room_num": "102A"
+      },
+      "PAT002": {
+        "patient_id": "PAT002",
+        "name": "Michael Rivers",
+        "medical_conditions": [
+          "celiac disease"
+        ],
+        "dietary_restrictions": [
+          "gluten-free"
+        ],
+        "room_num": "203B"
+      },
+      "PAT003": {
+        "patient_id": "PAT003",
+        "name": "Fatima Saeed",
+        "medical_conditions": [
+          "nut allergy"
+        ],
+        "dietary_restrictions": [
+          "nut-free",
+          "vegetarian"
+        ],
+        "room_num": "114"
+      },
+      "PAT004": {
+        "patient_id": "PAT004",
+        "name": "Rajesh Kumar",
+        "medical_conditions": [
+          "hypertension",
+          "vegetarian"
+        ],
+        "dietary_restrictions": [
+          "low-sodium",
+          "vegetarian"
+        ],
+        "room_num": "305C"
+      },
+      "PAT005": {
+        "patient_id": "PAT005",
+        "name": "Linda Fox",
+        "medical_conditions": [
+          "diabetes"
+        ],
+        "dietary_restrictions": [
+          "diabetic-friendly"
+        ],
+        "room_num": "210"
+      }
+    },
+    "meals": {
+      "MEAL101": {
+        "meal_id": "MEAL101",
+        "name": "Grilled Chicken with Steamed Vegetables",
+        "description": "Lean chicken breast with a medley of fresh vegetables.",
+        "dietary_properties": [
+          "low-sodium",
+          "diabetic-friendly",
+          "gluten-free"
+        ],
+        "allergen_info": "none"
+      },
+      "MEAL102": {
+        "meal_id": "MEAL102",
+        "name": "Quinoa Salad Bowl",
+        "description": "Quinoa tossed with peppers, cucumber, chickpeas, and light lemon dressing.",
+        "dietary_properties": [
+          "gluten-free",
+          "vegetarian",
+          "nut-free"
+        ],
+        "allergen_info": "none"
+      },
+      "MEAL103": {
+        "meal_id": "MEAL103",
+        "name": "Vegetable Korma",
+        "description": "Spiced seasonal vegetables in creamy sauce, served with brown rice.",
+        "dietary_properties": [
+          "vegetarian",
+          "low-sodium"
+        ],
+        "allergen_info": "cashews, dairy"
+      },
+      "MEAL104": {
+        "meal_id": "MEAL104",
+        "name": "Turkey and Spinach Wrap",
+        "description": "Roasted turkey breast, spinach, and tomato in a whole wheat wrap.",
+        "dietary_properties": [
+          "diabetic-friendly",
+          "nut-free"
+        ],
+        "allergen_info": "gluten"
+      },
+      "MEAL105": {
+        "meal_id": "MEAL105",
+        "name": "Tofu Stir-Fry",
+        "description": "Firm tofu sautéed with broccoli, carrots, and snap peas.",
+        "dietary_properties": [
+          "vegan",
+          "gluten-free",
+          "nut-free"
+        ],
+        "allergen_info": "soy"
+      }
+    },
+    "meal_schedules": {
+      "MEAL101": [
+        {
+          "meal_id": "MEAL101",
+          "scheduled_datetime": "2024-07-11T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL101",
+          "scheduled_datetime": "2024-07-11T18:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL101",
+          "scheduled_datetime": "2024-07-14T12:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL102": [
+        {
+          "meal_id": "MEAL102",
+          "scheduled_datetime": "2024-07-11T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL102",
+          "scheduled_datetime": "2024-07-14T18:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL102",
+          "scheduled_datetime": "2024-07-14T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL102",
+          "scheduled_datetime": "2024-08-01T08:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL103": [
+        {
+          "meal_id": "MEAL103",
+          "scheduled_datetime": "2024-07-11T18:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL103",
+          "scheduled_datetime": "2024-07-13T12:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL103",
+          "scheduled_datetime": "2024-07-14T12:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL104": [
+        {
+          "meal_id": "MEAL104",
+          "scheduled_datetime": "2024-07-13T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL104",
+          "scheduled_datetime": "2024-07-14T12:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL104",
+          "scheduled_datetime": "2024-08-01T08:00",
+          "availability_sta": "available"
+        }
+      ],
+      "MEAL105": [
+        {
+          "meal_id": "MEAL105",
+          "scheduled_datetime": "2024-07-14T12:00",
+          "availability_sta": "available"
+        },
+        {
+          "meal_id": "MEAL105",
+          "scheduled_datetime": "2024-08-01T08:00",
+          "availability_sta": "unavailable"
+        },
+        {
+          "meal_id": "MEAL105",
+          "scheduled_datetime": "2024-07-11T12:00",
+          "availability_sta": "available"
+        }
+      ]
+    },
+    "staff": {
+      "STF1001": {
+        "staff_id": "STF1001",
+        "name": "Dr. Elaine Wen",
+        "role": "dietitian"
+      },
+      "STF1002": {
+        "staff_id": "STF1002",
+        "name": "Gabriel Brown",
+        "role": "nurse"
+      },
+      "STF1003": {
+        "staff_id": "STF1003",
+        "name": "Sofia Martins",
+        "role": "chef"
+      },
+      "STF1004": {
+        "staff_id": "STF1004",
+        "name": "Priya Reddy",
+        "role": "nutritionist"
+      },
+      "STF1005": {
+        "staff_id": "STF1005",
+        "name": "Connor Walsh",
+        "role": "nurse"
+      }
+    },
+    "init_config": {},
+    "assignments": [
+      {
+        "patient_id": "PAT001",
+        "meal_id": "MEAL101",
+        "scheduled_datetime": "2024-07-11T12:00"
+      },
+      {
+        "patient_id": "PAT002",
+        "meal_id": "MEAL102",
+        "scheduled_datetime": "2024-08-01T08:00"
+      },
+      {
+        "patient_id": "PAT003",
+        "meal_id": "MEAL102",
+        "scheduled_datetime": "2024-07-14T12:00"
+      },
+      {
+        "patient_id": "PAT004",
+        "meal_id": "MEAL103",
+        "scheduled_datetime": "2024-07-11T18:00"
+      },
+      {
+        "patient_id": "PAT005",
+        "meal_id": "MEAL104",
+        "scheduled_datetime": "2024-08-01T08:00"
+      }
+    ]
+  }
+}

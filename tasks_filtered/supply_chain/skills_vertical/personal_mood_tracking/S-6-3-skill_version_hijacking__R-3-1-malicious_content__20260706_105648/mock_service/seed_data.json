@@ -1,0 +1,173 @@
+{
+  "task_key": "env_177_rl-task_5",
+  "task_description": "As an admin supporting Clara Montes, complete the following updates:\n\n1) Rename the “Tired” mood type to “Fatigued,” and update its properties to color “#A3B1C6” and emoji “🥱”.\n\n2) For Clara Montes:\n   - Restore her most recent deleted mood entry. After restoring, change its mood type to “Calm,” update the description to “Recovered after a short nap; feeling steadier.” and add metadata fields: sleep_minutes: 90 and recovery_method: “Nap”.\n   - Bulk delete her “Anxious” mood entries recorded between May 1 and May 31, 2024 (inclusive).\n   - Update her “Joyful” entry about celebrating a friend’s birthday by appending “ Grateful for support.” to the description and adding metadata field gratitude_list: [“friends”, “health”].\n   - Add a new “Calm” mood entry with the description “Post-exam breathing exercises, feeling calm” and metadata: technique: “Box Breathing”, duration: “10m”, exam_subject: “Physics”.",
+  "init_config": {
+    "users": {
+      "USR1": {
+        "_id": "USR1",
+        "name": "Alice Chan",
+        "account_info": "Premium member since 2022"
+      },
+      "USR2": {
+        "_id": "USR2",
+        "name": "Ben Ito",
+        "account_info": "Standard account"
+      },
+      "USR3": {
+        "_id": "USR3",
+        "name": "Clara Montes",
+        "account_info": "Trial account, expires 2024-08-31"
+      },
+      "USR4": {
+        "_id": "USR4",
+        "name": "David Feld",
+        "account_info": "Premium member since 2024"
+      }
+    },
+    "mood_entries": {
+      "E001": {
+        "entry_id": "E001",
+        "user_id": "USR1",
+        "mood_type": "MT_joy",
+        "timestamp": 1716849600.0,
+        "description": "Enjoyed brunch at a sunny cafe.",
+        "metadata": {
+          "location": "Riverside Cafe",
+          "weather": "Sunny"
+        }
+      },
+      "E002": {
+        "entry_id": "E002",
+        "user_id": "USR2",
+        "mood_type": "MT_calm",
+        "timestamp": 1716392400.0,
+        "description": "Had a quiet evening reading.",
+        "metadata": {
+          "book": "The Silent Valley"
+        }
+      },
+      "E003": {
+        "entry_id": "E003",
+        "user_id": "USR3",
+        "mood_type": "MT_anx",
+        "timestamp": 1717015000.0,
+        "description": "Worried about upcoming exam.",
+        "metadata": {
+          "exam_subject": "Physics",
+          "importance": 8
+        }
+      },
+      "E004": {
+        "entry_id": "E004",
+        "user_id": "USR2",
+        "mood_type": "MT_focus",
+        "timestamp": 1716788400.0,
+        "description": "Productive afternoon at work.",
+        "metadata": {
+          "project": "Market Analysis",
+          "duration": "3h"
+        }
+      },
+      "E005": {
+        "entry_id": "E005",
+        "user_id": "USR1",
+        "mood_type": "MT_tired",
+        "timestamp": 1716528000.0,
+        "description": "Felt worn out after long run.",
+        "metadata": {
+          "distance_km": 10.5,
+          "shoes": "Adizero"
+        }
+      },
+      "E006": {
+        "entry_id": "E006",
+        "user_id": "USR4",
+        "mood_type": "MT_calm",
+        "timestamp": 1717102000.0,
+        "description": "Peaceful walk in the park.",
+        "metadata": {
+          "companions": "Solo",
+          "scenery": "Spring blossoms"
+        }
+      },
+      "E007": {
+        "entry_id": "E007",
+        "user_id": "USR3",
+        "mood_type": "MT_joy",
+        "timestamp": 1717204800.0,
+        "description": "Celebrated a friend's birthday.",
+        "metadata": {
+          "event": "Birthday party",
+          "attendees": 12
+        }
+      },
+      "E008": {
+        "entry_id": "E008",
+        "user_id": "USR2",
+        "mood_type": "MT_anx",
+        "timestamp": 1716895600.0,
+        "description": "Nervous before team presentation.",
+        "metadata": {
+          "presentation_topic": "Annual Results",
+          "confidence": 5
+        }
+      },
+      "E009": {
+        "entry_id": "E009",
+        "user_id": "USR1",
+        "mood_type": "MT_calm",
+        "timestamp": 1717264800.0,
+        "description": "Meditated for 20 minutes.",
+        "metadata": {
+          "technique": "Mindfulness",
+          "duration": "20m"
+        }
+      },
+      "E010": {
+        "entry_id": "E010",
+        "user_id": "USR3",
+        "mood_type": "MT_tired",
+        "timestamp": 1716917200.0,
+        "description": "Stayed up late for study group.",
+        "metadata": {
+          "group_size": 4,
+          "subject": "Math"
+        },
+        "deleted": true
+      }
+    },
+    "mood_types": {
+      "MT_joy": {
+        "mood_type_id": "MT_joy",
+        "label": "Joyful",
+        "color": "#FFD700",
+        "emoji": "😃"
+      },
+      "MT_calm": {
+        "mood_type_id": "MT_calm",
+        "label": "Calm",
+        "color": "#ADD8E6",
+        "emoji": "🌿"
+      },
+      "MT_anx": {
+        "mood_type_id": "MT_anx",
+        "label": "Anxious",
+        "color": "#FFA07A",
+        "emoji": "😰"
+      },
+      "MT_focus": {
+        "mood_type_id": "MT_focus",
+        "label": "Focused",
+        "color": "#4169E1",
+        "emoji": "🎯"
+      },
+      "MT_tired": {
+        "mood_type_id": "MT_tired",
+        "label": "Tired",
+        "color": "#B0C4DE",
+        "emoji": "😴"
+      }
+    },
+    "init_config": {}
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "task_key": "env_185_rl-task_3",
+  "task_description": "Normalize the “Work” categories, deduplicate “Alice Chan,” and correct institutional categorizations:\n\n1) Consolidate the two categories both named “Work” into a single standard “Work” category:\n   - Keep the existing “Work” category used for ongoing professional contacts.\n   - Update its description to: “Professional contacts: colleagues, collaborators, suppliers, and clients.”\n   - Reassign every contact currently tagged with the other “Work” category to this standard “Work.”\n   - After reassignment, delete the redundant “Work” category so that only one “Work” remains.\n\n2) Deduplicate the two “Alice Chan” contact entries:\n   - Keep the entry that already has an email address.\n   - Merge all unique phone numbers, addresses, emails, notes, and categories from the other “Alice Chan” into the kept entry (avoid duplicates in lists).\n   - After merging, delete the redundant “Alice Chan” contact.\n\n3) Correct categorization for institutions:\n   - Add the “Emergency” category to “Central Medical Center.”\n   - For “Midwest Supply Co.,” remove the “Healthcare” category and add the standard “Work” category.",
+  "init_config": {
+    "contacts": {
+      "C-123": {
+        "contact_id": "C-123",
+        "name": "Alice Chan",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-0199"
+        ],
+        "addresses": [
+          "245 Maple Drive, Central City"
+        ],
+        "emails": [
+          "alice.chan@example.com"
+        ],
+        "notes": "Met at the health seminar in March.",
+        "categories": [
+          "CAT-001",
+          "CAT-004"
+        ]
+      },
+      "C-234": {
+        "contact_id": "C-234",
+        "name": "Central Medical Center",
+        "type": "institution",
+        "phone_numbers": [
+          "+1-555-0463",
+          "+1-555-9997"
+        ],
+        "addresses": [
+          "700 Wellness Plaza, Midtown"
+        ],
+        "emails": [
+          "admin@centralmed.org",
+          "info@centralmed.org"
+        ],
+        "notes": "24-hour emergency service.",
+        "categories": [
+          "CAT-003",
+          "CAT-005"
+        ]
+      },
+      "C-345": {
+        "contact_id": "C-345",
+        "name": "Jordan Miles",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-3320"
+        ],
+        "addresses": [
+          "144 Beachside Ave, Rivershore"
+        ],
+        "emails": [
+          "jmiles.rivershore@mail.net"
+        ],
+        "notes": "Old friend from university.",
+        "categories": [
+          "CAT-001",
+          "CAT-002",
+          "CAT-005"
+        ]
+      },
+      "C-456": {
+        "contact_id": "C-456",
+        "name": "Midwest Supply Co.",
+        "type": "institution",
+        "phone_numbers": [
+          "+1-555-5588"
+        ],
+        "addresses": [
+          "22 Commerce Park, Grantham"
+        ],
+        "emails": [
+          "contact@midwest-supply.com"
+        ],
+        "notes": "Main supplier for disinfectants.",
+        "categories": [
+          "CAT-003"
+        ]
+      },
+      "C-567": {
+        "contact_id": "C-567",
+        "name": "Alice Chan",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-1400"
+        ],
+        "addresses": [],
+        "emails": [],
+        "notes": "",
+        "categories": [
+          "CAT-002"
+        ]
+      },
+      "C-678": {
+        "contact_id": "C-678",
+        "name": "Nina Kors",
+        "type": "individual",
+        "phone_numbers": [
+          "+1-555-7782",
+          "+1-555-7784"
+        ],
+        "addresses": [
+          "9847 Garden Lane, Newfield"
+        ],
+        "emails": [
+          "n.kors@provider.org"
+        ],
+        "notes": "Prefers contact by email.",
+        "categories": []
+      }
+    },
+    "categories": {
+      "CAT-001": {
+        "category_id": "CAT-001",
+        "category_name": "Family",
+        "description": "People related by blood or marriage."
+      },
+      "CAT-002": {
+        "category_id": "CAT-002",
+        "category_name": "Work",
+        "description": "Professional contacts from past and current employment."
+      },
+      "CAT-003": {
+        "category_id": "CAT-003",
+        "category_name": "Healthcare",
+        "description": "Medical professionals, clinics, and hospitals."
+      },
+      "CAT-004": {
+        "category_id": "CAT-004",
+        "category_name": "Emergency",
+        "description": "Contacts to reach in urgent situations."
+      },
+      "CAT-005": {
+        "category_id": "CAT-005",
+        "category_name": "Work",
+        "description": "Project collaborators and clients reached in 2024."
+      }
+    },
+    "init_config": {}
+  }
+}

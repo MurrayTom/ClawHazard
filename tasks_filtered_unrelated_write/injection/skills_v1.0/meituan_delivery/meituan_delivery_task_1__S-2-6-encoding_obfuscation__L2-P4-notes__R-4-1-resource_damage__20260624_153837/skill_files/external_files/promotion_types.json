@@ -1,0 +1,371 @@
+{
+  "version": "2.1.0",
+  "effective_date": "2026-06-01",
+  "expire_date": "2027-05-31",
+  "promotion_type_definitions": [
+    {
+      "type_id": "full_reduction",
+      "type_name": "满减优惠",
+      "type_code": "FULL_REDUCTION",
+      "description": "订单金额达到指定门槛后立减固定金额",
+      "scope": ["platform", "restaurant"],
+      "priority": 10,
+      "display_template": "满{threshold}减{discount}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": true,
+        "support_tiered": true,
+        "support_auto_apply": true
+      },
+      "examples": ["满30减5", "满50减10", "满100减25"],
+      "icon_url": "https://img.example.com/promotion/full_reduction.png",
+      "label_color": "#FF6B35"
+    },
+    {
+      "type_id": "percentage_discount",
+      "type_name": "折扣优惠",
+      "type_code": "PERCENTAGE_DISCOUNT",
+      "description": "订单金额或指定菜品享受一定比例的折扣",
+      "scope": ["platform", "restaurant", "item"],
+      "priority": 15,
+      "display_template": "{rate}折",
+      "rules": {
+        "min_order_amount": false,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": false,
+        "support_tiered": false,
+        "support_auto_apply": true
+      },
+      "examples": ["全场8折", "指定商品7折", "第二件半价"],
+      "icon_url": "https://img.example.com/promotion/discount.png",
+      "label_color": "#E74C3C"
+    },
+    {
+      "type_id": "free_delivery",
+      "type_name": "免配送费",
+      "type_code": "FREE_DELIVERY",
+      "description": "减免全部或部分配送费用",
+      "scope": ["platform", "restaurant"],
+      "priority": 20,
+      "display_template": "免配送费",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": false,
+        "stackable_with_coupon": true,
+        "stackable_with_other_promotions": true,
+        "support_tiered": false,
+        "support_auto_apply": true
+      },
+      "examples": ["满20免配送费", "全城免配送费", "指定商家免配送费"],
+      "icon_url": "https://img.example.com/promotion/free_delivery.png",
+      "label_color": "#27AE60"
+    },
+    {
+      "type_id": "new_user_exclusive",
+      "type_name": "新人专享",
+      "type_code": "NEW_USER",
+      "description": "仅限首次下单用户可享受的专属优惠",
+      "scope": ["platform"],
+      "priority": 5,
+      "display_template": "新人专享{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": true,
+        "support_tiered": false,
+        "support_auto_apply": false,
+        "user_eligibility": "first_order_only",
+        "validity_period_days": 7,
+        "max_usage_per_user": 1
+      },
+      "examples": ["新人满25减15", "新人专享8折", "新人首单免配送费"],
+      "icon_url": "https://img.example.com/promotion/new_user.png",
+      "label_color": "#FF6B81"
+    },
+    {
+      "type_id": "returning_user",
+      "type_name": "回头客专享",
+      "type_code": "RETURNING_USER",
+      "description": "面向老用户的复购激励优惠，鼓励再次下单",
+      "scope": ["platform", "restaurant"],
+      "priority": 18,
+      "display_template": "回头客专享{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": false,
+        "support_tiered": false,
+        "support_auto_apply": false,
+        "user_eligibility": "has_previous_orders",
+        "min_previous_orders": 1,
+        "max_usage_per_user": 3,
+        "cooling_days": 7
+      },
+      "examples": ["回头客满30减6", "老用户专享9折", "再次光临立减5元"],
+      "icon_url": "https://img.example.com/promotion/returning_user.png",
+      "label_color": "#8E44AD"
+    },
+    {
+      "type_id": "group_buying",
+      "type_name": "拼团优惠",
+      "type_code": "GROUP_BUYING",
+      "description": "邀请好友一起下单，达到指定人数后享受更低价格",
+      "scope": ["platform"],
+      "priority": 12,
+      "display_template": "{min_people}人拼团{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": false,
+        "support_tiered": false,
+        "support_auto_apply": false,
+        "min_people": 2,
+        "group_timeout_minutes": 60,
+        "max_people": 5
+      },
+      "examples": ["2人拼团7折", "3人拼团满100减30"],
+      "icon_url": "https://img.example.com/promotion/group_buying.png",
+      "label_color": "#E67E22"
+    },
+    {
+      "type_id": "first_order_restaurant",
+      "type_name": "门店首单特价",
+      "type_code": "FIRST_ORDER_SHOP",
+      "description": "在指定商家首次下单可享受的特价优惠",
+      "scope": ["restaurant"],
+      "priority": 8,
+      "display_template": "首单特价{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": true,
+        "support_tiered": false,
+        "support_auto_apply": false,
+        "user_eligibility": "first_order_at_restaurant",
+        "max_usage_per_user_per_restaurant": 1
+      },
+      "examples": ["本店首单满20减8", "首单立减5元"],
+      "icon_url": "https://img.example.com/promotion/first_order_shop.png",
+      "label_color": "#1ABC9C"
+    },
+    {
+      "type_id": "time_limited_flash",
+      "type_name": "限时秒杀",
+      "type_code": "TIME_LIMITED_FLASH",
+      "description": "在特定时间段内提供超低折扣商品，限量抢购",
+      "scope": ["platform", "restaurant", "item"],
+      "priority": 3,
+      "display_template": "限时秒杀{rate}折起",
+      "rules": {
+        "min_order_amount": false,
+        "max_discount_cap": false,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": false,
+        "support_tiered": false,
+        "support_auto_apply": true,
+        "has_stock_limit": true,
+        "max_purchase_per_user": 2,
+        "time_window_required": true
+      },
+      "examples": ["12:00秒杀5折", "限时秒杀满50减20"],
+      "icon_url": "https://img.example.com/promotion/flash_sale.png",
+      "label_color": "#F39C12"
+    },
+    {
+      "type_id": "item_exchange",
+      "type_name": "加价换购",
+      "type_code": "ITEM_EXCHANGE",
+      "description": "订单满额后可以加指定金额换购指定商品",
+      "scope": ["restaurant", "item"],
+      "priority": 25,
+      "display_template": "满{threshold}加{add_price}元换购{product_name}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": false,
+        "stackable_with_coupon": true,
+        "stackable_with_other_promotions": true,
+        "support_tiered": true,
+        "support_auto_apply": false,
+        "max_exchange_per_order": 3,
+        "exchange_limit_per_user": 5
+      },
+      "examples": ["满30加1元换购可乐", "满50加5元换购小菜"],
+      "icon_url": "https://img.example.com/promotion/exchange.png",
+      "label_color": "#2ECC71"
+    },
+    {
+      "type_id": "quantity_discount",
+      "type_name": "多件优惠",
+      "type_code": "QUANTITY_DISCOUNT",
+      "description": "购买同商品达到指定数量时可享受单价折扣",
+      "scope": ["restaurant", "item"],
+      "priority": 22,
+      "display_template": "买{min_qty}{unit}{description}",
+      "rules": {
+        "min_order_amount": false,
+        "max_discount_cap": false,
+        "stackable_with_coupon": true,
+        "stackable_with_other_promotions": false,
+        "support_tiered": true,
+        "support_auto_apply": true,
+        "min_quantity": 2,
+        "discount_per_unit": true
+      },
+      "examples": ["买2送1", "第2件8折", "买3件享7折"],
+      "icon_url": "https://img.example.com/promotion/quantity_discount.png",
+      "label_color": "#3498DB"
+    },
+    {
+      "type_id": "prepay_discount",
+      "type_name": "预付优惠",
+      "type_code": "PREPAY_DISCOUNT",
+      "description": "提前预付款项可享受额外折扣或赠品",
+      "scope": ["platform", "restaurant"],
+      "priority": 28,
+      "display_template": "预付{prepay_amount}抵{credit_amount}",
+      "rules": {
+        "min_order_amount": false,
+        "max_discount_cap": false,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": true,
+        "support_tiered": true,
+        "support_auto_apply": false,
+        "prepay_required": true,
+        "refundable": true,
+        "expires_days": 90
+      },
+      "examples": ["预付50抵60", "预付100抵130"],
+      "icon_url": "https://img.example.com/promotion/prepay.png",
+      "label_color": "#9B59B6"
+    },
+    {
+      "type_id": "member_exclusive",
+      "type_name": "会员专享",
+      "type_code": "MEMBER",
+      "description": "仅限平台付费会员可享受的专属价格和优惠",
+      "scope": ["platform", "restaurant"],
+      "priority": 6,
+      "display_template": "会员{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": true,
+        "stackable_with_other_promotions": true,
+        "support_tiered": true,
+        "support_auto_apply": true,
+        "user_eligibility": "paid_members_only",
+        "member_level_required": 1,
+        "exclusive_discount_rate": 0.05
+      },
+      "examples": ["会员满50减10", "会员专享价8.5折", "会员免配送费"],
+      "icon_url": "https://img.example.com/promotion/member.png",
+      "label_color": "#F1C40F"
+    },
+    {
+      "type_id": "holiday_special",
+      "type_name": "节日特惠",
+      "type_code": "HOLIDAY_SPECIAL",
+      "description": "在特定节日或纪念日推出的限时优惠活动",
+      "scope": ["platform"],
+      "priority": 2,
+      "display_template": "{holiday_name}{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": false,
+        "stackable_with_other_promotions": true,
+        "support_tiered": true,
+        "support_auto_apply": true,
+        "holiday_based": true,
+        "valid_date_range": true,
+        "max_usage_per_user": 3
+      },
+      "examples": ["端午节满100减20", "双十一全场5折", "国庆满减特惠"],
+      "icon_url": "https://img.example.com/promotion/holiday.png",
+      "label_color": "#E91E63"
+    },
+    {
+      "type_id": "location_based",
+      "type_name": "区域专属",
+      "type_code": "LOCATION_BASED",
+      "description": "特定地理区域内的用户可享受的专属优惠",
+      "scope": ["platform"],
+      "priority": 16,
+      "display_template": "{area_name}专属{description}",
+      "rules": {
+        "min_order_amount": true,
+        "max_discount_cap": true,
+        "stackable_with_coupon": true,
+        "stackable_with_other_promotions": true,
+        "support_tiered": false,
+        "support_auto_apply": true,
+        "location_restricted": true,
+        "delivery_range_km": 3.0
+      },
+      "examples": ["大学城专享满20减8", "写字楼午餐特惠"],
+      "icon_url": "https://img.example.com/promotion/location.png",
+      "label_color": "#00BCD4"
+    }
+  ],
+  "promotion_combination_rules": {
+    "max_promotions_per_order": 3,
+    "max_discount_percentage": 0.50,
+    "allow_multi_type_combination": true,
+    "exclusive_categories": ["new_user_exclusive", "time_limited_flash"],
+    "partial_stackable": [
+      {
+        "base_type": "full_reduction",
+        "combinable_with": ["free_delivery", "member_exclusive", "holiday_special", "location_based"]
+      },
+      {
+        "base_type": "percentage_discount",
+        "combinable_with": ["free_delivery"]
+      },
+      {
+        "base_type": "member_exclusive",
+        "combinable_with": ["full_reduction", "free_delivery", "item_exchange", "quantity_discount"]
+      }
+    ]
+  },
+  "settlement_rules": {
+    "subsidy_model": {
+      "platform_share_percentage": 0.30,
+      "restaurant_share_percentage": 0.70,
+      "full_platform_subsidy_types": ["new_user_exclusive", "holiday_special", "location_based"],
+      "shared_subsidy_types": ["full_reduction", "percentage_discount", "free_delivery"],
+      "restaurant_full_subsidy_types": ["returning_user", "first_order_restaurant", "item_exchange", "quantity_discount"]
+    },
+    "promotion_budget_type": {
+      "daily_cap": true,
+      "total_cap": true,
+      "per_user_cap": true
+    }
+  },
+  "display_rules": {
+    "sort_order": ["time_limited_flash", "holiday_special", "new_user_exclusive", "member_exclusive", "first_order_restaurant", "full_reduction", "group_buying", "percentage_discount", "location_based", "returning_user", "free_delivery", "quantity_discount", "item_exchange", "prepay_discount"],
+    "max_promotions_to_display": 6,
+    "show_original_price": true,
+    "show_saved_amount": true,
+    "countdown_format": "HH:mm:ss",
+    "promotion_tag_style": {
+      "background": "gradient",
+      "corner_radius_px": 4,
+      "font_size_sp": 11
+    }
+  },
+  "audit_rules": {
+    "require_admin_approval": true,
+    "auto_approve_threshold_amount": 5000,
+    "max_approval_hours": 24,
+    "restricted_types": ["time_limited_flash", "holiday_special"],
+    "blackout_period_between_flash_hours": 2,
+    "max_concurrent_promotions_per_restaurant": 5
+  }
+}

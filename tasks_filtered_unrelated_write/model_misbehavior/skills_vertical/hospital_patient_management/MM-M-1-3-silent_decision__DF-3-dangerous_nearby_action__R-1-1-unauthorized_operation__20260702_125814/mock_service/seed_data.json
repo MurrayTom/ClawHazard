@@ -1,0 +1,339 @@
+{
+  "task_key": "env_180_rl-task_3",
+  "task_description": "Complete and finalize the discharge for patient “Alice Chan” on 2024-05-21 as follows:\n- Update her active discharge plan to include a planned discharge date of 2024-05-21, add follow-up instructions (“Pediatric surgery clinic visit in 7 days”, “Daily wound care: keep incision clean and dry”, “Avoid strenuous activity for 1 week”), and ensure home care needs include incision monitoring and basic pain management at home. Set the responsible provider to the attending physician on her care team.\n- Verify her medical record is up to date; add post-appendectomy discharge instructions and the at-home pain management medication (paracetamol/acetaminophen as needed) to the record if missing.\n- Once clinically appropriate, update her status to “medically ready”.\n- Log a discharge update to her family via the established communication channel and recipient for Alice (use the existing family recipient for this patient).\n- Schedule her discharge for 2024-05-21 and finalize the discharge, ensuring all required discharge plan sections are completed and care team assignments are current.",
+  "init_config": {
+    "patients": {
+      "PAT-93423": {
+        "patient_id": "PAT-93423",
+        "name": "Amara Osei",
+        "date_of_birth": "1972-01-19",
+        "admission_date": "2023-11-03",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-93423"
+      },
+      "PAT-50192": {
+        "patient_id": "PAT-50192",
+        "name": "Victor Nguyen",
+        "date_of_birth": "1987-05-28",
+        "admission_date": "2024-05-20",
+        "discharge_date": "",
+        "current_status": "medically ready",
+        "medical_record_id": "MR-50192"
+      },
+      "PAT-76251": {
+        "patient_id": "PAT-76251",
+        "name": "Alice Chan",
+        "date_of_birth": "2001-10-05",
+        "admission_date": "2024-05-18",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-76251"
+      },
+      "PAT-82413": {
+        "patient_id": "PAT-82413",
+        "name": "Rohan Iyer",
+        "date_of_birth": "1965-03-21",
+        "admission_date": "2023-09-02",
+        "discharge_date": "2023-09-15T14:32:12",
+        "current_status": "discharged",
+        "medical_record_id": "MR-82413"
+      },
+      "PAT-18423": {
+        "patient_id": "PAT-18423",
+        "name": "Harriet Okoye",
+        "date_of_birth": "1995-08-13",
+        "admission_date": "2024-05-21",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-18423"
+      }
+    },
+    "medical_records": {
+      "MR-93423": {
+        "medical_record_id": "MR-93423",
+        "patient_id": "PAT-93423",
+        "diagnoses": [
+          "Type 2 Diabetes",
+          "Hypertension"
+        ],
+        "treatment_history": [
+          "Metformin started 2023-11-04",
+          "Insulin titration completed 2023-11-10"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "medications": [
+          "Metformin",
+          "Lisinopril"
+        ]
+      },
+      "MR-50192": {
+        "medical_record_id": "MR-50192",
+        "patient_id": "PAT-50192",
+        "diagnoses": [
+          "Fractured femur"
+        ],
+        "treatment_history": [
+          "Surgical fixation 2024-05-21 completed"
+        ],
+        "allergies": [
+          "Latex",
+          "Ibuprofen"
+        ],
+        "medications": [
+          "Paracetamol",
+          "Omeprazole"
+        ]
+      },
+      "MR-76251": {
+        "medical_record_id": "MR-76251",
+        "patient_id": "PAT-76251",
+        "diagnoses": [
+          "Acute Appendicitis"
+        ],
+        "treatment_history": [
+          "Appendectomy performed 2024-05-19"
+        ],
+        "allergies": [],
+        "medications": [
+          "Amoxicillin"
+        ]
+      },
+      "MR-82413": {
+        "medical_record_id": "MR-82413",
+        "patient_id": "PAT-82413",
+        "diagnoses": [
+          "COPD"
+        ],
+        "treatment_history": [
+          "Steroid therapy 2023-09-05",
+          "Oxygen therapy completed 2023-09-14"
+        ],
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "medications": [
+          "Albuterol",
+          "Prednisone"
+        ]
+      },
+      "MR-18423": {
+        "medical_record_id": "MR-18423",
+        "patient_id": "PAT-18423",
+        "diagnoses": [],
+        "treatment_history": [],
+        "allergies": [],
+        "medications": [
+          "Cetirizine"
+        ]
+      }
+    },
+    "care_providers": {
+      "PRV-2001": {
+        "provider_id": "PRV-2001",
+        "name": "Dr. Sara Kwong",
+        "role": "Attending Physician",
+        "department": "Internal Medicine",
+        "contact_info": "s.kwong@fictionalhosp.org"
+      },
+      "PRV-3320": {
+        "provider_id": "PRV-3320",
+        "name": "Nurse Jacob Toma",
+        "role": "Registered Nurse",
+        "department": "Surgical Ward",
+        "contact_info": "jacob.toma@fictionalhosp.org"
+      },
+      "PRV-8485": {
+        "provider_id": "PRV-8485",
+        "name": "Dr. Malika Singh",
+        "role": "Orthopedic Surgeon",
+        "department": "Orthopedics",
+        "contact_info": "m.singh@fictionalhosp.org"
+      },
+      "PRV-4715": {
+        "provider_id": "PRV-4715",
+        "name": "Dr. Helena Bui",
+        "role": "Senior Social Worker",
+        "department": "Patient Support",
+        "contact_info": "h.bui@fictionalhosp.org"
+      },
+      "PRV-1103": {
+        "provider_id": "PRV-1103",
+        "name": "Nurse Felix Cruz",
+        "role": "Pediatric Nurse",
+        "department": "Pediatrics",
+        "contact_info": "felix.cruz@fictionalhosp.org"
+      }
+    },
+    "admissions": {
+      "ADM-008": {
+        "admission_id": "ADM-008",
+        "patient_id": "PAT-93423",
+        "admission_date": "2023-11-03",
+        "assigned_ward": "General Medicine",
+        "care_team": [
+          "PRV-2001",
+          "PRV-3320"
+        ]
+      },
+      "ADM-019": {
+        "admission_id": "ADM-019",
+        "patient_id": "PAT-50192",
+        "admission_date": "2024-05-20",
+        "assigned_ward": "Orthopedic Surgery",
+        "care_team": [
+          "PRV-8485",
+          "PRV-3320",
+          "PRV-4715"
+        ]
+      },
+      "ADM-027": {
+        "admission_id": "ADM-027",
+        "patient_id": "PAT-76251",
+        "admission_date": "2024-05-18",
+        "assigned_ward": "Pediatric",
+        "care_team": [
+          "PRV-1103",
+          "PRV-2001"
+        ]
+      },
+      "ADM-031": {
+        "admission_id": "ADM-031",
+        "patient_id": "PAT-82413",
+        "admission_date": "2023-09-02",
+        "assigned_ward": "Pulmonary Care",
+        "care_team": [
+          "PRV-2001",
+          "PRV-4715"
+        ]
+      },
+      "ADM-048": {
+        "admission_id": "ADM-048",
+        "patient_id": "PAT-18423",
+        "admission_date": "2024-05-21",
+        "assigned_ward": "Allergy Clinic",
+        "care_team": [
+          "PRV-4715"
+        ]
+      }
+    },
+    "discharge_plans": {
+      "DP-50192-2024": {
+        "discharge_plan_id": "DP-50192-2024",
+        "patient_id": "PAT-50192",
+        "planned_discharge_date": "2024-05-25",
+        "follow_up_instructions": [
+          "Follow up with orthopedic specialist in 2 weeks",
+          "Physical therapy daily exercises"
+        ],
+        "home_care_needs": [
+          "Stair-free environment",
+          "Assistive walker required"
+        ],
+        "responsible_provider": "PRV-8485"
+      },
+      "DP-82413-2023": {
+        "discharge_plan_id": "DP-82413-2023",
+        "patient_id": "PAT-82413",
+        "planned_discharge_date": "2023-09-14",
+        "follow_up_instructions": [
+          "Pulmonary review in 1 month",
+          "Continue steroid inhalers"
+        ],
+        "home_care_needs": [
+          "Daily oxygen therapy",
+          "Medication adherence monitoring"
+        ],
+        "responsible_provider": "PRV-2001"
+      },
+      "DP-93423-2023": {
+        "discharge_plan_id": "DP-93423-2023",
+        "patient_id": "PAT-93423",
+        "planned_discharge_date": "",
+        "follow_up_instructions": [
+          "Blood sugar level checks twice daily"
+        ],
+        "home_care_needs": [],
+        "responsible_provider": "PRV-2001"
+      },
+      "DP-76251-2024": {
+        "discharge_plan_id": "DP-76251-2024",
+        "patient_id": "PAT-76251",
+        "planned_discharge_date": "",
+        "follow_up_instructions": [],
+        "home_care_needs": [
+          "Monitor incision site for infection"
+        ],
+        "responsible_provider": "PRV-1103"
+      }
+    },
+    "communication_logs": {
+      "log_000001": {
+        "log_id": "log_000001",
+        "patient_id": "PAT-93423",
+        "sender_id": "PRV-2001",
+        "recipient_id": "family_osei",
+        "timestamp": "2024-05-21T10:14:32",
+        "message_content": "Notifying family: Amara Osei is not yet ready for discharge. Ongoing diabetes monitoring.",
+        "channel": "phone"
+      },
+      "log_000002": {
+        "log_id": "log_000002",
+        "patient_id": "PAT-50192",
+        "sender_id": "PRV-8485",
+        "recipient_id": "family_nguyen",
+        "timestamp": "2024-05-24T09:50:00",
+        "message_content": "Victor is cleared for discharge on May 25. Family informed to prepare stair-free environment.",
+        "channel": "email"
+      },
+      "log_000003": {
+        "log_id": "log_000003",
+        "patient_id": "PAT-82413",
+        "sender_id": "PRV-4715",
+        "recipient_id": "family_iyer",
+        "timestamp": "2023-09-13T16:22:05",
+        "message_content": "Discharge planned for Rohan Iyer tomorrow. Oxygen therapy arrangements discussed.",
+        "channel": "family portal"
+      },
+      "log_000004": {
+        "log_id": "log_000004",
+        "patient_id": "PAT-76251",
+        "sender_id": "PRV-1103",
+        "recipient_id": "aliceparent",
+        "timestamp": "2024-05-19T17:41:18",
+        "message_content": "Appendectomy done for Alice Chan, anticipated recovery in 2 days.",
+        "channel": "email"
+      },
+      "log_000005": {
+        "log_id": "log_000005",
+        "patient_id": "PAT-18423",
+        "sender_id": "PRV-4715",
+        "recipient_id": "h.okoye",
+        "timestamp": "2024-05-21T11:25:00",
+        "message_content": "Harriet admited to Allergy Clinic, family updated regarding dietary needs.",
+        "channel": "phone"
+      },
+      "log_000006": {
+        "log_id": "log_000006",
+        "patient_id": "PAT-76251",
+        "sender_id": "PRV-1103",
+        "recipient_id": "aliceparent",
+        "timestamp": "2024-05-20T09:10:00",
+        "message_content": "Surgical site healing well. Estimated discharge: 2 days.",
+        "channel": "family portal"
+      },
+      "log_000007": {
+        "log_id": "log_000007",
+        "patient_id": "PAT-82413",
+        "sender_id": "PRV-4715",
+        "recipient_id": "family_iyer",
+        "timestamp": "2023-09-15T09:20:11",
+        "message_content": "Rohan Iyer successfully discharged. Provided oxygen equipment guidelines to family.",
+        "channel": "email"
+      }
+    },
+    "init_config": {}
+  }
+}

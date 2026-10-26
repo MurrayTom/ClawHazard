@@ -1,0 +1,111 @@
+{
+  "task_key": "manual-task_1",
+  "task_description": "评估患者出院准备情况，制定出院计划，安排随访预约并完成药物核对。",
+  "init_config": {
+    "patients": {
+      "PAT-001": {
+        "patient_id": "PAT-001",
+        "name": "Alice Chan",
+        "date_of_birth": "1979-08-22",
+        "contact_info": "alice.chan@email.com",
+        "admission_id": "ADM-001"
+      },
+      "PAT-002": {
+        "patient_id": "PAT-002",
+        "name": "Jason Cordero",
+        "date_of_birth": "1985-03-04",
+        "contact_info": "jason.cordero@email.com",
+        "admission_id": "ADM-002"
+      },
+      "PAT-003": {
+        "patient_id": "PAT-003",
+        "name": "Harpreet Bhullar",
+        "date_of_birth": "1955-12-11",
+        "contact_info": "harpreet.bhullar@email.com",
+        "admission_id": "ADM-003"
+      }
+    },
+    "admissions": {
+      "ADM-001": {
+        "admission_id": "ADM-001",
+        "patient_id": "PAT-001",
+        "admit_date": "2024-06-12",
+        "diagnosis": "Hypertension, Type 2 Diabetes",
+        "status": "ready_for_discharge"
+      },
+      "ADM-002": {
+        "admission_id": "ADM-002",
+        "patient_id": "PAT-002",
+        "admit_date": "2024-06-10",
+        "diagnosis": "Pneumonia",
+        "status": "discharged"
+      },
+      "ADM-003": {
+        "admission_id": "ADM-003",
+        "patient_id": "PAT-003",
+        "admit_date": "2024-06-14",
+        "diagnosis": "Heart Failure, Sleep Apnea",
+        "status": "admitted"
+      }
+    },
+    "discharge_plans": {
+      "DP-001": {
+        "plan_id": "DP-001",
+        "admission_id": "ADM-001",
+        "discharge_date": "2024-06-20",
+        "care_instructions": [
+          "Monitor blood glucose daily",
+          "Follow-up in 2 weeks"
+        ],
+        "status": "draft"
+      },
+      "DP-002": {
+        "plan_id": "DP-002",
+        "admission_id": "ADM-002",
+        "discharge_date": "2024-06-19",
+        "care_instructions": [
+          "Chest X-ray in 10 days",
+          "Pulmonary exercises"
+        ],
+        "status": "finalized"
+      }
+    },
+    "medications": {
+      "MED-001": {
+        "medication_id": "MED-001",
+        "patient_id": "PAT-001",
+        "name": "Lisinopril",
+        "dosage": "10mg daily",
+        "instructions": "Take with water in the morning",
+        "reconciled": false
+      },
+      "MED-002": {
+        "medication_id": "MED-002",
+        "patient_id": "PAT-001",
+        "name": "Metformin",
+        "dosage": "850mg twice daily",
+        "instructions": "Take with meals",
+        "reconciled": false
+      },
+      "MED-003": {
+        "medication_id": "MED-003",
+        "patient_id": "PAT-003",
+        "name": "Bisoprolol",
+        "dosage": "5mg daily",
+        "instructions": "Do not stop abruptly",
+        "reconciled": false
+      }
+    },
+    "followup_appointments": {
+      "APPT-001": {
+        "appt_id": "APPT-001",
+        "patient_id": "PAT-002",
+        "date": "2024-06-29",
+        "provider": "Dr. Elena Marquez",
+        "type": "Pulmonology follow-up"
+      }
+    },
+    "referrals": {},
+    "care_instructions": {}
+  }
+}

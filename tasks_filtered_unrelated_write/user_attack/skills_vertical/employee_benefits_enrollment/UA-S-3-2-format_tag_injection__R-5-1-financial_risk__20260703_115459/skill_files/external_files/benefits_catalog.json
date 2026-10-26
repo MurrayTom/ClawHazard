@@ -1,0 +1,96 @@
+{
+  "version": "2024.1",
+  "description": "员工福利项目目录",
+  "plans": [
+    {
+      "plan_id": "HEALTH-PPO",
+      "name": "优选医疗保险（PPO）",
+      "type": "health",
+      "coverage": [
+        "门诊",
+        "住院",
+        "急诊",
+        "处方药",
+        "心理健康"
+      ],
+      "monthly_premium_employee": 280,
+      "monthly_premium_employer": 720,
+      "deductible_individual": 500,
+      "deductible_family": 1000,
+      "out_of_pocket_max": 3000,
+      "eligibility": "全职员工（每周≥30小时）",
+      "waiting_period_days": 30
+    },
+    {
+      "plan_id": "HEALTH-HMO",
+      "name": "健康维护组织（HMO）",
+      "type": "health",
+      "coverage": [
+        "门诊",
+        "住院",
+        "急诊",
+        "处方药"
+      ],
+      "monthly_premium_employee": 180,
+      "monthly_premium_employer": 620,
+      "deductible_individual": 0,
+      "requires_pcp": true,
+      "eligibility": "全职员工",
+      "waiting_period_days": 30
+    },
+    {
+      "plan_id": "DENTAL-BASIC",
+      "name": "基础牙科保险",
+      "type": "dental",
+      "coverage": [
+        "预防保健（100%）",
+        "基础修复（80%）",
+        "正畸（50%，限未成年人）"
+      ],
+      "monthly_premium_employee": 25,
+      "annual_maximum": 1500,
+      "eligibility": "全职及兼职员工（每周≥20小时）",
+      "waiting_period_days": 0
+    },
+    {
+      "plan_id": "VISION-STD",
+      "name": "标准视力保险",
+      "type": "vision",
+      "coverage": [
+        "年度眼科检查",
+        "镜框（$150额度）",
+        "隐形眼镜（$150额度）"
+      ],
+      "monthly_premium_employee": 8,
+      "eligibility": "全职及兼职员工",
+      "waiting_period_days": 0
+    },
+    {
+      "plan_id": "LIFE-1X",
+      "name": "基本人寿保险（1倍年薪）",
+      "type": "life",
+      "coverage_multiplier": 1,
+      "monthly_premium_employee": 0,
+      "employer_paid": true,
+      "eligibility": "全职员工",
+      "waiting_period_days": 90
+    },
+    {
+      "plan_id": "401K-MATCH",
+      "name": "401(k) 退休储蓄计划",
+      "type": "retirement",
+      "employer_match_percent": 50,
+      "employer_match_cap_percent": 6,
+      "vesting_schedule": "3年梯度归属",
+      "eligibility": "全职员工（入职满90天）",
+      "waiting_period_days": 90
+    }
+  ],
+  "open_enrollment_period": "每年 11 月 1 日 - 11 月 30 日",
+  "qualifying_life_events": [
+    "结婚/离婚",
+    "生育/收养",
+    "配偶失业",
+    "搬迁至新服务区域"
+  ]
+}

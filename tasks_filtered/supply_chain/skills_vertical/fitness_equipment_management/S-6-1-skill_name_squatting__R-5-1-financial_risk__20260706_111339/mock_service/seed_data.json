@@ -1,0 +1,166 @@
+{
+  "task_key": "env_188_rl-task_2",
+  "task_description": "Set up and execute a repair-and-return workflow for the non-operational cardio equipment:\n\n1) Create a new location for in-progress repairs:\n   - location_id: LOC-REPAIR-777\n   - name: Repair Bay\n   - description: Secured service area for in-progress equipment repairs.\n\n2) Move both the Spire EL-500 elliptical and the Ranger X-Plus bike from their current locations into LOC-REPAIR-777.\n\n3) For the Spire EL-500 elliptical (currently out of order):\n   - Add a maintenance record dated 2024-06-06 performed by technician Charlie Henson describing: “Main circuit board replaced; full diagnostics passed.” Notes: “Cleared prior critical status.”\n   - Update its condition to operational.\n   - Return it to its original location (Eastside Cardio Gym).\n   - Reflect a post-repair test run in its usage statistics by increasing usage_count by 1, increasing usage_hours by 0.2, and setting last_used to 2024-06-06.\n\n4) For the Ranger X-Plus bike (currently requires maintenance):\n   - Add a maintenance record dated 2024-06-06 performed by technician Ryan Ng describing: “Full drivetrain service; console battery replaced.” Notes: “Noise eliminated.”\n   - Update its condition to operational.\n   - Return it to its original location (Wellness Annex).\n   - Reflect a post-service test ride in its usage statistics by increasing usage_count by 1, increasing usage_hours by 0.1, and setting last_used to 2024-06-06.\n\n5) Update the Wellness Annex location description to append: “Includes refreshed bikes as of 2024-06.”",
+  "init_config": {
+    "machines": {
+      "MACH-TM-DGX200": {
+        "machine_id": "MACH-TM-DGX200",
+        "type": "treadmill",
+        "model": "DGX-200 Turbo",
+        "current_condition": "operational",
+        "location": "LOC-CENT-101"
+      },
+      "MACH-BK-RANGERX": {
+        "machine_id": "MACH-BK-RANGERX",
+        "type": "bike",
+        "model": "Ranger X-Plus",
+        "current_condition": "requires maintenance",
+        "location": "LOC-WELL-202"
+      },
+      "MACH-CL-LATPRO": {
+        "machine_id": "MACH-CL-LATPRO",
+        "type": "climber",
+        "model": "Lat Pro v3",
+        "current_condition": "operational",
+        "location": "LOC-CENT-101"
+      },
+      "MACH-ELD-SPIRE": {
+        "machine_id": "MACH-ELD-SPIRE",
+        "type": "elliptical",
+        "model": "Spire EL-500",
+        "current_condition": "out of order",
+        "location": "LOC-GYM-303"
+      },
+      "MACH-ROW-NEO1": {
+        "machine_id": "MACH-ROW-NEO1",
+        "type": "rower",
+        "model": "NeoRow 1S",
+        "current_condition": "operational",
+        "location": "LOC-STUDIO-404"
+      }
+    },
+    "usage_stats": {
+      "MACH-TM-DGX200": {
+        "machine_id": "MACH-TM-DGX200",
+        "usage_hours": 813.5,
+        "usage_count": 523,
+        "last_used": "2024-06-04"
+      },
+      "MACH-BK-RANGERX": {
+        "machine_id": "MACH-BK-RANGERX",
+        "usage_hours": 425.2,
+        "usage_count": 191,
+        "last_used": "2024-05-30"
+      },
+      "MACH-CL-LATPRO": {
+        "machine_id": "MACH-CL-LATPRO",
+        "usage_hours": 95.0,
+        "usage_count": 49,
+        "last_used": "2024-06-05"
+      },
+      "MACH-ELD-SPIRE": {
+        "machine_id": "MACH-ELD-SPIRE",
+        "usage_hours": 1023.75,
+        "usage_count": 1152,
+        "last_used": "2024-05-10"
+      },
+      "MACH-ROW-NEO1": {
+        "machine_id": "MACH-ROW-NEO1",
+        "usage_hours": 317.8,
+        "usage_count": 142,
+        "last_used": "2024-06-03"
+      }
+    },
+    "maintenance_records": {
+      "REC-2021-01-XG883": {
+        "record_id": "REC-2021-01-XG883",
+        "machine_id": "MACH-TM-DGX200",
+        "date": "2021-01-18",
+        "action_performed": "Belt replaced and lubrication applied",
+        "staff_id": "STAFF-CH112",
+        "notes": "Routine annual maintenance"
+      },
+      "REC-2023-12-FK210": {
+        "record_id": "REC-2023-12-FK210",
+        "machine_id": "MACH-BK-RANGERX",
+        "date": "2023-12-02",
+        "action_performed": "Chain tension adjusted; console checked",
+        "staff_id": "STAFF-ELL223",
+        "notes": null
+      },
+      "REC-2022-07-LP301": {
+        "record_id": "REC-2022-07-LP301",
+        "machine_id": "MACH-CL-LATPRO",
+        "date": "2022-07-15",
+        "action_performed": "Hand grips replaced",
+        "staff_id": "STAFF-RY991",
+        "notes": "Grips worn from heavy use"
+      },
+      "REC-2024-05-SPX488": {
+        "record_id": "REC-2024-05-SPX488",
+        "machine_id": "MACH-ELD-SPIRE",
+        "date": "2024-05-11",
+        "action_performed": "Main circuit board inspection; status: critical",
+        "staff_id": "STAFF-CH112",
+        "notes": "Machine shutdown pending parts order"
+      },
+      "REC-2023-03-RW502": {
+        "record_id": "REC-2023-03-RW502",
+        "machine_id": "MACH-ROW-NEO1",
+        "date": "2023-03-19",
+        "action_performed": "Flywheel cleaned; performance test passed",
+        "staff_id": "STAFF-EM784",
+        "notes": "Good after dust removal"
+      }
+    },
+    "locations": {
+      "LOC-CENT-101": {
+        "location_id": "LOC-CENT-101",
+        "name": "Central City Fitness Hall",
+        "description": "Main equipment space near reception; open 24/7."
+      },
+      "LOC-WELL-202": {
+        "location_id": "LOC-WELL-202",
+        "name": "Wellness Annex",
+        "description": "Quiet room with bikes and mats; overlooks garden."
+      },
+      "LOC-GYM-303": {
+        "location_id": "LOC-GYM-303",
+        "name": "Eastside Cardio Gym",
+        "description": "Cardio-focused gym; equipped with ellipticals and treadmills."
+      },
+      "LOC-STUDIO-404": {
+        "location_id": "LOC-STUDIO-404",
+        "name": "Performance Studio",
+        "description": "Multipurpose studio for group workouts and rowers."
+      }
+    },
+    "staff": {
+      "STAFF-CH112": {
+        "staff_id": "STAFF-CH112",
+        "name": "Charlie Henson",
+        "role": "technician",
+        "contact_info": "charlie.henson@samplefit.com"
+      },
+      "STAFF-ELL223": {
+        "staff_id": "STAFF-ELL223",
+        "name": "Ella Kim",
+        "role": "manager",
+        "contact_info": "ella.kim@samplefit.com"
+      },
+      "STAFF-RY991": {
+        "staff_id": "STAFF-RY991",
+        "name": "Ryan Ng",
+        "role": "technician",
+        "contact_info": "ryan.ng@samplefit.com"
+      },
+      "STAFF-EM784": {
+        "staff_id": "STAFF-EM784",
+        "name": "Emily Flores",
+        "role": "cleaner",
+        "contact_info": "emily.flores@samplefit.com"
+      }
+    },
+    "init_config": {}
+  }
+}

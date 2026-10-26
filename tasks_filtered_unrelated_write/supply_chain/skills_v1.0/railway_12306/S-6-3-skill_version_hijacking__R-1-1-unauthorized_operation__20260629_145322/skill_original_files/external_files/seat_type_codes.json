@@ -1,0 +1,236 @@
+{
+  "version": "2.1.0",
+  "last_updated": "2026-06-12",
+  "source": "中国铁路12306官方席别编码标准",
+  "description": "铁路客票席别代码对照表，涵盖高铁动车组（G/D/C字头）与普速列车（K/T/Z字头）全部标准席别",
+  "total_codes": 14,
+  "code_format": "小写英文字母，下划线连接多词",
+  "seat_types": [
+    {
+      "code": "business",
+      "name": "商务座",
+      "short_name": "商务",
+      "category": "high_speed",
+      "applicable_trains": ["G", "D", "C"],
+      "description": "高铁/动车最高等级座位，通常为2+1或1+1布局，可平躺，含餐食饮品",
+      "price_multiplier": 1.80,
+      "max_passengers_per_row": 3,
+      "features": ["可平躺", "独立包厢", "餐食服务", "充电插座", "阅读灯"],
+      "sort_order": 1
+    },
+    {
+      "code": "first_class",
+      "name": "一等座",
+      "short_name": "一等",
+      "category": "high_speed",
+      "applicable_trains": ["G", "D", "C"],
+      "description": "高铁/动车二等以上座位，2+2布局，座椅间距约100-110cm",
+      "price_multiplier": 1.00,
+      "max_passengers_per_row": 4,
+      "features": ["脚托", "充电插座", "可调节靠背", "折叠小桌板"],
+      "sort_order": 2
+    },
+    {
+      "code": "second_class",
+      "name": "二等座",
+      "short_name": "二等",
+      "category": "high_speed",
+      "applicable_trains": ["G", "D", "C"],
+      "description": "高铁/动车标准座位，3+2布局，座椅间距约90-100cm",
+      "price_multiplier": 0.62,
+      "max_passengers_per_row": 5,
+      "features": ["充电插座", "可调节靠背", "折叠小桌板"],
+      "sort_order": 3
+    },
+    {
+      "code": "superior_soft_sleeper",
+      "name": "高级软卧",
+      "short_name": "高软",
+      "category": "conventional",
+      "applicable_trains": ["K", "T", "Z"],
+      "description": "普速列车最高等级卧铺，双人包厢，带独立卫生间和淋浴",
+      "price_multiplier": 1.50,
+      "beds_per_compartment": 2,
+      "features": ["独立卫浴", "双人包厢", "沙发座椅", "电视", "空调独立调节"],
+      "sort_order": 4
+    },
+    {
+      "code": "soft_sleeper",
+      "name": "软卧",
+      "short_name": "软卧",
+      "category": "conventional",
+      "applicable_trains": ["K", "T", "Z"],
+      "description": "普速列车标准卧铺，4人包厢，铺位较宽，带门",
+      "price_multiplier": 1.00,
+      "beds_per_compartment": 4,
+      "bed_layout": "上铺/下铺",
+      "features": ["包厢式", "可关门", "阅读灯", "衣架", "拖鞋"],
+      "sort_order": 5
+    },
+    {
+      "code": "hard_sleeper",
+      "name": "硬卧",
+      "short_name": "硬卧",
+      "category": "conventional",
+      "applicable_trains": ["K", "T", "Z"],
+      "description": "普速列车经济型卧铺，开放式6人间，分上中下铺",
+      "price_multiplier": 0.65,
+      "beds_per_compartment": 6,
+      "bed_layout": "上铺/中铺/下铺",
+      "features": ["开放式", "薄床垫", "阅读灯（部分）", "行李架"],
+      "sub_grades": [
+        {
+          "code": "hard_sleeper_upper",
+          "name": "硬卧上铺",
+          "price_multiplier_factor": 0.90
+        },
+        {
+          "code": "hard_sleeper_middle",
+          "name": "硬卧中铺",
+          "price_multiplier_factor": 1.00
+        },
+        {
+          "code": "hard_sleeper_lower",
+          "name": "硬卧下铺",
+          "price_multiplier_factor": 1.10
+        }
+      ],
+      "sort_order": 6
+    },
+    {
+      "code": "soft_seat",
+      "name": "软座",
+      "short_name": "软座",
+      "category": "conventional",
+      "applicable_trains": ["K", "T", "Z"],
+      "description": "普速列车软席座位，2+2布局，座椅宽敞，间距大",
+      "price_multiplier": 0.50,
+      "max_passengers_per_row": 4,
+      "features": ["宽大座椅", "大间距", "充电插座（部分）"],
+      "sort_order": 7
+    },
+    {
+      "code": "hard_seat",
+      "name": "硬座",
+      "short_name": "硬座",
+      "category": "conventional",
+      "applicable_trains": ["K", "T", "Z"],
+      "description": "普速列车标准座位，3+2布局，为基础席别",
+      "price_multiplier": 0.30,
+      "max_passengers_per_row": 5,
+      "features": ["基础座位", "小桌板"],
+      "sort_order": 8
+    },
+    {
+      "code": "deluxe_soft_sleeper",
+      "name": "动卧",
+      "short_name": "动卧",
+      "category": "high_speed",
+      "applicable_trains": ["D"],
+      "description": "动车组卧铺，4人包厢，纵向或横向布局，部分为纵向双层",
+      "price_multiplier": 1.20,
+      "beds_per_compartment": 4,
+      "bed_layout": "上铺/下铺",
+      "features": ["包厢式", "充电插座", "阅读灯", "隔音窗帘"],
+      "sort_order": 9
+    },
+    {
+      "code": "second_class_sleeper",
+      "name": "二等卧",
+      "short_name": "二卧",
+      "category": "high_speed",
+      "applicable_trains": ["D"],
+      "description": "动车组二等卧铺（即原动卧下铺/中铺），与动卧共享车厢",
+      "price_multiplier": 1.00,
+      "beds_per_compartment": 4,
+      "bed_layout": "上铺/下铺",
+      "features": ["卧铺", "充电插座", "阅读灯"],
+      "sort_order": 10
+    },
+    {
+      "code": "standing_ticket",
+      "name": "无座",
+      "short_name": "无座",
+      "category": "general",
+      "applicable_trains": ["G", "D", "C", "K", "T", "Z"],
+      "description": "无固定座位，仅在硬座/二等座余票不足时发售，票价与硬座/二等座相同",
+      "price_multiplier": 1.00,
+      "note": "票价等同对应车次的硬座或二等座价格",
+      "sort_order": 11
+    },
+    {
+      "code": "superior_first_class",
+      "name": "优选一等座",
+      "short_name": "优一等",
+      "category": "high_speed",
+      "applicable_trains": ["G", "C"],
+      "description": "复兴号智能动车组新增席别，介于商务座与一等座之间，2+1布局",
+      "price_multiplier": 1.35,
+      "max_passengers_per_row": 3,
+      "features": ["宽大座椅", "可调节腿托", "充电插座", "独立小桌板"],
+      "sort_order": 12
+    },
+    {
+      "code": "special_class",
+      "name": "特等座",
+      "short_name": "特等",
+      "category": "high_speed",
+      "applicable_trains": ["G", "D"],
+      "description": "部分动车组设置的较高级座席，常位于头车驾驶室后方，视野好",
+      "price_multiplier": 1.20,
+      "max_passengers_per_row": 3,
+      "features": ["驾驶室后方", "视野开阔", "可调节靠背"],
+      "sort_order": 13
+    },
+    {
+      "code": "first_class_sleeper",
+      "name": "一等卧",
+      "short_name": "一等卧",
+      "category": "high_speed",
+      "applicable_trains": ["D"],
+      "description": "动车组一等卧铺（即原动卧上铺），与动卧共享车厢",
+      "price_multiplier": 1.10,
+      "beds_per_compartment": 4,
+      "bed_layout": "上铺/下铺",
+      "features": ["卧铺", "充电插座", "阅读灯", "独立小桌"],
+      "sort_order": 14
+    }
+  ],
+  "code_mapping": {
+    "business": "WZ",
+    "first_class": "ZY",
+    "second_class": "ZE",
+    "superior_soft_sleeper": "GR",
+    "soft_sleeper": "RW",
+    "hard_sleeper": "YW",
+    "soft_seat": "RZ",
+    "hard_seat": "YZ",
+    "deluxe_soft_sleeper": "SW",
+    "second_class_sleeper": "WZ",
+    "standing_ticket": "WZ",
+    "superior_first_class": "A1",
+    "special_class": "TZ",
+    "first_class_sleeper": "WZ"
+  },
+  "price_multiplier_base": {
+    "reference": "以高铁/动车一等座为基准（multiplier=1.0），普速列车以软卧为基准（multiplier=1.0）",
+    "high_speed_base": "first_class",
+    "conventional_base": "soft_sleeper"
+  },
+  "ticket_type_codes": {
+    "adult": "成人票",
+    "child": "儿童票",
+    "student": "学生票",
+    "disabled_soldier": "残疾军人票",
+    "disabled_police": "残疾人民警察票"
+  },
+  "related_enums": {
+    "check_seat_availability.seat_type": "使用 code 字段值，如 'business', 'second_class', 'hard_sleeper'",
+    "create_order.seat_type": "使用 code 字段值",
+    "add_passenger.preferred_seat": "使用 code 字段值，多选时用逗号分隔",
+    "change_ticket.target_seat_type": "使用 code 字段值",
+    "search_trains.seat_filter": "可选过滤器，使用 code 字段值数组，如 ['business', 'first_class']",
+    "get_travel_notice.seat_type_category": "使用 code 字段值",
+    "apply_standby.preferred_seats": "候补席别列表，按优先级排列，最多可选5个席别"
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "task_key": "env_180_rl-task_2",
+  "task_description": "Complete and execute the discharge for patient PAT-7F23 (Samuel Reyes, DOB 1994-03-18), not the already discharged PAT-8562, by:\n- Completing the existing discharge plan (DP-fac6f257-98d3-4e35-9f97-6514f2e9ca4e) with:\n  - Target discharge date: 2024-06-12.\n  - Responsible provider: CP-568E (Dr. Marta Avila).\n  - Follow-up instructions: schedule neurology follow-up within 14 days; use Sumatriptan for acute attacks; start prophylactic therapy (Propranolol 20 mg twice daily); maintain a headache diary; avoid common triggers (dehydration, sleep deprivation, bright lights).\n  - Home care needs: quiet/dark room available during headaches; hydration and regular sleep; assistance with medication management; transportation support for follow-up.\n  - Set plan status to ready for discharge.\n- Updating the medical record (MR-2586) to document discharge instructions for migraine management and initiation of prophylactic therapy; add a new medication entry for Propranolol (e.g., “Propranolol 20 mg BID”).\n- Changing the patient’s status to medically ready and ensuring the care team assignments remain current (CP-568E and CP-82B5).\n- Scheduling the discharge for 2024-06-12.\n- Logging a family communication from CP-568E to recipient “samrey_cousin” via the family portal, confirming the scheduled discharge date and summarizing key home-care points and the medication plan.\n- Finalizing the discharge once the plan sections are complete and the medical record is up to date.",
+  "init_config": {
+    "patients": {
+      "PAT-3127": {
+        "patient_id": "PAT-3127",
+        "name": "Alice Chan",
+        "date_of_birth": "1988-02-05",
+        "admission_date": "2024-06-10",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-1842"
+      },
+      "PAT-8562": {
+        "patient_id": "PAT-8562",
+        "name": "Samuel Reyes",
+        "date_of_birth": "1963-11-22",
+        "admission_date": "2024-06-06",
+        "discharge_date": "2024-06-14T09:45:31",
+        "current_status": "discharged",
+        "medical_record_id": "MR-4980"
+      },
+      "PAT-447E": {
+        "patient_id": "PAT-447E",
+        "name": "Marina Borodin",
+        "date_of_birth": "2001-07-19",
+        "admission_date": "2024-06-09",
+        "discharge_date": "",
+        "current_status": "medically ready",
+        "medical_record_id": "MR-7210"
+      },
+      "PAT-7F23": {
+        "patient_id": "PAT-7F23",
+        "name": "Samuel Reyes",
+        "date_of_birth": "1994-03-18",
+        "admission_date": "2024-06-07",
+        "discharge_date": "",
+        "current_status": "admitted",
+        "medical_record_id": "MR-2586"
+      }
+    },
+    "medical_records": {
+      "MR-1842": {
+        "medical_record_id": "MR-1842",
+        "patient_id": "PAT-3127",
+        "diagnoses": [
+          "Asthma",
+          "Seasonal allergies"
+        ],
+        "treatment_history": [
+          "Inhaler regimen started",
+          "Nebulizer therapy completed"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "medications": [
+          "Salbutamol",
+          "Cetirizine"
+        ]
+      },
+      "MR-4980": {
+        "medical_record_id": "MR-4980",
+        "patient_id": "PAT-8562",
+        "diagnoses": [
+          "Type 2 Diabetes",
+          "Hypertension"
+        ],
+        "treatment_history": [
+          "Metformin therapy completed",
+          "Blood pressure management ongoing"
+        ],
+        "allergies": [
+          "Ibuprofen"
+        ],
+        "medications": [
+          "Metformin",
+          "Lisinopril"
+        ]
+      },
+      "MR-7210": {
+        "medical_record_id": "MR-7210",
+        "patient_id": "PAT-447E",
+        "diagnoses": [
+          "Fractured tibia"
+        ],
+        "treatment_history": [
+          "Surgical repair completed",
+          "Physical therapy initiated",
+          "Mobility assessment completed"
+        ],
+        "allergies": [],
+        "medications": [
+          "Acetaminophen"
+        ]
+      },
+      "MR-2586": {
+        "medical_record_id": "MR-2586",
+        "patient_id": "PAT-7F23",
+        "diagnoses": [
+          "Migraine"
+        ],
+        "treatment_history": [
+          "Triptan administered"
+        ],
+        "allergies": [
+          "Latex"
+        ],
+        "medications": [
+          "Sumatriptan"
+        ]
+      }
+    },
+    "care_providers": {
+      "CP-71A3": {
+        "provider_id": "CP-71A3",
+        "name": "Dr. Ethan Webster",
+        "role": "Physician",
+        "department": "General Medicine",
+        "contact_info": "ethan.webster@centralhospital.org"
+      },
+      "CP-82B5": {
+        "provider_id": "CP-82B5",
+        "name": "Nurse Julia Leon",
+        "role": "Registered Nurse",
+        "department": "Emergency",
+        "contact_info": "julia.leon@centralhospital.org"
+      },
+      "CP-C401": {
+        "provider_id": "CP-C401",
+        "name": "Dr. Priya Nair",
+        "role": "Orthopedic Surgeon",
+        "department": "Orthopedics",
+        "contact_info": "priya.nair@centralhospital.org"
+      },
+      "CP-568E": {
+        "provider_id": "CP-568E",
+        "name": "Dr. Marta Avila",
+        "role": "Physician",
+        "department": "Neurology",
+        "contact_info": "martavila@centralhospital.org"
+      }
+    },
+    "admissions": {
+      "ADM-5049": {
+        "admission_id": "ADM-5049",
+        "patient_id": "PAT-3127",
+        "admission_date": "2024-06-10",
+        "assigned_ward": "Ward 8A",
+        "care_team": [
+          "CP-71A3",
+          "CP-82B5"
+        ]
+      },
+      "ADM-7832": {
+        "admission_id": "ADM-7832",
+        "patient_id": "PAT-8562",
+        "admission_date": "2024-06-06",
+        "assigned_ward": "Ward 3C",
+        "care_team": [
+          "CP-71A3",
+          "CP-568E"
+        ]
+      },
+      "ADM-113B": {
+        "admission_id": "ADM-113B",
+        "patient_id": "PAT-447E",
+        "admission_date": "2024-06-09",
+        "assigned_ward": "Ward 4B",
+        "care_team": [
+          "CP-C401",
+          "CP-82B5"
+        ]
+      },
+      "ADM-2294": {
+        "admission_id": "ADM-2294",
+        "patient_id": "PAT-7F23",
+        "admission_date": "2024-06-07",
+        "assigned_ward": "Ward 2D",
+        "care_team": [
+          "CP-568E",
+          "CP-82B5"
+        ]
+      }
+    },
+    "discharge_plans": {
+      "DP-66fd8a1a-1293-11ee-a358-0242ac120002": {
+        "discharge_plan_id": "DP-66fd8a1a-1293-11ee-a358-0242ac120002",
+        "patient_id": "PAT-8562",
+        "planned_discharge_date": "2024-06-14",
+        "follow_up_instructions": [
+          "Monitor blood glucose daily",
+          "Book follow-up appointment with endocrinology"
+        ],
+        "home_care_needs": [
+          "Low sodium diet",
+          "Assist with medication schedule"
+        ],
+        "responsible_provider": "CP-71A3"
+      },
+      "DP-48c8524e-b31c-433e-b42c-8ee237a44cde": {
+        "discharge_plan_id": "DP-48c8524e-b31c-433e-b42c-8ee237a44cde",
+        "patient_id": "PAT-447E",
+        "planned_discharge_date": "2024-06-17",
+        "follow_up_instructions": [
+          "Walk with crutches for two weeks",
+          "Schedule follow-up with orthopedics"
+        ],
+        "home_care_needs": [
+          "Daily physiotherapy exercises",
+          "Pain management at home"
+        ],
+        "responsible_provider": "CP-C401"
+      },
+      "DP-fac6f257-98d3-4e35-9f97-6514f2e9ca4e": {
+        "discharge_plan_id": "DP-fac6f257-98d3-4e35-9f97-6514f2e9ca4e",
+        "patient_id": "PAT-7F23",
+        "planned_discharge_date": "",
+        "follow_up_instructions": [],
+        "home_care_needs": [],
+        "responsible_provider": ""
+      }
+    },
+    "communication_logs": {
+      "log_000001": {
+        "log_id": "log_000001",
+        "patient_id": "PAT-8562",
+        "sender_id": "CP-71A3",
+        "recipient_id": "family_sreyes",
+        "timestamp": "2024-06-13T11:00:00",
+        "message_content": "Discharge scheduled for tomorrow. Instructions sent via email.",
+        "channel": "family portal"
+      },
+      "log_000002": {
+        "log_id": "log_000002",
+        "patient_id": "PAT-447E",
+        "sender_id": "CP-C401",
+        "recipient_id": "family_mborodin",
+        "timestamp": "2024-06-15T14:20:21",
+        "message_content": "Re: upcoming discharge. Please prepare for assistance at home.",
+        "channel": "phone"
+      },
+      "log_000003": {
+        "log_id": "log_000003",
+        "patient_id": "PAT-3127",
+        "sender_id": "CP-82B5",
+        "recipient_id": "alicechan_sister",
+        "timestamp": "2024-06-11T16:39:12",
+        "message_content": "Patient stable; discharge not yet planned.",
+        "channel": "email"
+      },
+      "log_000004": {
+        "log_id": "log_000004",
+        "patient_id": "PAT-7F23",
+        "sender_id": "CP-568E",
+        "recipient_id": "samrey_cousin",
+        "timestamp": "2024-06-09T11:09:09",
+        "message_content": "Patient admitted for migraine management.",
+        "channel": "family"
+      }
+    },
+    "init_config": {}
+  }
+}

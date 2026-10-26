@@ -1,0 +1,131 @@
+{
+  "task_key": "env_184_rl-task_4",
+  "task_description": "Launch a new dietary supplement and perform a moderation cleanup and review update:\n\n1) Add a new product:\n   - product_id: PRD6\n   - name: VitalBoost Multivitamin\n   - category: Dietary Supplements\n   - description: Daily multivitamin supporting immune function and energy metabolism.\n\n2) Seed initial customer feedback for PRD6 using active users:\n   - From user USR-789: rating 5, review_text: “Excellent daily multivitamin. Noticeable energy boost and no stomach upset.”\n   - From user USR-177: rating 4, review_text: “Solid value and easy to swallow. Wish the bottle had clearer dosage instructions.”\n   - If either user has already reviewed PRD6, edit their existing review to match the specified rating and text instead of adding a new one.\n   - After adding or editing, set these PRD6 reviews to approved.\n\n3) Apply moderation policy to all currently pending reviews in the system:\n   - Approve pending reviews authored by users with account_status = active.\n   - Reject pending reviews authored by users with non-active statuses (e.g., pending or disabled).\n\n4) Delete all rejected reviews authored by user USR-603 (account disabled).\n\n5) Update the approved review for LumaTech Smartwatch (review_id: PRD2-USR-789):\n   - Change rating from 5 to 4.\n   - Append to the review_text: “After two months, I noticed minor screen scratches. Still a strong performer overall.”",
+  "init_config": {
+    "products": {
+      "PRD1": {
+        "product_id": "PRD1",
+        "name": "AeroSpin Blender",
+        "category": "Kitchen Appliances",
+        "description": "Compact blender perfect for smoothies and sauces."
+      },
+      "PRD2": {
+        "product_id": "PRD2",
+        "name": "LumaTech Smartwatch",
+        "category": "Wearables",
+        "description": "Sleek smartwatch with heart-rate and fitness tracking."
+      },
+      "PRD3": {
+        "product_id": "PRD3",
+        "name": "Nimbus Wireless Earbuds",
+        "category": "Audio",
+        "description": "Noise-cancelling earbuds with long battery life."
+      },
+      "PRD4": {
+        "product_id": "PRD4",
+        "name": "FreshBrew Coffee Maker",
+        "category": "Kitchen Appliances",
+        "description": "Programmable coffee maker with dual brew options."
+      },
+      "PRD5": {
+        "product_id": "PRD5",
+        "name": "PeakForce Fitness Mat",
+        "category": "Sports",
+        "description": "Durable fitness mat ideal for yoga and pilates."
+      }
+    },
+    "reviews": {
+      "PRD2-USR-789": {
+        "review_id": "PRD2-USR-789",
+        "product_id": "PRD2",
+        "user_id": "USR-789",
+        "rating": 5,
+        "review_text": "Impressive battery life and intuitive interface. Highly recommended!",
+        "timestamp": "2024-03-17",
+        "moderation_status": "approved"
+      },
+      "PRD1-USR-942": {
+        "review_id": "PRD1-USR-942",
+        "product_id": "PRD1",
+        "user_id": "USR-942",
+        "rating": 3,
+        "review_text": "Blends well but struggles with ice. Decent value for the price.",
+        "timestamp": "2022-12-06",
+        "moderation_status": "pending"
+      },
+      "PRD3-USR-832": {
+        "review_id": "PRD3-USR-832",
+        "product_id": "PRD3",
+        "user_id": "USR-832",
+        "rating": 4,
+        "review_text": "Great sound, fits comfortably, but the case feels flimsy.",
+        "timestamp": "2023-07-14",
+        "moderation_status": "approved"
+      },
+      "PRD4-USR-603": {
+        "review_id": "PRD4-USR-603",
+        "product_id": "PRD4",
+        "user_id": "USR-603",
+        "rating": 2,
+        "review_text": "Setup is confusing, and it leaks sometimes. Needs improvement.",
+        "timestamp": "2021-10-02",
+        "moderation_status": "rejected"
+      },
+      "PRD5-USR-177": {
+        "review_id": "PRD5-USR-177",
+        "product_id": "PRD5",
+        "user_id": "USR-177",
+        "rating": 5,
+        "review_text": "Super comfortable and doesn't slip during workouts. Love it!",
+        "timestamp": "2023-05-28",
+        "moderation_status": "approved"
+      },
+      "PRD2-USR-832": {
+        "review_id": "PRD2-USR-832",
+        "product_id": "PRD2",
+        "user_id": "USR-832",
+        "rating": 4,
+        "review_text": "Feature-packed device, but display brightness could be better.",
+        "timestamp": "2023-11-20",
+        "moderation_status": "pending"
+      },
+      "PRD3-USR-603": {
+        "review_id": "PRD3-USR-603",
+        "product_id": "PRD3",
+        "user_id": "USR-603",
+        "rating": 1,
+        "review_text": "Sound intermittently cuts out and pairing is unreliable.",
+        "timestamp": "2022-01-16",
+        "moderation_status": "rejected"
+      }
+    },
+    "users": {
+      "USR-789": {
+        "user_id": "USR-789",
+        "username": "Alice Chan",
+        "account_status": "active"
+      },
+      "USR-832": {
+        "user_id": "USR-832",
+        "username": "Brett Silva",
+        "account_status": "active"
+      },
+      "USR-942": {
+        "user_id": "USR-942",
+        "username": "Caroline Lee",
+        "account_status": "pending"
+      },
+      "USR-177": {
+        "user_id": "USR-177",
+        "username": "David Ngyuen",
+        "account_status": "active"
+      },
+      "USR-603": {
+        "user_id": "USR-603",
+        "username": "Ella Martinez",
+        "account_status": "disabled"
+      }
+    },
+    "init_config": {}
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "task_key": "env_183_rl-task_5",
+  "task_description": "1) Resolve the duplicate “Alice Chan” participant records by keeping the account with email alice.chan@fakemail.com and removing the other. For every meeting where the duplicate account currently appears, remove that duplicate from the participant list; if the kept “Alice Chan” record is not already a participant in that meeting, add it using the meeting’s correct access code and without exceeding venue capacity.\n\n2) Update the monthly “Peer Support: Coping Strategies” meeting to use the venue at 100 Oakwood Street, room 201 (VEN-A12), and change its meeting_code to STRAT12. Then remove “Maria Gutierrez” (withdrawn) from this meeting, update “Brian Lee” to registered status, and add him to the meeting using the new code STRAT12, ensuring the venue capacity is respected.",
+  "init_config": {
+    "meetings": {
+      "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524": {
+        "meeting_id": "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524",
+        "topic": "Peer Support: Coping Strategies",
+        "schedule": "2023-10-15T18:00:00",
+        "venue": "VEN-4F96B6",
+        "meeting_code": "STRAT11",
+        "participants_list": [
+          "P-1001",
+          "P-1003",
+          "P-1004"
+        ],
+        "recurrence_pattern": "monthly"
+      },
+      "M-73c97fc3-b0c4-4282-814e-8e0bbca88dac": {
+        "meeting_id": "M-73c97fc3-b0c4-4282-814e-8e0bbca88dac",
+        "topic": "Anxiety Management",
+        "schedule": "2024-07-22T14:00:00",
+        "venue": "VEN-B95",
+        "meeting_code": "ANX852",
+        "participants_list": [
+          "P-1002",
+          "P-1005"
+        ],
+        "recurrence_pattern": "weekly"
+      },
+      "M-857abeba-2e13-44db-8656-ef4ad17e7f93": {
+        "meeting_id": "M-857abeba-2e13-44db-8656-ef4ad17e7f93",
+        "topic": "Caregivers’ Lounge",
+        "schedule": "2024-05-10T11:00:00",
+        "venue": "VEN-CC7",
+        "meeting_code": "CARE207",
+        "participants_list": [
+          "P-1003",
+          "P-1006",
+          "P-1001"
+        ],
+        "recurrence_pattern": "biweekly"
+      },
+      "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a": {
+        "meeting_id": "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a",
+        "topic": "Mindfulness Training",
+        "schedule": "2024-02-28T15:30:00",
+        "venue": "VEN-303",
+        "meeting_code": "MIND998",
+        "participants_list": [
+          "P-1004",
+          "P-1005",
+          "P-1002",
+          "P-1006"
+        ],
+        "recurrence_pattern": "monthly"
+      }
+    },
+    "participants": {
+      "P-1001": {
+        "participant_id": "P-1001",
+        "name": "Alice Chan",
+        "contact_info": "alice.chan@fakemail.com",
+        "registration_status": "registered"
+      },
+      "P-1002": {
+        "participant_id": "P-1002",
+        "name": "Brian Lee",
+        "contact_info": "brian.lee@demo.net",
+        "registration_status": "pending"
+      },
+      "P-1003": {
+        "participant_id": "P-1003",
+        "name": "Dana Everett",
+        "contact_info": "dana.everett@fakemail.com",
+        "registration_status": "registered"
+      },
+      "P-1004": {
+        "participant_id": "P-1004",
+        "name": "Maria Gutierrez",
+        "contact_info": "maria.g@demo.org",
+        "registration_status": "withdrawn"
+      },
+      "P-1005": {
+        "participant_id": "P-1005",
+        "name": "Samir Patel",
+        "contact_info": "samir.patel@fakemail.com",
+        "registration_status": "registered"
+      },
+      "P-1006": {
+        "participant_id": "P-1006",
+        "name": "Alice Chan",
+        "contact_info": "alicechan2@demo.com",
+        "registration_status": "registered"
+      }
+    },
+    "meeting_participants": {
+      "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524": [
+        {
+          "meeting_id": "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524",
+          "participant_id": "P-1001",
+          "join_time": "2023-10-15T18:04:10",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524",
+          "participant_id": "P-1003",
+          "join_time": "2023-10-15T18:01:32",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-57b16f5a-cc9a-4710-bbe3-0ee735b7f524",
+          "participant_id": "P-1004",
+          "join_time": "2023-10-15T18:05:47",
+          "attendance_status": "left"
+        }
+      ],
+      "M-73c97fc3-b0c4-4282-814e-8e0bbca88dac": [
+        {
+          "meeting_id": "M-73c97fc3-b0c4-4282-814e-8e0bbca88dac",
+          "participant_id": "P-1002",
+          "join_time": "2024-07-22T13:58:04",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-73c97fc3-b0c4-4282-814e-8e0bbca88dac",
+          "participant_id": "P-1005",
+          "join_time": "2024-07-22T14:05:10",
+          "attendance_status": "joined"
+        }
+      ],
+      "M-857abeba-2e13-44db-8656-ef4ad17e7f93": [
+        {
+          "meeting_id": "M-857abeba-2e13-44db-8656-ef4ad17e7f93",
+          "participant_id": "P-1003",
+          "join_time": "2024-05-10T11:03:04",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-857abeba-2e13-44db-8656-ef4ad17e7f93",
+          "participant_id": "P-1006",
+          "join_time": "2024-05-10T11:02:10",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-857abeba-2e13-44db-8656-ef4ad17e7f93",
+          "participant_id": "P-1001",
+          "join_time": "2024-05-10T11:05:23",
+          "attendance_status": "left"
+        }
+      ],
+      "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a": [
+        {
+          "meeting_id": "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a",
+          "participant_id": "P-1004",
+          "join_time": "2024-02-28T15:33:11",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a",
+          "participant_id": "P-1005",
+          "join_time": "2024-02-28T15:34:07",
+          "attendance_status": "joined"
+        },
+        {
+          "meeting_id": "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a",
+          "participant_id": "P-1002",
+          "join_time": "2024-02-28T15:31:25",
+          "attendance_status": "left"
+        },
+        {
+          "meeting_id": "M-2312e485-4229-400c-9ecc-9ffc0cd6a15a",
+          "participant_id": "P-1006",
+          "join_time": "2024-02-28T15:37:19",
+          "attendance_status": "joined"
+        }
+      ]
+    },
+    "venues": {
+      "VEN-A12": {
+        "venue_id": "VEN-A12",
+        "address": "100 Oakwood Street",
+        "room_number": "201",
+        "capacity": 5
+      },
+      "VEN-B95": {
+        "venue_id": "VEN-B95",
+        "address": "8 Riverside Drive",
+        "room_number": "B2",
+        "capacity": 10
+      },
+      "VEN-303": {
+        "venue_id": "VEN-303",
+        "address": "45 Main Avenue",
+        "room_number": "3A",
+        "capacity": 8
+      },
+      "VEN-4F96B6": {
+        "venue_id": "VEN-4F96B6",
+        "address": "222 Lake Plaza",
+        "room_number": "1F",
+        "capacity": 4
+      },
+      "VEN-CC7": {
+        "venue_id": "VEN-CC7",
+        "address": "Central City District Center",
+        "room_number": "C7",
+        "capacity": 6
+      }
+    },
+    "init_config": {}
+  }
+}

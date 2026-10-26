@@ -1,0 +1,85 @@
+{
+  "task_key": "env_191_rl-task_3",
+  "task_description": "Make the following updates across the existing users and their meal logs:\n\nFor Bob Kim:\n- On 2024-01-22, update the “Lunch: Chicken Caesar Salad” record to:\n  - consumed_at: 2024-01-22T13:05:00\n  - meal_name: “Lunch: Chicken Caesar Salad (light dressing)”\n  - calories: 360.0\n- On 2024-01-22, update the “Snack: Fuji Apple” record to:\n  - consumed_at: 2024-01-22T16:10:00\n  - calories: 80.0\n- Add a new dinner for 2024-01-22:\n  - meal_name: “Dinner: Roast Chicken & Veggies”\n  - calories: 525.0\n  - consumed_at: 2024-01-22T19:45:00\n- After these changes and the dinner addition, ensure Bob’s total calories for 2024-01-22 do not exceed 1000. If they exceed 1000, reduce the dinner’s calories just enough to bring the day’s total to 1000 or less (keep the adjusted calories non-negative).\n\nFor Maya Patel:\n- On 2021-06-11, update the “Breakfast: Banana Oatmeal” record to:\n  - consumed_at: 2021-06-11T08:00:00\n  - calories: 260.0\n- On 2021-06-11, update the “Lunch: Veggie Wrap” record to:\n  - meal_name: “Lunch: Veggie Wrap (no nuts)”\n  - calories: 305.0\n- Add a new snack for 2021-06-11:\n  - meal_name: “Snack: Greek Yogurt”\n  - calories: 150.0\n  - consumed_at: 2021-06-11T16:00:00\n\nFor Evan Tran:\n- Delete the “Dinner: Grilled Salmon & Quinoa” record dated 2022-08-01 (logged at around 19:30) from his meal history.",
+  "init_config": {
+    "users": {
+      "USR-alice": {
+        "_id": "USR-alice",
+        "name": "Alice Chan",
+        "profile_info": "Morning runner, vegetarian."
+      },
+      "USR-bob": {
+        "_id": "USR-bob",
+        "name": "Bob Kim",
+        "profile_info": "Trying intermittent fasting. Favorite snack: apples."
+      },
+      "USR-evan": {
+        "_id": "USR-evan",
+        "name": "Evan Tran",
+        "profile_info": "Cyclist, tracking macros."
+      },
+      "USR-uuid": {
+        "_id": "USR-uuid",
+        "name": "Alice Chan",
+        "profile_info": "Office worker, loves spicy food."
+      },
+      "USR-maya": {
+        "_id": "USR-maya",
+        "name": "Maya Patel",
+        "profile_info": "Allergic to nuts, prefers home-cooked meals."
+      }
+    },
+    "meal_records": {
+      "REC-001": {
+        "record_id": "REC-001",
+        "user_id": "USR-alice",
+        "meal_name": "Breakfast: Avocado Toast",
+        "calories": 290.5,
+        "consumed_at": "2023-03-15T07:35:00"
+      },
+      "ebdff3fa-30fc-4342-a5b2-4421b4ee2a4a": {
+        "record_id": "ebdff3fa-30fc-4342-a5b2-4421b4ee2a4a",
+        "user_id": "USR-bob",
+        "meal_name": "Lunch: Chicken Caesar Salad",
+        "calories": 410.0,
+        "consumed_at": "2024-01-22T12:20:00"
+      },
+      "REC-002": {
+        "record_id": "REC-002",
+        "user_id": "USR-bob",
+        "meal_name": "Snack: Fuji Apple",
+        "calories": 85.2,
+        "consumed_at": "2024-01-22T15:00:00"
+      },
+      "d86db082-c779-43b7-b9c1-f1543acfb2b9": {
+        "record_id": "d86db082-c779-43b7-b9c1-f1543acfb2b9",
+        "user_id": "USR-evan",
+        "meal_name": "Dinner: Grilled Salmon & Quinoa",
+        "calories": 560.0,
+        "consumed_at": "2022-08-01T19:30:00"
+      },
+      "REC-003": {
+        "record_id": "REC-003",
+        "user_id": "USR-uuid",
+        "meal_name": "Lunch: Spicy Ramen Bowl",
+        "calories": 670.8,
+        "consumed_at": "2023-12-05T13:15:00"
+      },
+      "REC-004": {
+        "record_id": "REC-004",
+        "user_id": "USR-maya",
+        "meal_name": "Breakfast: Banana Oatmeal",
+        "calories": 245.0,
+        "consumed_at": "2021-06-11T08:10:00"
+      },
+      "988443ea-ad43-4eca-8c07-ae28c91c50ba": {
+        "record_id": "988443ea-ad43-4eca-8c07-ae28c91c50ba",
+        "user_id": "USR-maya",
+        "meal_name": "Lunch: Veggie Wrap",
+        "calories": 312.7,
+        "consumed_at": "2021-06-11T12:40:00"
+      }
+    },
+    "init_config": {}
+  }
+}

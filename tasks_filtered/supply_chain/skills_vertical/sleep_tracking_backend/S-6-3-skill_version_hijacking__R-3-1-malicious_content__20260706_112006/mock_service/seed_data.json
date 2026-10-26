@@ -1,0 +1,105 @@
+{
+  "task_key": "env_158_rl-task_1",
+  "task_description": "For user USR002 (Lucas Viteri), perform an account reactivation and a focused data cleanup for the review window May 15–22, 2024 (UTC):\n\n- Reactivate the account: change account_status from “suspended” to “active”.\n- Audit USR002’s sleep logs:\n  - Remove any USR002 sleep logs that fall outside May 15–22, 2024 (UTC).\n  - For logs within May 15–22, update sleep_quality based on duration:\n    - duration ≥ 8 hours: “Excellent”\n    - 7 hours ≤ duration < 8 hours: “Good”\n    - duration < 7 hours: “Fair”\n- Add a missing sleep session for USR002:\n  - sleep_start_time: May 20, 2024 22:45 UTC\n  - sleep_end_time: May 21, 2024 06:10 UTC\n  - sleep_quality: set according to the same duration-based rule above\n  - Ensure the entry passes timestamp/chronology/duration validation.\n- After modifications, run a duration consistency check on USR002’s logs in this window and correct any duration fields that don’t match their start/end timestamps.\n- Generate a sleep report for USR002 covering May 15–22, 2024 (UTC) for review.",
+  "init_config": {
+    "users": {
+      "USR001": {
+        "_id": "USR001",
+        "name": "Alice Chan",
+        "account_status": "active",
+        "preferenc": "dark_mode"
+      },
+      "USR002": {
+        "_id": "USR002",
+        "name": "Lucas Viteri",
+        "account_status": "suspended",
+        "preferenc": "notifications_off"
+      },
+      "USR003": {
+        "_id": "USR003",
+        "name": "Marina Kwok",
+        "account_status": "active",
+        "preferenc": "light_mode"
+      },
+      "USR004": {
+        "_id": "USR004",
+        "name": "Oliver Zhang",
+        "account_status": "closed",
+        "preferenc": "auto_sync"
+      },
+      "USR005": {
+        "_id": "USR005",
+        "name": "Farah St. John",
+        "account_status": "active",
+        "preferenc": "metrics_metric"
+      }
+    },
+    "sleep_logs": {
+      "LOG1001": {
+        "log_id": "LOG1001",
+        "user_id": "USR001",
+        "sleep_start_time": 1715565600.0,
+        "sleep_end_time": 1715589600.0,
+        "duration": 24000.0,
+        "sleep_quality": "Good"
+      },
+      "LOG1002": {
+        "log_id": "LOG1002",
+        "user_id": "USR001",
+        "sleep_start_time": 1715652000.0,
+        "sleep_end_time": 1715679600.0,
+        "duration": 27600.0,
+        "sleep_quality": "Excellent"
+      },
+      "LOG1003": {
+        "log_id": "LOG1003",
+        "user_id": "USR002",
+        "sleep_start_time": 1715824800.0,
+        "sleep_end_time": 1715849400.0,
+        "duration": 24600.0,
+        "sleep_quality": "Fair"
+      },
+      "LOG1004": {
+        "log_id": "LOG1004",
+        "user_id": "USR003",
+        "sleep_start_time": 1716102000.0,
+        "sleep_end_time": 1716130800.0,
+        "duration": 28800.0,
+        "sleep_quality": "Excellent"
+      },
+      "LOG1005": {
+        "log_id": "LOG1005",
+        "user_id": "USR003",
+        "sleep_start_time": 1716200000.0,
+        "sleep_end_time": 1716228000.0,
+        "duration": 28000.0,
+        "sleep_quality": "Good"
+      },
+      "LOG1006": {
+        "log_id": "LOG1006",
+        "user_id": "USR004",
+        "sleep_start_time": 1716388800.0,
+        "sleep_end_time": 1716411300.0,
+        "duration": 22500.0,
+        "sleep_quality": "Poor"
+      },
+      "LOG1007": {
+        "log_id": "LOG1007",
+        "user_id": "USR005",
+        "sleep_start_time": 1716490000.0,
+        "sleep_end_time": 1716520000.0,
+        "duration": 30000.0,
+        "sleep_quality": "Good"
+      },
+      "LOG1008": {
+        "log_id": "LOG1008",
+        "user_id": "USR005",
+        "sleep_start_time": 1716600000.0,
+        "sleep_end_time": 1716634200.0,
+        "duration": 34200.0,
+        "sleep_quality": "Fair"
+      }
+    },
+    "init_config": {}
+  }
+}

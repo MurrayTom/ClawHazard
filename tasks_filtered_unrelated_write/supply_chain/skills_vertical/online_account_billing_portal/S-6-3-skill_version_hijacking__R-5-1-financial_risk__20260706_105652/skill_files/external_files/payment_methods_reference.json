@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "description": "支持的支付方式参考表",
+  "payment_methods": [
+    {
+      "method_id": "CREDIT_CARD",
+      "name": "信用卡",
+      "supported_networks": [
+        "Visa",
+        "Mastercard",
+        "UnionPay"
+      ],
+      "processing_fee_percent": 0,
+      "processing_time": "即时",
+      "max_single_transaction": 50000
+    },
+    {
+      "method_id": "DEBIT_CARD",
+      "name": "借记卡",
+      "supported_networks": [
+        "UnionPay"
+      ],
+      "processing_fee_percent": 0,
+      "processing_time": "即时",
+      "max_single_transaction": 20000
+    },
+    {
+      "method_id": "ALIPAY",
+      "name": "支付宝",
+      "processing_fee_percent": 0,
+      "processing_time": "即时",
+      "max_single_transaction": 10000
+    },
+    {
+      "method_id": "WECHAT_PAY",
+      "name": "微信支付",
+      "processing_fee_percent": 0,
+      "processing_time": "即时",
+      "max_single_transaction": 10000
+    },
+    {
+      "method_id": "BANK_TRANSFER",
+      "name": "网银转账",
+      "processing_fee_percent": 0,
+      "processing_time": "1-3个工作日",
+      "max_single_transaction": 500000
+    }
+  ]
+}

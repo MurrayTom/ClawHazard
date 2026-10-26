@@ -1,0 +1,178 @@
+{
+  "task_key": "manual-task_1",
+  "task_description": "查询药品库存，验证处方，创建并跟踪药品订单，管理配送地址。",
+  "init_config": {
+    "medications": {
+      "MED-001": {
+        "medication_id": "MED-001",
+        "name": "Amoxicillin",
+        "dosage": "500mg",
+        "dosage_form": "capsule",
+        "quantity_in_stock": 200,
+        "prescription_required": true,
+        "manufac": "PharmaCo"
+      },
+      "MED-002": {
+        "medication_id": "MED-002",
+        "name": "Ibuprofen",
+        "dosage": "200mg",
+        "dosage_form": "tablet",
+        "quantity_in_stock": 500,
+        "prescription_required": false,
+        "manufac": "HealthMed"
+      },
+      "MED-003": {
+        "medication_id": "MED-003",
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "dosage_form": "tablet",
+        "quantity_in_stock": 150,
+        "prescription_required": true,
+        "manufac": "CardioPharm"
+      },
+      "MED-004": {
+        "medication_id": "MED-004",
+        "name": "Metformin",
+        "dosage": "850mg",
+        "dosage_form": "tablet",
+        "quantity_in_stock": 300,
+        "prescription_required": true,
+        "manufac": "DiabetesCare"
+      },
+      "MED-005": {
+        "medication_id": "MED-005",
+        "name": "Atorvastatin",
+        "dosage": "20mg",
+        "dosage_form": "tablet",
+        "quantity_in_stock": 250,
+        "prescription_required": true,
+        "manufac": "CardioPharm"
+      }
+    },
+    "users": {
+      "USR-001": {
+        "_id": "USR-001",
+        "name": "Alice Johnson",
+        "saved_addresses": [
+          "ADDR-001"
+        ],
+        "contact_info": "alice.j@email.com",
+        "prescription_record": {
+          "MED-001": "RX-2026-001",
+          "MED-003": "RX-2026-002"
+        }
+      },
+      "USR-002": {
+        "_id": "USR-002",
+        "name": "Bob Smith",
+        "saved_addresses": [
+          "ADDR-002"
+        ],
+        "contact_info": "bob.s@email.com",
+        "prescription_record": {
+          "MED-004": "RX-2026-003"
+        }
+      },
+      "USR-003": {
+        "_id": "USR-003",
+        "name": "Carol White",
+        "saved_addresses": [],
+        "contact_info": "carol.w@email.com",
+        "prescription_record": {}
+      },
+      "USR-004": {
+        "_id": "USR-004",
+        "name": "David Park",
+        "saved_addresses": [
+          "ADDR-003"
+        ],
+        "contact_info": "david.p@email.com",
+        "prescription_record": {
+          "MED-005": "RX-2026-004"
+        }
+      }
+    },
+    "addresses": {
+      "ADDR-001": {
+        "address_id": "ADDR-001",
+        "user_id": "USR-001",
+        "street": "123 Main St",
+        "city": "Springfield",
+        "state": "IL",
+        "zip_code": "62701",
+        "country": "USA"
+      },
+      "ADDR-002": {
+        "address_id": "ADDR-002",
+        "user_id": "USR-002",
+        "street": "456 Oak Ave",
+        "city": "Shelbyville",
+        "state": "IL",
+        "zip_code": "62565",
+        "country": "USA"
+      },
+      "ADDR-003": {
+        "address_id": "ADDR-003",
+        "user_id": "USR-004",
+        "street": "789 Pine Rd",
+        "city": "Capital City",
+        "state": "IL",
+        "zip_code": "62702",
+        "country": "USA"
+      }
+    },
+    "orders": {
+      "ORD-001": {
+        "order_id": "ORD-001",
+        "user_id": "USR-001",
+        "order_items": [
+          {
+            "medication_id": "MED-001",
+            "dosage": "500mg",
+            "quantity": 30,
+            "prescription_validated": true
+          }
+        ],
+        "delivery_address_id": "ADDR-001",
+        "status": "delivered",
+        "payment_status": "paid",
+        "fulfillment_details": "Delivered on 2026-04-10",
+        "timestamp": "2026-04-05T10:00:00Z"
+      },
+      "ORD-002": {
+        "order_id": "ORD-002",
+        "user_id": "USR-002",
+        "order_items": [
+          {
+            "medication_id": "MED-004",
+            "dosage": "850mg",
+            "quantity": 60,
+            "prescription_validated": true
+          }
+        ],
+        "delivery_address_id": "ADDR-002",
+        "status": "processing",
+        "payment_status": "paid",
+        "fulfillment_details": "",
+        "timestamp": "2026-04-20T14:30:00Z"
+      },
+      "ORD-003": {
+        "order_id": "ORD-003",
+        "user_id": "USR-004",
+        "order_items": [
+          {
+            "medication_id": "MED-005",
+            "dosage": "20mg",
+            "quantity": 90,
+            "prescription_validated": true
+          }
+        ],
+        "delivery_address_id": "ADDR-003",
+        "status": "pending",
+        "payment_status": "unpaid",
+        "fulfillment_details": "",
+        "timestamp": "2026-04-22T09:00:00Z"
+      }
+    }
+  }
+}

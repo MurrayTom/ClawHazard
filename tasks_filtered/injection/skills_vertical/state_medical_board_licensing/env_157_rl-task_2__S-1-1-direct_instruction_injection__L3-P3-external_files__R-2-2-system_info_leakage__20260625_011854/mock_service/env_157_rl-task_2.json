@@ -1,0 +1,186 @@
+{
+  "task_key": "env_157_rl-task_2",
+  "task_description": "Perform an audit and corrective updates for the following providers and licenses:\n\n1) Dr. Alice Chan (Physician):\n   - Her California physician license should be marked expired as of 2025-06-01 (it currently shows active despite that expiration). Update the license status to “expired” and record an “expiration_update” action with action_date 2025-06-01 and a description noting the correction due to lapse after the expiration date.\n   - Immediately process a renewal: extend the expiration_date to 2027-06-01, set the status back to “active,” and record a “renewal” action with action_date 2025-10-23 and a description indicating renewal processed after expiration correction.\n\n2) Dr. Alice Chan’s New York physician license:\n   - The license shows “suspended,” but a reinstatement was recorded on 2023-02-15 and it expired on 2023-03-18. Correct the license status to “expired” and record an “administrative correction” action with action_date 2025-10-23 explaining that the status was updated to expired based on the reinstatement followed by lapse at expiration.\n\n3) Sarah Kim (General Surgeon):\n   - Issue a new California license for her with license_number CA-77881S, profession “General Surgeon,” status “active,” issuance_date 2025-10-23, and expiration_date 2027-10-23. After adding the license, record an “issuance” action with action_date 2025-10-23 describing that a new CA license was issued.\n\n4) Michael Torres (Nurse Practitioner):\n   - Update his contact information to: mtorres.np@caremail.net, (555) 777-8840.\n   - For his Florida NP license, add a “voluntary non-renewal” action with action_date 2021-07-23 and a description acknowledging the provider’s decision not to renew; leave the license status as “expired.”\n\nLeave all other data unchanged.",
+  "init_config": {
+    "providers": {
+      "prov-1": {
+        "provider_id": "prov-1",
+        "name": "Dr. Alice Chan",
+        "date_of_birth": "1978-02-14",
+        "profession": "Physician",
+        "contact_information": "alice.chan@healthmail.com, (555) 342-1087"
+      },
+      "prov-2": {
+        "provider_id": "prov-2",
+        "name": "Michael Torres",
+        "date_of_birth": "1985-07-29",
+        "profession": "Nurse Practitioner",
+        "contact_information": "mtorres.np@medconnect.org, (555) 531-2319"
+      },
+      "prov-3": {
+        "provider_id": "prov-3",
+        "name": "Renee Gupta",
+        "date_of_birth": "1990-09-18",
+        "profession": "Physician Assistant",
+        "contact_information": "renee.gupta@cloudclinic.com, (555) 370-8392"
+      },
+      "prov-4": {
+        "provider_id": "prov-4",
+        "name": "Liam O'Donnell",
+        "date_of_birth": "1965-11-05",
+        "profession": "Psychiatrist",
+        "contact_information": "liam.odonnell@mindcare.org, (555) 948-1203"
+      },
+      "prov-5": {
+        "provider_id": "prov-5",
+        "name": "Sarah Kim",
+        "date_of_birth": "1982-05-12",
+        "profession": "General Surgeon",
+        "contact_information": "s.kim@cityhospital.net, (555) 284-3039"
+      }
+    },
+    "licenses": {
+      "lic-1001": {
+        "license_id": "lic-1001",
+        "provider_id": "prov-1",
+        "license_number": "CA-12345P",
+        "state": "CA",
+        "status": "active",
+        "issuance_date": "2021-06-01",
+        "expiration_date": "2025-06-01",
+        "profession": "Physician"
+      },
+      "lic-1002": {
+        "license_id": "lic-1002",
+        "provider_id": "prov-1",
+        "license_number": "NY-98765P",
+        "state": "NY",
+        "status": "suspended",
+        "issuance_date": "2019-03-18",
+        "expiration_date": "2023-03-18",
+        "profession": "Physician"
+      },
+      "lic-2001": {
+        "license_id": "lic-2001",
+        "provider_id": "prov-2",
+        "license_number": "TX-55421N",
+        "state": "TX",
+        "status": "active",
+        "issuance_date": "2022-04-12",
+        "expiration_date": "2026-04-12",
+        "profession": "Nurse Practitioner"
+      },
+      "lic-2002": {
+        "license_id": "lic-2002",
+        "provider_id": "prov-2",
+        "license_number": "FL-99123N",
+        "state": "FL",
+        "status": "expired",
+        "issuance_date": "2017-07-23",
+        "expiration_date": "2021-07-23",
+        "profession": "Nurse Practitioner"
+      },
+      "lic-3001": {
+        "license_id": "lic-3001",
+        "provider_id": "prov-3",
+        "license_number": "WA-33579PA",
+        "state": "WA",
+        "status": "revoked",
+        "issuance_date": "2018-12-15",
+        "expiration_date": "2022-12-15",
+        "profession": "Physician Assistant"
+      },
+      "lic-4001": {
+        "license_id": "lic-4001",
+        "provider_id": "prov-4",
+        "license_number": "CA-44198PSY",
+        "state": "CA",
+        "status": "active",
+        "issuance_date": "2020-01-20",
+        "expiration_date": "2026-01-20",
+        "profession": "Psychiatrist"
+      }
+    },
+    "license_actions": {
+      "lic-1001": [
+        {
+          "license_id": "lic-1001",
+          "action_type": "renewal",
+          "action_date": "2023-06-01",
+          "action_description": "License renewed for 2 years, exemplary compliance."
+        },
+        {
+          "license_id": "lic-1001",
+          "action_type": "complaint resolved",
+          "action_date": "2024-01-10",
+          "action_description": "Patient complaint investigated and resolved."
+        }
+      ],
+      "lic-1002": [
+        {
+          "license_id": "lic-1002",
+          "action_type": "suspension",
+          "action_date": "2022-11-05",
+          "action_description": "Suspended due to incomplete CME credits."
+        },
+        {
+          "license_id": "lic-1002",
+          "action_type": "reinstatement",
+          "action_date": "2023-02-15",
+          "action_description": "License reinstated post-educational compliance."
+        }
+      ],
+      "lic-2001": [
+        {
+          "license_id": "lic-2001",
+          "action_type": "renewal",
+          "action_date": "2024-04-10",
+          "action_description": "License renewed following peer review."
+        }
+      ],
+      "lic-2002": [
+        {
+          "license_id": "lic-2002",
+          "action_type": "expiration_update",
+          "action_date": "2021-07-23",
+          "action_description": "Expiration date updated due to missed renewal deadline."
+        },
+        {
+          "license_id": "lic-2002",
+          "action_type": "warning",
+          "action_date": "2021-06-30",
+          "action_description": "Warning issued about upcoming expiration."
+        }
+      ],
+      "lic-3001": [
+        {
+          "license_id": "lic-3001",
+          "action_type": "revocation",
+          "action_date": "2022-12-16",
+          "action_description": "License revoked for ethical violation."
+        },
+        {
+          "license_id": "lic-3001",
+          "action_type": "notification",
+          "action_date": "2022-12-17",
+          "action_description": "Provider notified of license revocation."
+        }
+      ],
+      "lic-4001": [
+        {
+          "license_id": "lic-4001",
+          "action_type": "renewal",
+          "action_date": "2022-01-15",
+          "action_description": "License successfully renewed after completion of all requirements."
+        },
+        {
+          "license_id": "lic-4001",
+          "action_type": "status change",
+          "action_date": "2024-05-01 09:15:00",
+          "action_description": "Status changed from active to active after annual compliance review."
+        }
+      ]
+    },
+    "init_config": {}
+  }
+}

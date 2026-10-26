@@ -1,0 +1,126 @@
+{
+  "task_key": "env_144_rl-task_3",
+  "task_description": "Update the patient profile for the currently authenticated user (Alice Chan, PAT1001) to reflect new contact and provider preferences:\n\n- Replace contact_info with a semicolon-delimited string in this exact format:\n  email=alice.chan@newmail.mock; mobile=+1-234-555-8888; address=542 Cedar Ridge Ave, Columbus, OH 43215; emergency_contact=Evan Chan (+1-234-555-9999); preferred_provider_id=<ID of the cardiologist who diagnosed her hypertension in October 2022>\n\n- Set account_status to \"pending\" to trigger verification of the new mailing address.\n\nUse the provider_id associated with Alice’s October 2022 hypertension diagnosis (confirm it belongs to the cardiologist and is validly linked to that record) before populating preferred_provider_id. Do not change name or date_of_birth.",
+  "init_config": {
+    "patients": {
+      "PAT1001": {
+        "patient_id": "PAT1001",
+        "name": "Alice Chan",
+        "date_of_birth": "1991-02-19",
+        "contact_info": "alice.chan@email.mock | (234) 555-1014",
+        "account_status": "active"
+      },
+      "PAT1002": {
+        "patient_id": "PAT1002",
+        "name": "Roberto Alvarez",
+        "date_of_birth": "1983-07-05",
+        "contact_info": "roberto.alv@mock.org | 555-325-9921",
+        "account_status": "inactive"
+      },
+      "PAT1003": {
+        "patient_id": "PAT1003",
+        "name": "Devon Meadows",
+        "date_of_birth": "1976-11-23",
+        "contact_info": "d.meadows@mockmail.com | +1-852-555-7007",
+        "account_status": "active"
+      },
+      "PAT1004": {
+        "patient_id": "PAT1004",
+        "name": "Mai Linh Ngo",
+        "date_of_birth": "2007-05-14",
+        "contact_info": "ml.ngo@mockschool.org",
+        "account_status": "pending"
+      }
+    },
+    "medical_records": {
+      "MR-20221030-1": {
+        "record_id": "MR-20221030-1",
+        "patient_id": "PAT1001",
+        "event_date": "2022-10-30",
+        "event_type": "diagnosis",
+        "provider_id": "PROV-A3D9",
+        "details": "Diagnosed with mild hypertension after routine check."
+      },
+      "MR-20220812-5": {
+        "record_id": "MR-20220812-5",
+        "patient_id": "PAT1002",
+        "event_date": "2022-08-12",
+        "event_type": "surgery",
+        "provider_id": "PROV-T918",
+        "details": "Knee arthroscopy performed. Discharged with post-op instructions."
+      },
+      "MR-20230719-2": {
+        "record_id": "MR-20230719-2",
+        "patient_id": "PAT1003",
+        "event_date": "2023-07-19",
+        "event_type": "test",
+        "provider_id": "PROV-A3D9",
+        "details": "Cardiac stress test, normal results."
+      },
+      "MR-20230114-4": {
+        "record_id": "MR-20230114-4",
+        "patient_id": "PAT1004",
+        "event_date": "2023-01-14",
+        "event_type": "vaccination",
+        "provider_id": "PROV-B124",
+        "details": "Administered booster dose of MMR vaccine at school."
+      },
+      "MR-20230605-3": {
+        "record_id": "MR-20230605-3",
+        "patient_id": "PAT1001",
+        "event_date": "2023-06-05",
+        "event_type": "visit",
+        "provider_id": "PROV-M7Z8",
+        "details": "Annual physical exam. All vitals within normal range."
+      },
+      "MR-20211002-7": {
+        "record_id": "MR-20211002-7",
+        "patient_id": "PAT1003",
+        "event_date": "2021-10-02",
+        "event_type": "prescription",
+        "provider_id": "PROV-JERR",
+        "details": "Prescribed atorvastatin for cholesterol management."
+      }
+    },
+    "providers": {
+      "PROV-A3D9": {
+        "provider_id": "PROV-A3D9",
+        "name": "Dr. Sandeep Prasad",
+        "specialty": "Cardiology",
+        "contact_info": "s.prasad@mockclinic.com | 555-238-1101"
+      },
+      "PROV-B124": {
+        "provider_id": "PROV-B124",
+        "name": "Dr. Helena Lutz",
+        "specialty": "Pediatrics",
+        "contact_info": "h.lutz@wellpeds.mock | (212) 555-8891"
+      },
+      "PROV-T918": {
+        "provider_id": "PROV-T918",
+        "name": "Dr. Tom Yu",
+        "specialty": "Orthopedics",
+        "contact_info": "tomyu@orthomock.com"
+      },
+      "PROV-M7Z8": {
+        "provider_id": "PROV-M7Z8",
+        "name": "Nurse Olivia Park",
+        "specialty": "General Practice",
+        "contact_info": "olivia.park@mockhospital.fake"
+      },
+      "PROV-JERR": {
+        "provider_id": "PROV-JERR",
+        "name": "Dr. Mikhail Jerrin",
+        "specialty": "Family Medicine",
+        "contact_info": "+1-400-322-1990"
+      }
+    },
+    "init_config": {},
+    "current_user": {
+      "user_type": "patient",
+      "role": "patient",
+      "user_id": "PAT1001",
+      "patient_id": "PAT1001",
+      "authenticated": true
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "task_key": "env_177_rl-task_1",
+  "task_description": "For user “Lucas Rivera,” perform an end-of-year cleanup and annotation of his mood records:\n\n1) Restore his deleted mood entry about losing his keys at the library.\n2) Immediately edit the restored entry:\n   - Change its mood_type to “anxious.”\n   - Update the description to: “Frustrated after losing my keys. Later found them at home.”\n   - In metadata, change severity from “moderate” to “low” and add found_at: “Home.”\n3) Add a new mood entry for Lucas with mood_type “happy” that records the resolution:\n   - Description: “Relieved after finding keys at home.”\n   - Metadata: {location: “Home”, resolution: true}\n4) Bulk delete Lucas’s “anxious” mood entries with timestamps earlier than 1701388800 (UNIX, Dec 1, 2023 UTC), keeping newer anxious entries intact.",
+  "init_config": {
+    "users": {
+      "USR1": {
+        "_id": "USR1",
+        "name": "Alice Chan",
+        "account_info": "Premium member since April"
+      },
+      "USR2": {
+        "_id": "USR2",
+        "name": "Jamal Nordin",
+        "account_info": "Standard account, joined in 2023"
+      },
+      "USR3": {
+        "_id": "USR3",
+        "name": "Sophia Martins",
+        "account_info": "Linked to Google, subscription trial"
+      },
+      "USR4": {
+        "_id": "USR4",
+        "name": "Lucas Rivera",
+        "account_info": "Student plan, invited by Alice"
+      }
+    },
+    "mood_entries": {
+      "entry_001": {
+        "entry_id": "entry_001",
+        "user_id": "USR1",
+        "mood_type": "happy",
+        "timestamp": 1679305020.0,
+        "description": "Had a great brunch with friends.",
+        "metadata": {
+          "location": "Green Leaf Cafe",
+          "weather": "Sunny",
+          "companions": [
+            "Sophia",
+            "Lucas"
+          ]
+        }
+      },
+      "entry_002": {
+        "entry_id": "entry_002",
+        "user_id": "USR2",
+        "mood_type": "anxious",
+        "timestamp": 1688213708.0,
+        "description": "Felt stressed before midterm exam.",
+        "metadata": {
+          "event": "Midterm Biology",
+          "stress_level": 7
+        }
+      },
+      "entry_003": {
+        "entry_id": "entry_003",
+        "user_id": "USR3",
+        "mood_type": "sad",
+        "timestamp": 1691204800.0,
+        "description": "Missed family gathering.",
+        "metadata": {
+          "reason": "Travel delays",
+          "associated_task": "Project presentation"
+        }
+      },
+      "entry_004": {
+        "entry_id": "entry_004",
+        "user_id": "USR1",
+        "mood_type": "energized",
+        "timestamp": 1697405600.0,
+        "description": "Finished a morning run in the park.",
+        "metadata": {
+          "distance_km": 5.2,
+          "weather": "Cool breeze"
+        }
+      },
+      "entry_005": {
+        "entry_id": "entry_005",
+        "user_id": "USR4",
+        "mood_type": "angry",
+        "timestamp": 1700303000.0,
+        "description": "Frustrated after losing my keys.",
+        "metadata": {
+          "location": "Library",
+          "severity": "moderate"
+        },
+        "deleted": true
+      },
+      "entry_006": {
+        "entry_id": "entry_006",
+        "user_id": "USR3",
+        "mood_type": "happy",
+        "timestamp": 1701281100.0,
+        "description": "Got accepted for summer internship.",
+        "metadata": {
+          "organization": "Nova Labs",
+          "method": "Email notification"
+        }
+      },
+      "entry_007": {
+        "entry_id": "entry_007",
+        "user_id": "USR2",
+        "mood_type": "energized",
+        "timestamp": 1701502550.0,
+        "description": "Productive coding session.",
+        "metadata": {
+          "duration_min": 120,
+          "topics": [
+            "ML",
+            "Python"
+          ]
+        }
+      },
+      "entry_008": {
+        "entry_id": "entry_008",
+        "user_id": "USR4",
+        "mood_type": "anxious",
+        "timestamp": 1701900000.0,
+        "description": "Waiting for scholarship reply.",
+        "metadata": {
+          "expected_response": "Email",
+          "anticipated": true
+        }
+      }
+    },
+    "mood_types": {
+      "happy": {
+        "mood_type_id": "happy",
+        "label": "Joyful",
+        "color": "#FFD700",
+        "emoji": "😊"
+      },
+      "anxious": {
+        "mood_type_id": "anxious",
+        "label": "Anxious",
+        "color": "#85C1E9",
+        "emoji": "😰"
+      },
+      "sad": {
+        "mood_type_id": "sad",
+        "label": "Sad",
+        "color": "#5DADE2",
+        "emoji": "😢"
+      },
+      "energized": {
+        "mood_type_id": "energized",
+        "label": "Energized",
+        "color": "#58D68D",
+        "emoji": "⚡"
+      },
+      "angry": {
+        "mood_type_id": "angry",
+        "label": "Angry",
+        "color": "#E74C3C",
+        "emoji": "😠"
+      }
+    },
+    "init_config": {}
+  }
+}
